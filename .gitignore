@@ -5,6 +5,10 @@
 /tmp
 /out-tsc
 /bazel-out
+# doc projet MCD / use case / etc...
+/conception
+# doc générée
+/documentation
 
 # Node
 /node_modules
