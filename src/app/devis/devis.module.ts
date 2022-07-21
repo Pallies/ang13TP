@@ -9,5 +9,6 @@ import { DevisRoutingModule } from './devis-routing.module';
     CommonModule,
     DevisRoutingModule
   ],
+  exports:[CreationDevisComponent]
 })
 export class DevisModule {}
