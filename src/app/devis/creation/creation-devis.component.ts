@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Vehicule } from 'src/app/core/models/vehicule';
 
@@ -8,7 +9,9 @@ import { Vehicule } from 'src/app/core/models/vehicule';
 })
 export class CreationDevisComponent implements OnInit {
   vehicules!: Vehicule[];
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.vehicules = this.route.snapshot.data['dataVehicules'];
+  }
 }
