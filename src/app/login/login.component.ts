@@ -1,28 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
-import { ApiService } from '../core/services/api.service';
 import { Utilisateur } from '../core/models/utilisateur';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-
 export class LoginComponent implements OnInit {
+  utilisateurs!: Utilisateur[];
 
-  constructor(public loginservice: LoginService, private route: ActivatedRoute, private apiservice: ApiService <Utilisateur>) {}
+  constructor(
+    public loginservice: LoginService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.route.snapshot.data['dataUtilisateur']
+    this.utilisateurs = this.route.snapshot.data['dataUtilisateur'];
   }
 
   submit() {
-    console.log(this.loginservice.isValid(), this.loginservice.email, this.loginservice.password)
-  }
-
-  login() {
-    this.apiservice.
+    console.log(
+      this.loginservice.isValid(),
+      this.loginservice.email,
+      this.loginservice.password
+    );
+    if (this.loginservice.isValid()) {
+      this.utilisateurs
+        .filter((data) => data.email === this.loginservice.email)
+        .map((data) => data.mdp === this.loginservice.password)
+    }
   }
 }

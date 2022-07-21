@@ -1,0 +1,15 @@
+h1 {
+  margin-bottom: 5rem;
+  margin-top: 7rem;
+  text-align: center;
+}
+
+button.btn-lg {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+i.bi-box-arrow-in-right{
+  font-size: 2rem;
+  margin-left: 1rem;
+}
