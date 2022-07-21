@@ -5,24 +5,34 @@
 
         <h1>LOGIN PAGE</h1>
 
-        <form (ngSubmit)="submit()" [formGroup]="loginservice.loginForm">
+        <form (ngSubmit)="submitForm()" [formGroup]="loginservice.loginForm" #loginForm="ngForm">
 
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <label class="form-label" for="mail">
-              Email address
+            <label class="form-label" title="Ce champ est obligatoire" for="mail">
+              Addresse email
+              <span>*</span>
             </label>
             <input class="form-control form-control-lg" type="email" id="mail" formControlName="email"
-              aria-describedby="emailHelp" placeholder="Enter a valid email address" />
+              aria-describedby="emailHelp" placeholder="Saisissez votre addresse email..."
+              [class.is-invalid]="loginForm.submitted && loginservice.loginForm.get('email')?.invalid" />
+            <div class="invalid-feedback">
+              Le champ doit contenir une adresse email valide
+            </div>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
-            <label class="form-label" for="password">
-              Password
+            <label class="form-label" title="Ce champ est obligatoire" for="password">
+              Mot de passe
+              <span>*</span>
             </label>
             <input class="form-control form-control-lg" type="password" id="password" formControlName="password"
-              placeholder="Enter password" minlength="8" />
+              placeholder="Saisissez votre mot de passe..." minlength="8"
+              [class.is-invalid]="loginForm.submitted && loginservice.loginForm.get('password')?.invalid" />
+            <div class="invalid-feedback">
+              Le mot de passe doit contenir au minimum 8 caractères
+            </div>
           </div>
 
           <!-- Checkbox remember me + forgot password -->
@@ -30,11 +40,11 @@
             <div class="form-check mb-0">
               <input class="form-check-input me-2" type="checkbox" />
               <label class="form-check-label">
-                Remember me
+                Se souvenir de moi
               </label>
             </div>
             <a href="#!" class="text-body">
-              Forgot password?
+              Mot de passe oublié ?
             </a>
           </div>
 

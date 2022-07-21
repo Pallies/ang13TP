@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     this.utilisateurs = this.route.snapshot.data['dataUtilisateur'];
   }
 
-  submit() {
+  submitForm() {
     console.log(
       this.loginservice.isValid(),
       this.loginservice.email,
