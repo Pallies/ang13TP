@@ -10,12 +10,14 @@ import { DevisModule } from './devis/devis.module';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
     LoginComponent,
+    MenuVehiculesComponent,
     NavbarComponent,
-    MenuComponent
   ],
   imports: [
     BrowserModule,
