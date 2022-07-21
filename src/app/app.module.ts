@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuVehiculesComponent } from './menu/menu-vehicules/menu-vehicules.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    LoginComponent
+    LoginComponent,
+    MenuVehiculesComponent
   ],
   imports: [
     BrowserModule,
