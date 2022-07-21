@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DevisModule } from './devis/devis.module';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { MenuVehiculesComponent } from './menu/menu-vehicules/menu-vehicules.component';
 
 
 @NgModule({
