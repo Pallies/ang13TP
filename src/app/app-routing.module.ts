@@ -6,6 +6,7 @@ import { CreationDevisComponent } from './devis/creation/creation-devis.componen
 import { LoaduserResolver } from './core/resolvers/loaduser.resolver';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { MenuVehiculesComponent } from './menu/menu-vehicules/menu-vehicules.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,9 @@ const routes: Routes = [
   },
   {
     path:"menu", component: MenuComponent
+  },
+  {
+    path:"menu-vehicules", component: MenuVehiculesComponent
   },
 ];
 
