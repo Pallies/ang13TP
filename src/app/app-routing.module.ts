@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CreationDevisComponent } from './devis/creation/creation-devis.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:"",component:CreationDevisComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

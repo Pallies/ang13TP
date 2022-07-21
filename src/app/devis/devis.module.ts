@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreationComponent } from './creation/creation.component';
-
-
+import { CreationDevisComponent } from './creation/creation-devis.component';
+import { DevisRoutingModule } from './devis-routing.module';
 
 @NgModule({
-  declarations: [
-    CreationComponent
-  ],
+  declarations: [CreationDevisComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    DevisRoutingModule
+  ],
 })
-export class DevisModule { }
+export class DevisModule {}

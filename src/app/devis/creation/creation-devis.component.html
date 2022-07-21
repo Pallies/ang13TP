@@ -1,0 +1,50 @@
+<div class="container">
+  <!-- TITRE -->
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-info">Retour</button>
+      <h1 class="display-1">CREATION D'UN DEVIS : VENTE DE VEHICULE</h1>
+    </div>
+  </div>
+  <!-- FILTRE -->
+  <div class="row">
+    <div class="col"></div>
+  </div>
+  <!-- TABLEAU -->
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped">
+        <thead>
+          <tr class="table-secondary">
+            <th scope="col">Photo</th>
+            <th scope="col">Marque Modèle</th>
+            <th scope="col">Prix HT</th>
+            <th scope="col">Année</th>
+            <th scope="col">Couleur</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Ajouter Devis</th>
+            <th scope="col">Supprimer Devis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let vehicule of vehicules">
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>
+              <div class="btn btn-success">
+                <i class="fa-solid fa-circle-plus"></i>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot class="table-secondary">
+          <div class="d-flex">
+            <button class="btn btn-success">Créer</button>
+            <button class="btn btn-danger">Annuler</button>
+          </div>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
