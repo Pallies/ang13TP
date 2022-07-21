@@ -14,7 +14,7 @@ export class LoginService {
     this.loginForm = this.formbuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-    });
+    }, {updateOn: 'submit'});
   }
 
   isValid() {

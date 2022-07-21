@@ -21,8 +21,7 @@ export class LoginComponent implements OnInit {
     this.utilisateurs = this.route.snapshot.data['dataUtilisateur'];
   }
 
-  submit() {
-    this.router.navigate(["devis","creation"]);
+  submitForm() {
     if (this.loginservice.isValid()) {
       this.utilisateurs
         .filter((data) => data.email === this.loginservice.email)

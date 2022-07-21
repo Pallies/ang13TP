@@ -17,10 +17,6 @@ i.bi-box-arrow-in-right {
   margin-left: 1rem;
 }
 
-input:invalid {
-  border: 1px solid red;
-}
-
-input:valid {
-  border: 1px solid black;
+span {
+  color: red;
 }

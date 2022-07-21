@@ -5,6 +5,7 @@ import { CreationDevisComponent } from './devis/creation/creation-devis.componen
 
 import { LoaduserResolver } from './core/resolvers/loaduser.resolver';
 import { LoginComponent } from './login/login.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,9 @@ const routes: Routes = [
     path: 'devis',
     loadChildren: () =>
       import('./devis/devis.module').then((m) => m.DevisModule),
+  },
+  {
+    path:"menu", component: MenuComponent
   },
 ];
 
