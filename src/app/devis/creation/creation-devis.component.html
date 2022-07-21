@@ -1,16 +1,16 @@
 <div class="container-fluid">
   <!-- TITRE -->
-  <div class="row">
-    <div class="col my-5 d-flex justify-content-center">
-      <div class="d-flex align-items-center me-3">
-        <button class="btn btn-sm btn-outline-primary">
+    <div class="row my-4">
+      <div class="col-1 ">
+        <button class="btn btn-lg btn-outline-primary">
           <i class="bi bi-backspace"></i> Retour
         </button>
       </div>
-      <h1 class="display-5 text-center">
-        CREATION D'UN DEVIS : VENTE DE VEHICULE
-      </h1>
-    </div>
+      <div class="offset-1 col-10">
+        <h1 class="display-5 text-center">
+          CREATION D'UN DEVIS : VENTE DE VEHICULE
+        </h1>
+      </div>
   </div>
   <!-- FILTRE -->
   <div class="row">
@@ -43,7 +43,7 @@
             <td>{{ vehicule.couleur }}</td>
             <td>
               <input
-                class="text-end"
+                class="text-end me-2"
                 type="number"
                 name="quantite"
                 id="quantite"
@@ -66,8 +66,8 @@
         <tfoot>
           <td colspan="6">
             <div class="w-50 d-flex justify-content-around m-auto">
-              <button class="btn btn-success">Créer</button>
-              <button class="btn btn-danger">Annuler</button>
+              <button class="btn btn-lg btn-success px-5">Créer</button>
+              <button class="btn btn-lg btn-danger px-5">Annuler</button>
             </div>
           </td>
         </tfoot>
