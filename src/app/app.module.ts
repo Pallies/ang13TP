@@ -10,13 +10,15 @@ import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuVehiculesComponent } from './menu/menu-vehicules/menu-vehicules.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     LoginComponent,
-    MenuVehiculesComponent
+    MenuVehiculesComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
