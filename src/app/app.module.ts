@@ -9,14 +9,16 @@ import { DevisModule } from './devis/devis.module';
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './navbar/navbar.component';
+import { MenuVehiculesComponent } from './menu/menu-vehicules/menu-vehicules.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
     LoginComponent,
+    MenuVehiculesComponent,
     NavbarComponent,
-    MenuComponent
   ],
   imports: [
     BrowserModule,
