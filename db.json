@@ -15,5 +15,9 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "utilisateurs": [
+    {"id":1,"nom":"","prenom":"","mdp":"","email":"","profil":""}
+  ]
+
 }
