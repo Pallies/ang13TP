@@ -9,9 +9,9 @@ import { ApiService } from '../services/api.service';
 })
 export class LoadclientResolver implements Resolve<Client[]> {
   constructor(private api: ApiService<Client>) {
-    this.api.name = 'clients';
   }
   resolve(): Observable<Client[]> {
+    this.api.name = 'clients';
     return this.api.getAll();
   }
 }

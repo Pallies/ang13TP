@@ -4,9 +4,7 @@ import {
   EventEmitter,
   OnInit,
   Output,
-  ViewChild,
   ElementRef,
-  ViewChildren,
   QueryList,
 } from '@angular/core';
 
@@ -14,7 +12,6 @@ import {
   selector: 'car-couleur',
   template: `
     <select
-      #select
       class="form-select w-75"
       [(ngModel)]="valeurSelection"
       (click)="emitionValeur()"
@@ -26,8 +23,7 @@ import {
         [ngValue]="item"
       ></option>
     </select>
-  `,
-  styleUrls: ['./couleur-select.component.css'],
+  `
 })
 export class CouleurSelectComponent implements OnInit {
   /** renvoie la couleur sélectionnée */

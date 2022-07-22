@@ -15,10 +15,10 @@ import { ApiService } from '../services/api.service';
 export class LoaduserResolver implements Resolve<Utilisateur[]> {
 
   constructor(private apiservice:ApiService<Utilisateur>) {
-    this.apiservice.name = "utilisateurs"
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Utilisateur[]> {
+    this.apiservice.name = "utilisateurs"
     return this.apiservice.getAll();
   }
 }
