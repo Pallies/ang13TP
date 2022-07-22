@@ -6,5 +6,6 @@ export class Vehicule {
   public annee!:string;
   public couleur!:string;
   public quantite!:number;
+  public quantiteVendu!:number;
   public prixHT!:number;
 }
