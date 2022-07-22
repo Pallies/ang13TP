@@ -7,6 +7,7 @@ import { LoaduserResolver } from './core/resolvers/loaduser.resolver';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuVehiculesComponent } from './menu/menu-vehicules/menu-vehicules.component';
+import { MenuUtilisateursComponent } from './menu/menu-utilisateurs/menu-utilisateurs.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,9 @@ const routes: Routes = [
   },
   {
     path:"menu-vehicules", component: MenuVehiculesComponent
+  },
+  {
+    path:"menu-utilisateurs", component: MenuUtilisateursComponent
   },
 ];
 

@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuVehiculesComponent } from './menu/menu-vehicules/menu-vehicules.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MenuUtilisateursComponent } from './menu/menu-utilisateurs/menu-utilisateurs.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LoginComponent,
     MenuVehiculesComponent,
     NavbarComponent,
+    MenuUtilisateursComponent,
   ],
   imports: [
     BrowserModule,
