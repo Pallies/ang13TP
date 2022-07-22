@@ -1,12 +1,11 @@
-import { DevisModule } from './devis/devis.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreationDevisComponent } from './devis/creation/creation-devis.component';
 
 import { LoaduserResolver } from './core/resolvers/loaduser.resolver';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
-import { MenuVehiculesComponent } from './menu/menu-vehicules/menu-vehicules.component';
+import { VehiculesComponent } from './menu/vehicules/vehicules.component';
+import { ClientsComponent } from './menu/clients/clients.component';
 
 const routes: Routes = [
   {
@@ -20,11 +19,10 @@ const routes: Routes = [
       import('./devis/devis.module').then((m) => m.DevisModule),
   },
   {
-    path:"menu", component: MenuComponent
-  },
-  {
-    path:"menu-vehicules", component: MenuVehiculesComponent
-  },
+    path:'menu', component: MenuComponent,
+    loadChildren: () =>
+      import('./menu/menu.module').then((m) => m.MenuModule)
+  }
 ];
 
 @NgModule({

@@ -9,15 +9,14 @@ import { DevisModule } from './devis/devis.module';
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MenuVehiculesComponent } from './menu/menu-vehicules/menu-vehicules.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MenuModule } from './menu/menu.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     LoginComponent,
-    MenuVehiculesComponent,
     NavbarComponent,
   ],
   imports: [
@@ -27,6 +26,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ReactiveFormsModule,
     AppRoutingModule,
     DevisModule,
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
