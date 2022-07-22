@@ -11,9 +11,10 @@ import {
 @Component({
   selector: 'car-quantite',
   template: `
+<div class="row">
     <select
       #select
-      class="form-select"
+      class="form-select col"
       [(ngModel)]="valeurSelection"
       (click)="emitionValeur()"
     >
@@ -21,7 +22,8 @@ import {
       <option *ngFor="let index of compteur" [ngValue]="index">
         {{ index }}
       </option>
-    </select>
+    </select><p  class="col" style="color:crimson;margin:auto"> / {{ max}}</p>
+</div>
   `,
 })
 export class QuantiteSelectComponent implements OnInit {

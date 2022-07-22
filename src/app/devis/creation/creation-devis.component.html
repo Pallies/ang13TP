@@ -2,10 +2,7 @@
   <!-- TITRE -->
   <div class="row my-4">
     <div class="col-1">
-      <button
-        class="btn btn-lg btn-outline-primary"
-        (click)="onBack()"
-      >
+      <button class="btn btn-lg btn-outline-primary" (click)="onBack()">
         <i class="bi bi-backspace"></i> Retour
       </button>
     </div>
@@ -62,14 +59,6 @@
                 (selection)="vehicule.quantiteVendu = $event"
                 [raz]="maj$"
               ></car-quantite>
-              <p
-                [ngStyle]="{
-                  visibility: vehicule.quantite == 0 ? 'hidden' : 'visible'
-                }"
-                class="error"
-              >
-                / {{ vehicule.quantite }}
-              </p>
             </td>
             <td>
               <button
@@ -90,7 +79,9 @@
               >
                 Récapitulatif
               </button>
-              <button class="btn btn-lg btn-danger px-5" routerLink="/menu-vehicules">Annuler</button>
+              <button class="btn btn-lg btn-danger px-5" (click)="onBack()">
+                Annuler
+              </button>
             </div>
           </td>
         </tfoot>

@@ -6,7 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   template: `
     <select
       #select
-      class="form-select"
+      class="form-select w-75"
       [(ngModel)]="valeurSelection"
       (click)="emitionValeur()"
       [ngStyle]="{ backgroundColor: valeurSelection }"
