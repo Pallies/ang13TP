@@ -5,12 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { DevisModule } from './devis/devis.module';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
-
-
+import { SharedModule } from './shared/shared.module';
 import { MenuModule } from './menu/menu.module';
 
 @NgModule({
@@ -18,7 +16,6 @@ import { MenuModule } from './menu/menu.module';
     AppComponent,
     MenuComponent,
     LoginComponent,
-    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +24,8 @@ import { MenuModule } from './menu/menu.module';
     ReactiveFormsModule,
     AppRoutingModule,
     DevisModule,
-    MenuModule
+    MenuModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
