@@ -4,12 +4,14 @@ import { VehiculesComponent } from './vehicules/vehicules.component';
 import { ClientsComponent } from './clients/clients.component';
 import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
 import { MenuRoutingModule } from './menu-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [VehiculesComponent, UtilisateursComponent, ClientsComponent],
   imports: [
     CommonModule,
-    MenuRoutingModule
+    MenuRoutingModule,
+    SharedModule
   ],
   exports:[VehiculesComponent, UtilisateursComponent, ClientsComponent]
 })
