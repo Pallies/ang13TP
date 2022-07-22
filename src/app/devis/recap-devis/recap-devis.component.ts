@@ -1,9 +1,10 @@
-import { Utilisateur } from './../../core/models/utilisateur';
+import { ApiService } from './../../core/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Vehicule } from 'src/app/core/models/vehicule';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DevisVehiculeService } from '../devis-vehicule.service';
+import { Client } from 'src/app/core/models/client';
 
 @Component({
   selector: 'app-recap-devis',
@@ -12,24 +13,34 @@ import { DevisVehiculeService } from '../devis-vehicule.service';
 })
 export class RecapDevisComponent implements OnInit, OnDestroy {
   venteVehicules!: Vehicule[];
-  clients!:Utilisateur[];
+  clients!: Client[];
   subscription!: Subscription;
 
-  constructor(private devis: DevisVehiculeService,private route:ActivatedRoute,private router:Router) {}
+  constructor(
+    private devis: DevisVehiculeService,
+    private api: ApiService<Client>,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.clients=this.route.snapshot.data['dataClients']
+    this.clients = this.route.snapshot.data['dataClients'];
+    this.api.getAll();
     this.subscription = this.devis.commande.subscribe(
       (data) => (this.venteVehicules = data)
     );
   }
-  get quantiteTotal():number{
+  get quantiteTotal(): number {
     return this.devis.quantiteTotal;
   }
-  get prixTotal():number{
+  get prixTotal(): number {
     return this.devis.prixTotalHT;
   }
-
+  onBack() {
+    this.router.navigated = false;
+    this.api.name = 'vehicules';
+    this.router.navigate(['menu', 'vehicules']);
+  }
   ngOnDestroy(): void {
     this.subscription.closed;
   }

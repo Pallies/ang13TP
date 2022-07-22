@@ -1,18 +1,14 @@
+<!-- TITRE -->
+<a class="h5">
+  <button
+    class="btn btn-sm btn-outline-primary m-3 p-2"
+    routerLink="/devis/creation"
+  >
+    <i class="bi bi-backspace"></i> Retour
+  </button>
+</a>
+<h1 class="text-center">Récapitulatif</h1>
 <div class="container-fluid">
-  <!-- TITRE -->
-  <div class="row my-4">
-    <div class="col-1">
-      <button
-        class="btn btn-lg btn-outline-primary"
-        routerLink="/devis/creation"
-      >
-        <i class="bi bi-backspace"></i> Retour
-      </button>
-    </div>
-    <div class="offset-1 col-10">
-      <h1 class="display-5 text-center">RECAPITULATIF DU DEVIS</h1>
-    </div>
-  </div>
   <!-- TABLEAU -->
   <div class="row w-75 m-auto">
     <div class="col">
@@ -50,15 +46,13 @@
     </div>
   </div>
   <div class="row">
-    <div class="offset-2 col-4 my-4 ">
-
+    <div class="offset-2 col-4 my-4">
       <select class="form-select btn btn-info">
-      <option selected>Sélectionner le client</option>
-      <option
-        *ngFor="let client of clients"
-        style="background-color:white"
-      >{{client.nom }} {{client.prenom}}</option>
-    </select>
+        <option selected>Sélectionner le client</option>
+        <option *ngFor="let client of clients" style="background-color: white">
+          {{ client.nom }} {{ client.prenom }}
+        </option>
+      </select>
     </div>
   </div>
   <div class="row">
@@ -77,10 +71,10 @@
             </thead>
             <tbody>
               <tr>
-                <td>{{quantiteTotal}}</td>
-                <td>{{prixTotal}}</td>
+                <td>{{ quantiteTotal }}</td>
+                <td>{{ prixTotal }}</td>
                 <td>20 %</td>
-                <td>{{quantiteTotal*prixTotal*20/100}}</td>
+                <td>{{ (quantiteTotal * prixTotal * 20) / 100 }}</td>
               </tr>
             </tbody>
           </table>
@@ -93,7 +87,9 @@
         >
           Valider
         </button>
-        <button class="btn btn-lg btn-danger px-5" >Annuler</button>
+        <button class="btn btn-lg btn-danger px-5" (click)="onBack()">
+          Annuler
+        </button>
       </div>
     </div>
   </div>
