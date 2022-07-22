@@ -25,7 +25,7 @@ export class CreationDevisComponent implements OnInit {
   ) {}
   onBack() {
     this.devis.init();
-    this.router.navigate(['menu-vehicules']);
+    this.router.navigate(['vehicules']);
   }
   ngOnInit(): void {
     this.vehicules = this.route.snapshot.data['dataVehicules'];
