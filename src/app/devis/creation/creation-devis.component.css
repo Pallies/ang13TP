@@ -17,11 +17,6 @@ tr {
 tbody td:not(:first-child){
   padding: 2rem;
 }
-td>i{
-
-  font-size:1.5rem;
- color: green;
-}
 .error {
   display: inline-block;
   margin: auto 0;

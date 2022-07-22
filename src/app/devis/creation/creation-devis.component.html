@@ -1,16 +1,19 @@
 <div class="container-fluid">
   <!-- TITRE -->
-    <div class="row my-4">
-      <div class="col-1 ">
-        <button class="btn btn-lg btn-outline-primary" routerLink="/menu-vehicules">
-          <i class="bi bi-backspace"></i> Retour
-        </button>
-      </div>
-      <div class="offset-1 col-10">
-        <h1 class="display-5 text-center">
-          CREATION D'UN DEVIS : VENTE DE VEHICULE
-        </h1>
-      </div>
+  <div class="row my-4">
+    <div class="col-1">
+      <button
+        class="btn btn-lg btn-outline-primary"
+        (click)="onBack()"
+      >
+        <i class="bi bi-backspace"></i> Retour
+      </button>
+    </div>
+    <div class="offset-1 col-10">
+      <h1 class="display-5 text-center">
+        CREATION D'UN DEVIS : VENTE DE VEHICULE
+      </h1>
+    </div>
   </div>
   <!-- FILTRE -->
   <div class="row">
@@ -37,40 +40,57 @@
         </thead>
         <tbody class="scrollbar">
           <tr *ngFor="let vehicule of vehicules; let i = index">
-            <td><img [src]="'/assets/images/car/'+vehicule.photo" [alt]="vehicule.marque+' '+vehicule.modele " ></td>
+            <td>
+              <img
+                [src]="'/assets/images/car/' + vehicule.photo"
+                [alt]="vehicule.marque + ' ' + vehicule.modele"
+              />
+            </td>
             <td>{{ vehicule.marque }} {{ vehicule.modele }}</td>
             <td>{{ vehicule.prixHT }} €</td>
             <td>{{ vehicule.annee }}</td>
-            <td><car-couleur (selection)="vehicule.couleur=$event"></car-couleur></td>
+            <td>
+              <car-couleur
+                (selection)="vehicule.couleur = $event"
+              ></car-couleur>
+            </td>
 
             <td>
-              <input
-                class="text-end me-2"
-                type="number"
-                name="quantite"
-                id="quantite"
-                [min]="0"
+              <car-quantite
+                *ngIf="vehicule.quantite > 0"
                 [max]="vehicule.quantite"
-                [value]="0"
-              />
+                (selection)="vehicule.quantiteVendu = $event"
+                [raz]="maj$"
+              ></car-quantite>
               <p
                 [ngStyle]="{
-                  visibility:
-                    vehicule.quantite == 1 ? 'hidden' : 'visible'
+                  visibility: vehicule.quantite == 0 ? 'hidden' : 'visible'
                 }"
                 class="error"
               >
-              / {{vehicule.quantite}}
+                / {{ vehicule.quantite }}
               </p>
             </td>
-            <td (click)="ajouter(vehicule)"><i class="bi bi-plus-circle"></i></td>
+            <td>
+              <button
+                class="btn btn-lg btn-outline-success"
+                (click)="ajouter(vehicule)"
+              >
+                <i class="bi bi-plus-circle"></i>
+              </button>
+            </td>
           </tr>
         </tbody>
         <tfoot>
           <td colspan="6">
             <div class="w-50 d-flex justify-content-around m-auto">
-              <button class="btn btn-lg btn-success px-5"routerLink="/devis/recap">Récapitulatif</button>
-              <button class="btn btn-lg btn-danger px-5">Annuler</button>
+              <button
+                class="btn btn-lg btn-success px-5"
+                routerLink="/devis/recap"
+              >
+                Récapitulatif
+              </button>
+              <button class="btn btn-lg btn-danger px-5" routerLink="/menu-vehicules">Annuler</button>
             </div>
           </td>
         </tfoot>
