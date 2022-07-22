@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   submitForm() {
+    this.router.navigate(['devis','creation'])
     if (this.loginservice.isValid()) {
       this.utilisateurs
         .filter((data) => data.email === this.loginservice.email)
