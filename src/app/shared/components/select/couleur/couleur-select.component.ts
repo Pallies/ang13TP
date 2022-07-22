@@ -1,4 +1,4 @@
-import { Couleur } from './../../../core/models/enums/couleur';
+import { Couleur } from '../../../../core/models/enums/couleur';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -13,14 +13,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
     >
       <option selected></option>
       <option
-        *ngFor="let item of couleur; let i = index"
+        *ngFor="let item of couleur"
         [ngStyle]="{ backgroundColor: item }"
         [ngValue]="item"
       ></option>
     </select>
   `,
 })
-export class CouleurComponent implements OnInit {
+export class CouleurSelectComponent implements OnInit {
   /** renvoie la couleur sélectionnée */
   @Output() selection: EventEmitter<string> = new EventEmitter<string>();
   // récupération des valeurs de l'enum Couleur
