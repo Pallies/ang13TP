@@ -1,23 +1,53 @@
+import { Vehicule } from 'src/app/core/models/vehicule';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Vehicule } from '../core/models/vehicule';
 
 @Injectable({
   providedIn: 'platform',
 })
 export class DevisVehiculeService {
   commande: BehaviorSubject<Vehicule[]> = new BehaviorSubject<Vehicule[]>([]);
-  constructor() {}
-
+  constructor() {
+    this.init();
+  }
+  init() {
+    this.commande.next([]);
+  }
   add(vehicule: Vehicule) {
-    let temp: Vehicule[] = this.commande.getValue();
-    if (temp.length == 0) this.commande.getValue().push(vehicule);
-    else
-      temp.forEach((data) => {
-        if (data.id == vehicule.id && data.couleur == vehicule.couleur)
+    // si vide met la première donnée
+    if (this.value.length == 0) this.value.push(vehicule);
+    // sinon si vehicule est présent avec la même couleur
+    else if (this.estIdentique(vehicule))
+      this.value
+        // filtre par ref
+        .filter((data) => data.id == vehicule.id)
+        //suppression du stock pour tous les vehicules de même ref
+        .map((data) => {
+          data.quantite = vehicule.quantite;
+          return data;
+        })
+        // filtre par couleur
+        .filter((data) => data.couleur == vehicule.couleur)
+        // ajout quantite vendu
+        .forEach((data) => {
           data.quantiteVendu += vehicule.quantiteVendu;
-        else this.commande.getValue().push(vehicule);
-      });
-    this.commande.next([...this.commande.getValue()]);
+        });
+        // sinon on ajoute le vehicule
+    else this.value.push(vehicule);
+    // enregistrement de la nouvelle valeur
+    this.commande.next([...this.value]);
+  }
+  estIdentique(vehicule: Vehicule) {
+    return (
+      this.commande
+        .getValue()
+        .filter(
+          (data) => data.id == vehicule.id && data.couleur == vehicule.couleur
+        ).length > 0
+    );
+  }
+
+  get value(): Vehicule[] {
+    return this.commande.getValue();
   }
 }
