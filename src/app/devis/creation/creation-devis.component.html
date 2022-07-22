@@ -1,11 +1,17 @@
-<!-- TITRE -->
-<a class="h5">
-  <button class="btn btn-sm btn-outline-primary m-3 p-2" (click)="onBack()">
-    <i class="bi bi-backspace"></i> Retour
-  </button>
-</a>
-<h1 class="text-center">Création d'un devis: Vente de véhicule</h1>
-<div class="container-fluid mt-4">
+<div class="container-fluid">
+  <!-- TITRE -->
+  <div class="row my-4">
+    <div class="col-1">
+      <button class="btn btn-lg btn-outline-primary" (click)="onBack()">
+        <i class="bi bi-backspace"></i> Retour
+      </button>
+    </div>
+    <div class="offset-1 col-10">
+      <h1 class="display-5 text-center">
+        CREATION D'UN DEVIS : VENTE DE VEHICULE
+      </h1>
+    </div>
+  </div>
   <!-- FILTRE -->
   <div class="row">
     <div class="col"></div>
@@ -33,7 +39,7 @@
           <tr *ngFor="let vehicule of vehicules; let i = index">
             <td>
               <img
-                [src]="'./assets/images/car/' + vehicule.photo"
+                [src]="'/assets/images/car/' + vehicule.photo"
                 [alt]="vehicule.marque + ' ' + vehicule.modele"
               />
             </td>
@@ -66,7 +72,7 @@
         </tbody>
         <tfoot>
           <td colspan="6">
-            <div class="w-50 d-flex justify-content-around m-auto mt-4">
+            <div class="w-50 d-flex justify-content-around m-auto">
               <button
                 class="btn btn-lg btn-success px-5"
                 routerLink="/devis/recap"
