@@ -1,8 +1,5 @@
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   OnInit,
 } from '@angular/core';
@@ -25,7 +22,7 @@ export class CreationDevisComponent implements OnInit {
   ) {}
   onBack() {
     this.devis.init();
-    this.router.navigate(['vehicules']);
+    this.router.navigate(['menu','vehicules']);
   }
   ngOnInit(): void {
     this.vehicules = this.route.snapshot.data['dataVehicules'];

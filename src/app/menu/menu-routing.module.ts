@@ -4,16 +4,21 @@ import { CommonModule } from '@angular/common';
 import { VehiculesComponent } from './vehicules/vehicules.component';
 import { ClientsComponent } from './clients/clients.component';
 import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
+import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'menu',
     children: [
       { path: 'vehicules', component: VehiculesComponent },
       { path: 'utilisateurs', component: UtilisateursComponent },
-      { path: 'clients', component: ClientsComponent }
+      {
+        path: 'clients',
+        component: ClientsComponent,
+        resolve: { dataClients: LoadclientResolver },
+      },
     ],
-  }
+  },
 ];
 
 @NgModule({
