@@ -43,25 +43,22 @@
             <td>{{ vehicule.prixHT }} €</td>
             <td>{{ vehicule.annee }}</td>
             <td>{{ vehicule.couleur }}</td>
-            <td >
-              <p
-                [ngStyle]="{
-                  visibility: vehicule.quantite == 1 ? 'visible' : 'visible'
-                }"
-                class="error"
-              >
-                {{ vehicule.quantite }}
-              </p>
-            </td>
+            <td>{{ vehicule.quantiteVendu }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
   <div class="row">
-    <div class="offset-2 col-10 my-4">
-      <button class="btn btn-xl btn-info me-5">Selectionner le Client</button>
-      <input type="text" name="client" id="client" />
+    <div class="offset-2 col-4 my-4 ">
+
+      <select class="form-select btn btn-info">
+      <option selected>Sélectionner le client</option>
+      <option
+        *ngFor="let client of clients"
+        style="background-color:white"
+      >{{client.nom }} {{client.prenom}}</option>
+    </select>
     </div>
   </div>
   <div class="row">
@@ -79,20 +76,24 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let vehicule of venteVehicules; let i = index">
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+              <tr>
+                <td>{{quantiteTotal}}</td>
+                <td>{{prixTotal}}</td>
+                <td>20 %</td>
+                <td>{{quantiteTotal*prixTotal*20/100}}</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
       <div class="w-50 d-flex justify-content-around mt-5 mx-auto">
-        <button class="btn btn-lg btn-success px-5"
-        [disabled]="venteVehicules.length==0">Valider</button>
-        <button class="btn btn-lg btn-danger px-5">Annuler</button>
+        <button
+          class="btn btn-lg btn-success px-5"
+          [disabled]="venteVehicules.length == 0"
+        >
+          Valider
+        </button>
+        <button class="btn btn-lg btn-danger px-5" >Annuler</button>
       </div>
     </div>
   </div>

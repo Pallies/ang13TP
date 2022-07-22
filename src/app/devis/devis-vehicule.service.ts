@@ -32,7 +32,7 @@ export class DevisVehiculeService {
         .forEach((data) => {
           data.quantiteVendu += vehicule.quantiteVendu;
         });
-        // sinon on ajoute le vehicule
+    // sinon on ajoute le vehicule
     else this.value.push(vehicule);
     // enregistrement de la nouvelle valeur
     this.commande.next([...this.value]);
@@ -49,5 +49,19 @@ export class DevisVehiculeService {
 
   get value(): Vehicule[] {
     return this.commande.getValue();
+  }
+  get quantiteTotal(): number {
+    if (this.value.length == 0) return 0;
+    return this.commande
+      .getValue()
+      .map((data) => data.quantiteVendu)
+      .reduce((c, sum) => (sum += c));
+  }
+  get prixTotalHT():number{
+    if (this.value.length == 0) return 0;
+    return this.commande
+      .getValue()
+      .map((data) => data.quantiteVendu*data.prixHT)
+      .reduce((c, sum) => (sum += c));
   }
 }
