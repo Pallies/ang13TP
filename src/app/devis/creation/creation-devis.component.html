@@ -32,15 +32,17 @@
             <td scope="col">Année</td>
             <td scope="col">Couleur</td>
             <td scope="col">Quantité</td>
+            <td scope="col">Ajouter</td>
           </tr>
         </thead>
         <tbody class="scrollbar">
           <tr *ngFor="let vehicule of vehicules; let i = index">
             <td><img [src]="'/assets/images/car/'+vehicule.photo" [alt]="vehicule.marque+' '+vehicule.modele " ></td>
             <td>{{ vehicule.marque }} {{ vehicule.modele }}</td>
-            <td>{{ vehicule.prixHT }}</td>
+            <td>{{ vehicule.prixHT }} €</td>
             <td>{{ vehicule.annee }}</td>
-            <td>{{ vehicule.couleur }}</td>
+            <td><car-couleur (selection)="vehicule.couleur=$event"></car-couleur></td>
+
             <td>
               <input
                 class="text-end me-2"
@@ -61,12 +63,13 @@
               / {{vehicule.quantite}}
               </p>
             </td>
+            <td (click)="ajouter(vehicule)"><i class="bi bi-plus-circle"></i></td>
           </tr>
         </tbody>
         <tfoot>
           <td colspan="6">
             <div class="w-50 d-flex justify-content-around m-auto">
-              <button class="btn btn-lg btn-success px-5"routerLink="/devis/recap">Créer</button>
+              <button class="btn btn-lg btn-success px-5"routerLink="/devis/recap">Récapitulatif</button>
               <button class="btn btn-lg btn-danger px-5">Annuler</button>
             </div>
           </td>

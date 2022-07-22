@@ -1,4 +1,4 @@
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Vehicule } from 'src/app/core/models/vehicule';
 
@@ -13,5 +13,9 @@ export class CreationDevisComponent implements OnInit {
 
   ngOnInit(): void {
     this.vehicules = this.route.snapshot.data['dataVehicules'];
+  }
+  ajouter(vehicule:Vehicule){
+    if(vehicule.couleur)
+    console.log(vehicule)
   }
 }
