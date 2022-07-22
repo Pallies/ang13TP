@@ -1,10 +1,10 @@
-import { LoaduserResolver } from './../core/resolvers/loaduser.resolver';
 import { RecapDevisComponent } from './recap-devis/recap-devis.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreationDevisComponent } from './creation/creation-devis.component';
 import { LoadvehiculeResolver } from '../core/resolvers/loadvehicule.resolver';
+import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
 
 const routes: Routes = [
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
       {
         path: 'recap',
         component: RecapDevisComponent,
-        resolve: { dataUtilisateurs: LoaduserResolver },
+        resolve: { dataClients: LoadclientResolver },
       },
     ],
   },

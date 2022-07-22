@@ -18,7 +18,7 @@ export class RecapDevisComponent implements OnInit, OnDestroy {
   constructor(private devis: DevisVehiculeService,private route:ActivatedRoute,private router:Router) {}
 
   ngOnInit(): void {
-    this.clients=this.route.snapshot.data['dataUtilisateurs']
+    this.clients=this.route.snapshot.data['dataClients']
     this.subscription = this.devis.commande.subscribe(
       (data) => (this.venteVehicules = data)
     );
