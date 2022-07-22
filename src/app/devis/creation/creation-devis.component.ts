@@ -22,13 +22,18 @@ export class CreationDevisComponent implements OnInit {
     private route: ActivatedRoute,
     private devis: DevisVehiculeService,
     private router: Router
-  ) {}
+  ) {
+
+    this.vehicules = this.route.snapshot.data['dataVehicules'];
+  }
   onBack() {
+    this.router.navigated=false;
     this.devis.init();
     this.router.navigate(['vehicules']);
   }
   ngOnInit(): void {
     this.vehicules = this.route.snapshot.data['dataVehicules'];
+    console.log(this.vehicules)
     this.maj$ = this.devis.commande.pipe(map((_) => true));
     this.devis.commande.subscribe((d) => console.log(d));
   }

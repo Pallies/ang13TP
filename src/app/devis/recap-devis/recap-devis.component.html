@@ -1,18 +1,11 @@
+<!-- TITRE -->
+<a class="h5">
+  <button class="btn btn-sm btn-outline-primary m-3 p-2"  routerLink="/devis/creation">
+    <i class="bi bi-backspace"></i> Retour
+  </button>
+</a>
+<h1 class="text-center">Récapitulatif</h1>
 <div class="container-fluid">
-  <!-- TITRE -->
-  <div class="row my-4">
-    <div class="col-1">
-      <button
-        class="btn btn-lg btn-outline-primary"
-        routerLink="/devis/creation"
-      >
-        <i class="bi bi-backspace"></i> Retour
-      </button>
-    </div>
-    <div class="offset-1 col-10">
-      <h1 class="display-5 text-center">RECAPITULATIF DU DEVIS</h1>
-    </div>
-  </div>
   <!-- TABLEAU -->
   <div class="row w-75 m-auto">
     <div class="col">
@@ -93,7 +86,7 @@
         >
           Valider
         </button>
-        <button class="btn btn-lg btn-danger px-5" >Annuler</button>
+        <button class="btn btn-lg btn-danger px-5" (click)="onBack()">Annuler</button>
       </div>
     </div>
   </div>

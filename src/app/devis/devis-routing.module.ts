@@ -10,8 +10,11 @@ const routes: Routes = [
   {
     path: '',
     resolve: { dataVehicules: LoadvehiculeResolver },
+    runGuardsAndResolvers:'always',
     children: [
-      { path: 'creation', component: CreationDevisComponent },
+      { path: 'creation', component: CreationDevisComponent,
+      resolve: { dataVehicules: LoadvehiculeResolver } ,
+      runGuardsAndResolvers:'always'},
       {
         path: 'recap',
         component: RecapDevisComponent,

@@ -29,7 +29,10 @@ export class RecapDevisComponent implements OnInit, OnDestroy {
   get prixTotal():number{
     return this.devis.prixTotalHT;
   }
-
+  onBack() {
+    this.devis.init();
+    this.router.navigate(['/menu/vehicules']);
+  }
   ngOnDestroy(): void {
     this.subscription.closed;
   }
