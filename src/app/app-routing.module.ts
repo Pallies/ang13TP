@@ -4,8 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoaduserResolver } from './core/resolvers/loaduser.resolver';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
-import { VehiculesComponent } from './menu/vehicules/vehicules.component';
-import { ClientsComponent } from './menu/clients/clients.component';
 
 const routes: Routes = [
   {
