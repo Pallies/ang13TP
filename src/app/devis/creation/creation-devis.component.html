@@ -2,7 +2,7 @@
   <!-- TITRE -->
     <div class="row my-4">
       <div class="col-1 ">
-        <button class="btn btn-lg btn-outline-primary">
+        <button class="btn btn-lg btn-outline-primary" routerLink="/menu-vehicules">
           <i class="bi bi-backspace"></i> Retour
         </button>
       </div>
@@ -36,7 +36,7 @@
         </thead>
         <tbody class="scrollbar">
           <tr *ngFor="let vehicule of vehicules; let i = index">
-            <td></td>
+            <td><img [src]="'/assets/images/car/'+vehicule.photo" [alt]="vehicule.marque+' '+vehicule.modele " ></td>
             <td>{{ vehicule.marque }} {{ vehicule.modele }}</td>
             <td>{{ vehicule.prixHT }}</td>
             <td>{{ vehicule.annee }}</td>
@@ -58,7 +58,7 @@
                 }"
                 class="error"
               >
-                max
+              / {{vehicule.quantite}}
               </p>
             </td>
           </tr>
@@ -66,7 +66,7 @@
         <tfoot>
           <td colspan="6">
             <div class="w-50 d-flex justify-content-around m-auto">
-              <button class="btn btn-lg btn-success px-5">Créer</button>
+              <button class="btn btn-lg btn-success px-5"routerLink="/devis/recap">Créer</button>
               <button class="btn btn-lg btn-danger px-5">Annuler</button>
             </div>
           </td>

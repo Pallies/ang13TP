@@ -2,7 +2,7 @@
   <!-- TITRE -->
   <div class="row my-4">
     <div class="col-1">
-      <button class="btn btn-lg btn-outline-primary">
+      <button class="btn btn-lg btn-outline-primary" routerLink="/devis/creation">
         <i class="bi bi-backspace"></i> Retour
       </button>
     </div>
@@ -30,9 +30,9 @@
         </thead>
         <tbody class="scrollbar">
           <tr *ngFor="let vehicule of venteVehicules; let i = index">
-            <td>{{ vehicule.id }}</td>
+            <td><img [src]="'/assets/images/car/'+vehicule.photo" [alt]="vehicule.marque+' '+vehicule.modele " ></td>
             <td>{{ vehicule.marque }} {{ vehicule.modele }}</td>
-            <td>{{ vehicule.prixHT }}</td>
+            <td>{{ vehicule.prixHT }} €</td>
             <td>{{ vehicule.annee }}</td>
             <td>{{ vehicule.couleur }}</td>
             <td class="d-flex justify-content-center">

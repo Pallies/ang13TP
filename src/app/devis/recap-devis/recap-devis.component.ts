@@ -8,16 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecapDevisComponent implements OnInit {
 
-  venteVehicules:Vehicule[]=[  {
-    id: 2,
-    photo: '',
-    marque: 'Citroën',
-    modele: 'picasso',
-    annee: '2018',
-    couleur: 'rouge',
-    quantite: 1,
-    prixHT: 3500.99,
-  }];
+  venteVehicules!:Vehicule[];
 
   constructor() { }
 
