@@ -1,25 +1,24 @@
-
-
-
-table{
+table {
   overflow: hidden;
 }
 .scrollbar {
   position: relative;
   height: 50vh;
   width: 100%;
-  overflow-y:scroll;
+  overflow-y: scroll;
   display: block;
-  }
-  tr {
-    width: 100%;
-    display: table;
-    table-layout: fixed;
-    position:relative;
-  }
-.error
-{
-  display: inline;
-  margin-left: 1rem;
+}
+tr {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  position: relative;
+}
+tbody td:not(:first-child){
+  padding: 2rem;
+}
+.error {
+  display: inline-block;
+  margin: auto 0;
   color: crimson;
 }
