@@ -5,17 +5,23 @@ import { CommonModule } from '@angular/common';
 import { CreationDevisComponent } from './creation/creation-devis.component';
 import { LoadvehiculeResolver } from '../core/resolvers/loadvehicule.resolver';
 import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
+// import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
 
 const routes: Routes = [
   {
-    path: '',
-    resolve: { dataVehicules: LoadvehiculeResolver },
+    path: 'devis',
     children: [
-      { path: 'creation', component: CreationDevisComponent },
+      {
+        path: 'creation',
+        component: CreationDevisComponent,
+        resolve: { dataVehicules: LoadvehiculeResolver },
+        runGuardsAndResolvers: 'always'
+      },
       {
         path: 'recap',
         component: RecapDevisComponent,
         resolve: { dataClients: LoadclientResolver },
+        runGuardsAndResolvers: 'always'
       },
     ],
   },

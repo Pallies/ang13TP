@@ -1,8 +1,5 @@
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   OnInit,
 } from '@angular/core';
@@ -22,15 +19,18 @@ export class CreationDevisComponent implements OnInit {
     private route: ActivatedRoute,
     private devis: DevisVehiculeService,
     private router: Router
-  ) {}
+  ) {
+
+    // this.vehicules = this.route.snapshot.data['dataVehicules'];
+  }
   onBack() {
-    this.devis.init();
-    this.router.navigate(['vehicules']);
+    this.router.navigated=false;
+    this.router.navigate(['menu','vehicules']);
   }
   ngOnInit(): void {
     this.vehicules = this.route.snapshot.data['dataVehicules'];
+    console.log(this.vehicules)
     this.maj$ = this.devis.commande.pipe(map((_) => true));
-    this.devis.commande.subscribe((d) => console.log(d));
   }
   ajouter(vehicule: Vehicule) {
     if (

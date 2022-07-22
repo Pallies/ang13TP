@@ -8,12 +8,9 @@ import { ApiService } from '../services/api.service';
   providedIn: 'root',
 })
 export class LoadvehiculeResolver implements Resolve<Vehicule[]> {
-  constructor(
-    private apiService: ApiService<Vehicule>,
-    ) {
-    this.apiService.name = 'vehicules';
-  }
+  constructor(private apiService: ApiService<Vehicule>) {}
   resolve(): Observable<Vehicule[]> {
+    this.apiService.name = 'vehicules';
     return this.apiService.getAll();
   }
 }
