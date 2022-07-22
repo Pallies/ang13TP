@@ -1,0 +1,100 @@
+<div class="container-fluid">
+  <!-- TITRE -->
+  <div class="row my-4">
+    <div class="col-1">
+      <button
+        class="btn btn-lg btn-outline-primary"
+        routerLink="/devis/creation"
+      >
+        <i class="bi bi-backspace"></i> Retour
+      </button>
+    </div>
+    <div class="offset-1 col-10">
+      <h1 class="display-5 text-center">RECAPITULATIF DU DEVIS</h1>
+    </div>
+  </div>
+  <!-- TABLEAU -->
+  <div class="row w-75 m-auto">
+    <div class="col">
+      <table
+        class="table table-striped table-responsive text-center"
+        cellspacing="0"
+        width="100%"
+      >
+        <thead>
+          <tr class="table-secondary">
+            <td scope="col">Photo</td>
+            <td scope="col">Marque Modèle</td>
+            <td scope="col">Prix HT</td>
+            <td scope="col">Année</td>
+            <td scope="col">Couleur</td>
+            <td scope="col">Quantité</td>
+          </tr>
+        </thead>
+        <tbody class="scrollbar">
+          <tr *ngFor="let vehicule of venteVehicules; let i = index">
+            <td>
+              <img
+                [src]="'/assets/images/car/' + vehicule.photo"
+                [alt]="vehicule.marque + ' ' + vehicule.modele"
+              />
+            </td>
+            <td>{{ vehicule.marque }} {{ vehicule.modele }}</td>
+            <td>{{ vehicule.prixHT }} €</td>
+            <td>{{ vehicule.annee }}</td>
+            <td>{{ vehicule.couleur }}</td>
+            <td>{{ vehicule.quantiteVendu }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-2 col-4 my-4 ">
+
+      <select class="form-select btn btn-info">
+      <option selected>Sélectionner le client</option>
+      <option
+        *ngFor="let client of clients"
+        style="background-color:white"
+      >{{client.nom }} {{client.prenom}}</option>
+    </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <!-- TABLEAU -->
+      <div class="row w-75 m-auto">
+        <div class="col">
+          <table class="table table-striped table-responsive text-center w-50">
+            <thead>
+              <tr class="table-secondary">
+                <td scope="col">QUANTITE TOTAL</td>
+                <td scope="col">PRIX HT TOTAL</td>
+                <td scope="col">TVA</td>
+                <td scope="col">PRIX TTC TOTAL</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{quantiteTotal}}</td>
+                <td>{{prixTotal}}</td>
+                <td>20 %</td>
+                <td>{{quantiteTotal*prixTotal*20/100}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="w-50 d-flex justify-content-around mt-5 mx-auto">
+        <button
+          class="btn btn-lg btn-success px-5"
+          [disabled]="venteVehicules.length == 0"
+        >
+          Valider
+        </button>
+        <button class="btn btn-lg btn-danger px-5" >Annuler</button>
+      </div>
+    </div>
+  </div>
+</div>
