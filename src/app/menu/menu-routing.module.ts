@@ -16,6 +16,7 @@ const routes: Routes = [
         path: 'clients',
         component: ClientsComponent,
         resolve: { dataClients: LoadclientResolver },
+        runGuardsAndResolvers:'always'
       },
     ],
   },

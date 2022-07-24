@@ -5,7 +5,7 @@
     <i class="bi bi-backspace"></i> Retour
   </button>
 </a>
-<h1 class="text-center">Création d'un devis: Vente de véhicule</h1>
+<h1 class="text-center">Gestion des clients</h1>
 <div class="container-fluid mt-4">
   <!-- FILTRE -->
   <div class="row">
@@ -39,10 +39,18 @@
             <td>{{ client.cp }}</td>
             <td>{{ client.ville }}</td>
             <td>
-              <button class="btn btn-lg btn-outline-primary me-3">
+              <button class="btn btn-lg btn-outline-primary me-3"
+              data-bs-toggle="modal"
+                data-bs-target="#clientModal"
+                (click)="clientChoisi(client);modal.titre=modalHeader[1].label"
+              >
                 <i class="bi bi-pencil"></i>
               </button>
-              <button class="btn btn-lg btn-outline-danger">
+              <button class="btn btn-lg btn-outline-danger"
+              data-bs-toggle="modal"
+              data-bs-target="#clientModal"
+              (click)="clientChoisi(client);modal.titre=modalHeader[2].label"
+              >
                 <i class="bi bi-trash"></i>
               </button>
             </td>
@@ -52,8 +60,12 @@
           <td colspan="7">
             <div class="w-50 d-flex justify-content-around m-auto mt-4">
               <button
+              type="button"
                 class="btn btn-lg btn-success px-5"
-              >
+                data-bs-toggle="modal"
+                data-bs-target="#clientModal"
+                (click)="refresh();modal.titre=modalHeader[0].label"
+                >
                 Ajouter un Client
               </button>
             </div>
@@ -63,3 +75,5 @@
     </div>
   </div>
 </div>
+<car-client-forms #modal ref="clientModal" (updateClient)="refresh()"></car-client-forms>
+

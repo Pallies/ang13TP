@@ -8,7 +8,7 @@ import { ApiService } from '../services/api.service';
   providedIn: 'root',
 })
 export class LoadclientResolver implements Resolve<Client[]> {
-  
+
   constructor(private api: ApiService<Client>) {}
 
   resolve(): Observable<Client[]> {
