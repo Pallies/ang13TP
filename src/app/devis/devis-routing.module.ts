@@ -8,10 +8,14 @@ import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
 
 const routes: Routes = [
   {
-    path: '',
-    resolve: { dataVehicules: LoadvehiculeResolver },
+    path: 'devis',
+
     children: [
-      { path: 'creation', component: CreationDevisComponent },
+      {
+        path: 'creation',
+        component: CreationDevisComponent,
+        resolve: { dataVehicules: LoadvehiculeResolver },
+      },
       {
         path: 'recap',
         component: RecapDevisComponent,
