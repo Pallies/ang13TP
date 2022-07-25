@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
         #select
         class="form-select col"
         [(ngModel)]="valeurSelection"
-        (click)="emitionValeur()"
+        (change)="emitionValeur()"
       >
         <option *ngFor="let index of compteur" [ngValue]="index">
           {{ index }}
