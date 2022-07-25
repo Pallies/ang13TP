@@ -5,10 +5,12 @@ import { VehiculesComponent } from './vehicules/vehicules.component';
 import { ClientsComponent } from './clients/clients.component';
 import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
 import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
+import { ProfilGuard } from '../core/guards/profil.guard';
 
 const routes: Routes = [
   {
     path: 'menu',
+    canActivate: [ProfilGuard],
     children: [
       { path: 'vehicules', component: VehiculesComponent },
       { path: 'utilisateurs', component: UtilisateursComponent },

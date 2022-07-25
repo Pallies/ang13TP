@@ -1,7 +1,9 @@
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { gestionProfil, RoutesProfil } from './../guards/routes';
+import { BehaviorSubject} from 'rxjs';
 import { Utilisateur } from './../models/utilisateur';
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
+import { Profil } from '../models/profil';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +15,7 @@ export class AuthService {
   utilisateurs!: Utilisateur[];
 
   constructor(private apiService: ApiService<Utilisateur>) {
+    this.apiService.name='utilisateurs'
     this.apiService.getAll().subscribe(data=>this.utilisateurs=data);
   }
 
@@ -27,5 +30,13 @@ export class AuthService {
         }
         return false;
       })[0];
+  }
+  accesRoutes(routes:RoutesProfil):boolean{
+    // récupération du profil
+    const profil= Object.entries(Profil).filter(profil=>
+      profil[0]== this.utilisateur.getValue().profil
+    ).flatMap(data=>data[1])[0]
+
+    return gestionProfil[profil]?.includes(routes)
   }
 }

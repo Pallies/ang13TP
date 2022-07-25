@@ -9,7 +9,6 @@ import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
 const routes: Routes = [
   {
     path: 'devis',
-
     children: [
       {
         path: 'creation',
