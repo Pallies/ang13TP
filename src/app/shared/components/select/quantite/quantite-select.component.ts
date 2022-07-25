@@ -4,19 +4,19 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'car-quantite',
   template: `
-<div class="row">
-    <select
-      #select
-      class="form-select col"
-      [(ngModel)]="valeurSelection"
-      (change)="emitionValeur()"
-    >
-      <option selected></option>
-      <option *ngFor="let index of compteur" [ngValue]="index">
-        {{ index }}
-      </option>
-    </select><p  class="col" style="color:crimson;margin:auto"> / {{ max}}</p>
-</div>
+    <div class="row">
+      <select
+        #select
+        class="form-select col"
+        [(ngModel)]="valeurSelection"
+        (change)="emitionValeur()"
+      >
+        <option *ngFor="let index of compteur" [ngValue]="index">
+          {{ index }}
+        </option>
+      </select>
+      <p class="col" style="color:crimson;margin:auto">/ {{ max }}</p>
+    </div>
   `,
 })
 export class QuantiteSelectComponent implements OnInit {

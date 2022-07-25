@@ -4,19 +4,27 @@ import { CommonModule } from '@angular/common';
 import { VehiculesComponent } from './vehicules/vehicules.component';
 import { ClientsComponent } from './clients/clients.component';
 import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
+import { LoaduserResolver } from '../core/resolvers/loaduser.resolver';
 import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
+import { ProfilGuard } from '../core/guards/profil.guard';
 
 const routes: Routes = [
   {
     path: 'menu',
+    canActivate: [ProfilGuard],
     children: [
       { path: 'vehicules', component: VehiculesComponent },
-      { path: 'utilisateurs', component: UtilisateursComponent },
+      {
+        path: 'utilisateurs',
+        component: UtilisateursComponent,
+        resolve: { dataUtilisateurs: LoaduserResolver },
+        runGuardsAndResolvers: 'always',
+      },
       {
         path: 'clients',
         component: ClientsComponent,
         resolve: { dataClients: LoadclientResolver },
-        runGuardsAndResolvers:'always'
+        runGuardsAndResolvers: 'always',
       },
     ],
   },

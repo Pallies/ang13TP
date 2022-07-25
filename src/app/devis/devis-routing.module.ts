@@ -22,8 +22,10 @@ const routes: Routes = [
         component: RecapDevisComponent,
         resolve: { dataClients: LoadclientResolver },
       },
-      { path: 'liste', component: ListeDevisComponent,
-      resolve: { dataDevis: LoaddevisResolver },
+      {
+        path: 'liste',
+        component: ListeDevisComponent,
+        resolve: { dataDevis: LoaddevisResolver },
       }
     ],
   },

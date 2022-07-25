@@ -27,16 +27,16 @@
               Mot de passe
               <span>*</span>
             </label>
-            <input class="form-control form-control-lg" type="password" id="password" formControlName="password"
+            <input class="form-control form-control-lg" type="password" id="password" formControlName="mdp"
               placeholder="Saisissez votre mot de passe..." minlength="8"
-              [class.is-invalid]="loginForm.submitted && loginservice.loginForm.get('password')?.invalid" />
+              [class.is-invalid]="loginForm.submitted && loginservice.loginForm.get('mdp')?.invalid" />
             <div class="invalid-feedback">
               Le mot de passe doit contenir au minimum 8 caractères
             </div>
           </div>
 
           <!-- Checkbox remember me + forgot password -->
-          <div class="d-flex justify-content-between align-items-center">
+          <!-- <div class="d-flex justify-content-between align-items-center">
             <div class="form-check mb-0">
               <input class="form-check-input me-2" type="checkbox" />
               <label class="form-check-label">
@@ -46,7 +46,7 @@
             <a href="#!" class="text-body">
               Mot de passe oublié ?
             </a>
-          </div>
+          </div> -->
 
           <!-- Login button -->
           <div class="d-flex justify-content-center text-center text-lg-start mt-4 pt-2">
