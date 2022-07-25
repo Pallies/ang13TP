@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Utilisateur } from 'src/app/core/models/utilisateur';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { utilisateurHeader, UtilisateurHeader } from './utilisateur-form.model';
+import { UtilisateurFormsService } from './utilisateur-forms.service';
 
 @Component({
   selector: 'app-utilisateurs',
@@ -8,13 +10,27 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   styleUrls: ['./utilisateurs.component.css'],
 })
 export class UtilisateursComponent implements OnInit {
+  ref!: string;
   utilisateurs!: Utilisateur[];
-
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  modalHeader: UtilisateurHeader[] = utilisateurHeader;
+  constructor(
+    private route: ActivatedRoute,
+    private utilisateurFormService: UtilisateurFormsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.utilisateurs = this.route.snapshot.data['dataUtilisateurs'];
     console.log(this.utilisateurs);
   }
 
+  async refresh() {
+    this.utilisateurFormService.refresh();
+    this.router.navigated = false;
+    await this.router.navigate(['menu', 'utilisateurs']);
+    this.utilisateurs = this.route.snapshot.data['dataUtilisateurs'];
+  }
+  utilisateurChoisi(utilisateur: Utilisateur) {
+    this.utilisateurFormService.initValue(utilisateur);
+  }
 }

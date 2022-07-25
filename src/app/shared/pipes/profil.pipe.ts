@@ -6,7 +6,6 @@ import { Profil } from 'src/app/core/models/profil';
 })
 export class ProfilPipe implements PipeTransform {
   transform(profil: Profil): unknown {
-    Object.entries(Profil).forEach((data) => console.log(data));
     return Object.entries(Profil)
       .filter((data) => data[0] == profil)
       .flatMap((data) => data[1]);
