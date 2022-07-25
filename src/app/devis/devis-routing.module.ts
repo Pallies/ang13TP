@@ -9,7 +9,7 @@ import { ListeDevisComponent } from './liste-devis/liste-devis.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'devis',
     resolve: { dataVehicules: LoadvehiculeResolver },
     children: [
       { path: 'creation', component: CreationDevisComponent },

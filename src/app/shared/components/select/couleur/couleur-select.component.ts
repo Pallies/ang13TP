@@ -8,7 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
       #select
       class="form-select w-75"
       [(ngModel)]="valeurSelection"
-      (click)="emitionValeur()"
+      (change)="emitionValeur()"
       [ngStyle]="{ backgroundColor: valeurSelection }"
     >
       <option selected></option>

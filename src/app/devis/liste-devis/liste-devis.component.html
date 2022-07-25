@@ -1,1 +1,35 @@
-<p>liste-devis works!</p>
+<div class="container-fluid">
+  <div class="col-1">
+    <button class="btn btn-lg btn-outline-primary mt-3" (click)="onBack()">
+      <i class="bi bi-backspace"></i> Retour
+    </button>
+  </div>
+  <div class="offset-1 col-10">
+    <h1 class="display-5 text-center">Liste des devis</h1>
+  </div>
+  <div class="row w-75 m-auto">
+    <div class="col">
+      <table class="table table-striped table-responsive text-center" cellspacing="0" width="100%">
+        <thead>
+          <tr class="table-secondary">
+            <td scope="col">N°</td>
+            <td scope="col">Client</td>
+            <td scope="col">Total TTC</td>
+            <td scope="col">Récapitulatif</td>
+            <td scope="col">Supprimer le devis</td>
+          </tr>
+        </thead>
+        <tbody class="scrollbar">
+          <tr *ngFor="let devis of allDevis; let i = index">
+            <td>{{ devis.id }} </td>
+            <td>{{ devis.client.prenom }} {{ devis.client.nom }} </td>
+            <td>{{ devis.prixTTC }}€</td>
+            <td></td>
+            <td></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

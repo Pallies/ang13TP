@@ -25,7 +25,7 @@ export class CreationDevisComponent implements OnInit {
   ) {}
   onBack() {
     this.devis.init();
-    this.router.navigate(['vehicules']);
+    this.router.navigate(['/menu/vehicules']);
   }
   ngOnInit(): void {
     this.vehicules = this.route.snapshot.data['dataVehicules'];
@@ -33,6 +33,7 @@ export class CreationDevisComponent implements OnInit {
     this.devis.commande.subscribe((d) => console.log(d));
   }
   ajouter(vehicule: Vehicule) {
+    console.log(vehicule);
     if (
       vehicule.quantite >= vehicule.quantiteVendu &&
       vehicule.quantiteVendu != 0
