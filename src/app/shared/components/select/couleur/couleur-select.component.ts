@@ -14,7 +14,7 @@ import {
     <select
       class="form-select w-75"
       [(ngModel)]="valeurSelection"
-      (click)="emitionValeur()"
+      (change)="emitionValeur()"
       [ngStyle]="{ backgroundColor: valeurSelection }"
     >
       <option

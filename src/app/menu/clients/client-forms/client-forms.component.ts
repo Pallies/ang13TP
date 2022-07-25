@@ -1,7 +1,9 @@
+import { Subscription } from 'rxjs';
 import { Client, CLIENT } from './../../../core/models/client';
 import {
   Component,
   OnInit,
+  OnDestroy,
   ViewChild,
   ElementRef,
   Input,
@@ -15,7 +17,7 @@ import { ClientFormsService } from '../client-forms.service';
   templateUrl: './client-forms.component.html',
   styleUrls: ['./client-forms.component.css'],
 })
-export class ClientFormsComponent implements OnInit {
+export class ClientFormsComponent implements OnInit, OnDestroy {
   @Input() ref!: string;
   @Input() titre!: string;
 
@@ -25,24 +27,27 @@ export class ClientFormsComponent implements OnInit {
   dimiss!: ElementRef;
   modalRef!: ElementRef;
   CLIENT: typeof CLIENT = CLIENT;
+  subscription!: Subscription;
   constructor(private clientFormService: ClientFormsService) {}
 
   saveClient() {
-    console.log(this.clientForm.value)
-    console.log(this.clientForm.valid)
     if (this.clientForm.valid) {
-      this.clientFormService.save(this.titre)?.subscribe(_=> {
-        this.updateClient.emit();
-      });
+      this.subscription = this.clientFormService
+        .save(this.titre)
+        ?.subscribe((_) => {
+          this.updateClient.emit();
+        });
       this.dimiss.nativeElement.click();
     }
   }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   get clientForm() {
     return this.clientFormService.formGrp;
   }
-  get clientService(){
+  get clientService() {
     return this.clientFormService;
+  }
+  ngOnDestroy(): void {
+    this.subscription?.closed;
   }
 }

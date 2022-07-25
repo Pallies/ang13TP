@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import {
   AbstractControl,
   FormBuilder,
@@ -50,7 +50,7 @@ export class ClientFormsService {
     this.formGrp.get([CLIENT.VILLE])?.setValue(client.ville);
     console.log(this.formGrp.value);
   }
-  save(titre: string): Observable<Client> | null {
+  save(titre: string): Observable<Client|null> {
     this._capitalize(CLIENT.NOM)
     this._capitalize(CLIENT.PRENOM)
     this._capitalize(CLIENT.VILLE)
@@ -63,7 +63,7 @@ export class ClientFormsService {
         case clientHeader[2].label:
         return this.apiService.delete(this.formGrp.value);
       default:
-        return null;
+        return of(null);
     }
   }
 
@@ -71,9 +71,6 @@ export class ClientFormsService {
     return this.formGrp.get(nomControl) as AbstractControl;
   }
   error(nomControl: string) {
-    if(nomControl=='cp'){
-      console.log(this.formGrp.get(nomControl)?.errors?.['required'])
-    }
     return (
       this.formGrp.get(nomControl)?.invalid &&
       this.formGrp.get(nomControl)?.touched
