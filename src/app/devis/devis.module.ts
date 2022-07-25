@@ -6,9 +6,10 @@ import { RecapDevisComponent } from './recap-devis/recap-devis.component';
 import { SharedModule } from '../shared/shared.module';
 import { DevisVehiculeService } from './devis-vehicule.service';
 import { ListeDevisComponent } from './liste-devis/liste-devis.component';
+import { DeleteConfirmationDevisComponent } from './delete-confirmation-devis/delete-confirmation-devis.component';
 
 @NgModule({
-  declarations: [CreationDevisComponent, RecapDevisComponent, ListeDevisComponent,],
+  declarations: [CreationDevisComponent, RecapDevisComponent, ListeDevisComponent, DeleteConfirmationDevisComponent,],
   imports: [
     CommonModule,
     DevisRoutingModule,

@@ -1,19 +1,24 @@
 import { Couleur } from '../../../../core/models/enums/couleur';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ElementRef,
+  QueryList,
+} from '@angular/core';
 
 @Component({
   selector: 'car-couleur',
   template: `
     <select
-      #select
       class="form-select w-75"
       [(ngModel)]="valeurSelection"
       (change)="emitionValeur()"
       [ngStyle]="{ backgroundColor: valeurSelection }"
     >
-      <option selected></option>
       <option
-        *ngFor="let item of couleur"
+        *ngFor="let item of couleur; let i = index"
         [ngStyle]="{ backgroundColor: item }"
         [ngValue]="item"
       ></option>
@@ -25,6 +30,7 @@ export class CouleurSelectComponent implements OnInit {
   @Output() selection: EventEmitter<string> = new EventEmitter<string>();
   // récupération des valeurs de l'enum Couleur
   couleur!: Couleur[];
+  option!: QueryList<ElementRef>;
   // valeur de sélection
   valeurSelection!: string;
 

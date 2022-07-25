@@ -24,8 +24,16 @@
             <td>{{ devis.id }} </td>
             <td>{{ devis.client.prenom }} {{ devis.client.nom }} </td>
             <td>{{ devis.prixTTC }}€</td>
-            <td></td>
-            <td></td>
+            <td>
+              <button class="btn btn-lg btn-outline-success" [routerLink]="['/devis/recap/', devis.id]">
+                <i class="bi bi-cart-check-fill"></i>
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-lg btn-outline-danger" data-bs-toggle="modal" data-bs-target="#devisModal">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
 
           </tr>
         </tbody>

@@ -6,19 +6,25 @@ import { CreationDevisComponent } from './creation/creation-devis.component';
 import { LoadvehiculeResolver } from '../core/resolvers/loadvehicule.resolver';
 import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
 import { ListeDevisComponent } from './liste-devis/liste-devis.component';
+import { LoaddevisResolver } from '../core/resolvers/loaddevis.resolver';
 
 const routes: Routes = [
   {
     path: 'devis',
-    resolve: { dataVehicules: LoadvehiculeResolver },
     children: [
-      { path: 'creation', component: CreationDevisComponent },
+      {
+        path: 'creation',
+        component: CreationDevisComponent,
+        resolve: { dataVehicules: LoadvehiculeResolver },
+      },
       {
         path: 'recap',
         component: RecapDevisComponent,
         resolve: { dataClients: LoadclientResolver },
       },
-      { path: 'liste', component: ListeDevisComponent }
+      { path: 'liste', component: ListeDevisComponent,
+      resolve: { dataDevis: LoaddevisResolver },
+      }
     ],
   },
 ];
