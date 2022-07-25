@@ -12,7 +12,7 @@ export class DevisVehiculeService {
   init() {
     this.commande.next([]);
   }
-  
+
   add(vehicule: Vehicule) {
     // si vide met la première donnée
     if (this.value.length == 0) this.value.push(vehicule);

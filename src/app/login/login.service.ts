@@ -12,8 +12,8 @@ export class LoginService {
   constructor(private formbuilder: FormBuilder) {
 
     this.loginForm = this.formbuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      email: ['commercial@car.fr', [Validators.required, Validators.email]],
+      mdp: ['rootroot', [Validators.required, Validators.minLength(8)]],
     }, {updateOn: 'submit'});
   }
 
@@ -26,7 +26,7 @@ export class LoginService {
   }
 
   get password() {
-    return this.loginForm.get('password')?.value
+    return this.loginForm.get('mdp')?.value
   }
 
 }
