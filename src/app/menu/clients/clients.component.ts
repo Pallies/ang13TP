@@ -23,6 +23,7 @@ export class ClientsComponent implements OnInit {
   ngOnInit(): void {
     console.log('form')
     this.clients = this.route.snapshot.data['dataClients'];
+    console.log(this.clients)
   }
   async refresh() {
     this.clientFormService.refresh();

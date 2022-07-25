@@ -17,8 +17,6 @@ const routes: Routes = [
         component: UtilisateursComponent,
         resolve: { dataUtilisateurs: LoaduserResolver },
       },
-      { path: 'clients', component: ClientsComponent },
-      { path: 'utilisateurs', component: UtilisateursComponent },
       {
         path: 'clients',
         component: ClientsComponent,
