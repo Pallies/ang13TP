@@ -1,7 +1,7 @@
 export enum Profil {
-  ADMIN = 'Administrateur',
+  ADMIN = "Administrateur",
   CHEF = "Chef d'atelier",
-  MAG = 'Magasinier',
-  MECA = 'Mécanicien',
-  COM = 'Commercial'
+  MAG = "Magasinier",
+  MECA = "Mécanicien",
+  COM = "Commercial",
 }

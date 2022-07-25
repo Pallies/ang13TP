@@ -1,7 +1,7 @@
 <h1 class="text-center mt-3">MENU</h1>
 <div class="container">
   <div class="row">
-    <div class="col mt-5 mb-5">
+    <div class="col mt-5 mb-5" *ngIf="auth.accesRoutes(RouteProfil.MENU_CLIENT)">
       <a routerLink="/menu/clients" class="h5"><button class="button">Gestion des clients</button></a>
     </div>
     <!-- <div class="col mt-5 mb-5">
@@ -10,13 +10,13 @@
     <!-- <div class="col mt-5 mb-5">
       <a routerLink="/" class="h5"><button class="button"">Gestion des fiches d'entretien</button></a>
     </div> -->
-    <div class="col mt-5">
+    <div class="col mt-5" *ngIf="auth.accesRoutes(RouteProfil.MENU_VEHICULE)">
       <a routerLink="/menu/vehicules" class="h5"><button class="button">Gestion des ventes de véhicules</button></a>
     </div>
     <!-- <div class="col mt-5">
       <a routerLink="/" class="h5"><button class="button"">Gestion des tâches</button></a>
     </div> -->
-    <div class="col mt-5">
+    <div class="col mt-5" *ngIf="auth.accesRoutes(RouteProfil.MENU_UTILISATEUR)">
       <a routerLink="/menu/utilisateurs" class="h5"><button class="button">Gestion des utilisateurs</button></a>
     </div>
   </div>
