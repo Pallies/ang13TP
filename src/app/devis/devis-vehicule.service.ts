@@ -7,12 +7,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DevisVehiculeService {
   commande: BehaviorSubject<Vehicule[]> = new BehaviorSubject<Vehicule[]>([]);
-  constructor() {
-    this.init();
-  }
+  constructor() {}
+
   init() {
     this.commande.next([]);
   }
+  
   add(vehicule: Vehicule) {
     // si vide met la première donnée
     if (this.value.length == 0) this.value.push(vehicule);

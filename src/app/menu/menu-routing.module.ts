@@ -5,10 +5,11 @@ import { VehiculesComponent } from './vehicules/vehicules.component';
 import { ClientsComponent } from './clients/clients.component';
 import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
 import { LoaduserResolver } from '../core/resolvers/loaduser.resolver';
+import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'menu',
     children: [
       { path: 'vehicules', component: VehiculesComponent },
       {
@@ -17,6 +18,13 @@ const routes: Routes = [
         resolve: { dataUtilisateurs: LoaduserResolver },
       },
       { path: 'clients', component: ClientsComponent },
+      { path: 'utilisateurs', component: UtilisateursComponent },
+      {
+        path: 'clients',
+        component: ClientsComponent,
+        resolve: { dataClients: LoadclientResolver },
+        runGuardsAndResolvers: 'always',
+      },
     ],
   },
 ];
