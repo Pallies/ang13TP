@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-import {
-  Router,
-  Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot,
-} from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Resolve } from '@angular/router';
+import { Observable } from 'rxjs';
 import { URL_BACK } from '../guards/url-back.routes';
 import { Utilisateur } from '../models/utilisateur';
 import { ApiService } from '../services/api.service';
@@ -14,7 +9,6 @@ import { ApiService } from '../services/api.service';
   providedIn: 'root',
 })
 export class LoaduserResolver implements Resolve<Utilisateur[]> {
-
   constructor(private apiservice: ApiService<Utilisateur>) {}
 
   resolve(): Observable<Utilisateur[]> {
