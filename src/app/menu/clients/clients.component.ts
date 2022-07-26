@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { URL_SNAPSHOT } from 'src/app/core/guards/url-front.routes';
 import { Client } from 'src/app/core/models/client';
 import { clientHeader, ClientHeader } from './client-form.model';
 import { ClientFormsService } from './client-forms.service';
@@ -21,13 +22,13 @@ export class ClientsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.clients = this.route.snapshot.data['dataClients'];
+    this.clients = this.route.snapshot.data[URL_SNAPSHOT.DATA_CLIENT];
   }
   async refresh() {
     this.clientFormService.refresh();
     this.router.navigated=false;
     await this.router.navigate(['menu','clients']);
-    this.clients=this.route.snapshot.data['dataClients']
+    this.clients=this.route.snapshot.data[URL_SNAPSHOT.DATA_CLIENT]
   }
   clientChoisi(client: Client) {
     this.clientFormService.initValue(client);
