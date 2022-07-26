@@ -10,12 +10,14 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { SharedModule } from './shared/shared.module';
 import { MenuModule } from './menu/menu.module';
+import { ValidationDevisComponent } from './devis/validation-devis/validation-devis.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     LoginComponent,
+    ValidationDevisComponent,
   ],
   imports: [
     BrowserModule,

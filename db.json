@@ -124,12 +124,11 @@
       "profil": "MAG"
     }
   ],
-  "devis": [
-    {
-      "id": 1,
-      "dateCreation": "",
-      "prixHT": ""
-    }
+  "devis":[
+    { "id":1, "dateCreation":"2022-07-25", "prixTTC":66000, "clientId": 1, "vehiculesVenduId": [1] }
+  ],
+  "VehiculesVendu":[
+    {"id":"1","quantiteVendu":5,"couleur":"","vehiculeId":1}
   ],
   "vehicules": [
     {
