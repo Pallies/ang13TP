@@ -9,7 +9,11 @@
   </div>
   <div class="row w-75 m-auto">
     <div class="col">
-      <table class="table table-striped table-responsive text-center" cellspacing="0" width="100%">
+      <table
+        class="table table-striped table-responsive text-center"
+        cellspacing="0"
+        width="100%"
+      >
         <thead>
           <tr class="table-secondary">
             <td scope="col">N°</td>
@@ -21,29 +25,31 @@
         </thead>
         <tbody class="scrollbar">
           <tr *ngFor="let devis of allDevis; let i = index">
-            <td>{{ devis.id }} </td>
-            <td>{{ devis.client.prenom }} {{ devis.client.nom }} </td>
+            <td>{{ devis.id }}</td>
+            <td>{{ devis.client.prenom }} {{ devis.client.nom }}</td>
             <td>{{ devis.prixHT }}€</td>
             <td>
-              <button class="btn btn-lg btn-outline-success" [routerLink]="['/devis/validation/', devis.id]">
+              <button
+                class="btn btn-lg btn-outline-success"
+                [routerLink]="['/devis/validation/', devis.id]"
+              >
                 <i class="bi bi-cart-check-fill"></i>
               </button>
             </td>
             <td>
-              <button class="btn btn-lg btn-outline-danger"
-              data-bs-toggle="modal"
-               data-bs-target="#devisModal">
+              <button
+                class="btn btn-lg btn-outline-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#devisModal"
+                (click)="modalDelete(devis)"
+              >
                 <i class="bi bi-trash"></i>
               </button>
             </td>
-            <car-modal-liste-devis
-            ref="devisModal"
-            [devis]="devis"
-            ></car-modal-liste-devis>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-
+<car-modal-liste-devis ref="devisModal"></car-modal-liste-devis>
