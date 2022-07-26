@@ -21,5 +21,4 @@ export class ListeDevisComponent implements OnInit {
   ngOnInit(): void {
     this.allDevis = this.route.snapshot.data[URL_SNAPSHOT.DATA_DEVIS];
   }
-
 }

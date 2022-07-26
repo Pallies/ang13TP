@@ -30,14 +30,20 @@
               </button>
             </td>
             <td>
-              <button class="btn btn-lg btn-outline-danger" data-bs-toggle="modal" data-bs-target="#devisModal">
+              <button class="btn btn-lg btn-outline-danger"
+              data-bs-toggle="modal"
+               data-bs-target="#devisModal">
                 <i class="bi bi-trash"></i>
               </button>
             </td>
-
+            <car-modal-liste-devis
+            ref="devisModal"
+            [devis]="devis"
+            ></car-modal-liste-devis>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
