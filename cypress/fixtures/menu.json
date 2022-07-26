@@ -1,0 +1,51 @@
+{
+  "menu": [
+    {
+      "COM": {
+        "buttons": [
+          "Gestion des clients",
+          "Gestion des ventes de véhicules"
+        ]
+      }
+    },
+    {
+      "MECA": {
+        "buttons": [
+          "Gestion des fiches d'entretien",
+          "Gestion des tâches"
+        ]
+      }
+    },
+    {
+      "CHEF": {
+        "buttons": [
+          "Gestion des clients",
+          "Gestion des stocks",
+          "Gestion des fiches d'entretien",
+          "Gestion des tâches"
+        ]
+      }
+    },
+    {
+      "MAG": {
+        "buttons": [
+          "Gestion des stocks",
+          "Gestion des fiches d'entretien",
+          "Gestion des ventes de véhicules"
+        ]
+      }
+    },
+    {
+      "ADMIN": {
+        "buttons": [
+          "Gestion des clients",
+          "Gestion des stocks",
+          "Gestion des fiches d'entretien",
+          "Gestion des ventes de véhicules",
+          "Gestion des tâches",
+          "Gestion des utilisateurs"
+        ]
+      }
+    }
+  ]
+}

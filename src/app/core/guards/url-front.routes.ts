@@ -2,10 +2,10 @@ import { Profil } from '../models/profil';
 export enum RoutesProfil {
   MENU = '/menu',
   MENU_CLIENT = '/menu/clients',
-  MENU_STOCK = '',
-  MENU_ENTRETIEN = '',
+  MENU_STOCK = '/menu/stock',
+  MENU_ENTRETIEN = '/menu/entretien',
   MENU_VEHICULE = '/menu/vehicules',
-  MENU_TACHE = '',
+  MENU_TACHE = 'menu/tache',
   MENU_UTILISATEUR = '/menu/utilisateurs',
   MENU_DEVIS = '/menu/clients',
 }
@@ -47,6 +47,7 @@ export const gestionProfil = {
     RoutesProfil.MENU_TACHE,
   ],
   [Profil.COM]: [
+    RoutesProfil.MENU,
     RoutesProfil.MENU_CLIENT,
     RoutesProfil.MENU_VEHICULE,
   ],
