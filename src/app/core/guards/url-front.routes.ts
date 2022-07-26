@@ -8,7 +8,7 @@ export enum RoutesProfil{
   MENU_DEVIS='/menu/clients'
 }
 export enum URL_SNAPSHOT{
-
+  DATA_UTILISATEUR="dataUtilisateurs",
   DATA_VEHICULE="dataVehicules",
   DATA_CLIENT="dataClients"
 }
