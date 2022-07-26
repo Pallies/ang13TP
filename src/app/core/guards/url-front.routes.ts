@@ -3,7 +3,10 @@ import { Profil } from '../models/profil';
 export enum RoutesProfil{
   MENU='/menu',
   MENU_CLIENT='/menu/clients',
+  MENU_STOCK='',
+  MENU_ENTRETIEN='',
   MENU_VEHICULE='/menu/vehicules',
+  MENU_TACHE='',
   MENU_UTILISATEUR='/menu/utilisateurs',
   MENU_DEVIS='/menu/clients'
 }

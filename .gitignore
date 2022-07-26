@@ -9,7 +9,8 @@
 /conception
 # doc générée
 /documentation
-
+#cypress
+./cypress/video
 # Node
 /node_modules
 npm-debug.log
