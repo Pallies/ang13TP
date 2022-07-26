@@ -1,8 +1,10 @@
+import { VehiculeVendu } from '../../core/models/vehicule-vendu';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Vehicule } from 'src/app/core/models/vehicule';
-import { DevisVehiculeService } from '../devis-vehicule.service';
+import { VehiculeVenteService } from '../vehicule-vente.service';
 import { map, Observable } from 'rxjs';
+import { URL_SNAPSHOT } from 'src/app/core/guards/url-front.routes';
 
 @Component({
   selector: 'app-creation',
@@ -10,30 +12,31 @@ import { map, Observable } from 'rxjs';
   styleUrls: ['./creation-devis.component.css'],
 })
 export class CreationDevisComponent implements OnInit {
-  vehicules!: Vehicule[];
+  vehiculesVendus!:VehiculeVendu[]
   maj$!: Observable<boolean>;
   constructor(
     private route: ActivatedRoute,
-    private devis: DevisVehiculeService,
+    private vehiculeVenteService: VehiculeVenteService,
     private router: Router
-  ) {}
+  ) {
+    this.vehiculesVendus = (this.route.snapshot.data[URL_SNAPSHOT.DATA_VEHICULE] as Vehicule[]).map(v=>new VehiculeVendu(v));
+    this.vehiculeVenteService.init()
+  }
   onBack() {
     this.devis.init();
     this.router.navigate(['/menu/vehicules']);
   }
   ngOnInit(): void {
-    this.devis.init()
-    this.vehicules = this.route.snapshot.data['dataVehicules'];
-    this.maj$ = this.devis.commande.pipe(map((_) => true));
+    this.maj$ = this.vehiculeVenteService.vehiculeVente.pipe(map((_) => true));
   }
-  ajouter(vehicule: Vehicule) {
-    console.log(vehicule);
+  ajouter(vehiculeVendu: VehiculeVendu) {
     if (
-      vehicule.quantite >= vehicule.quantiteVendu &&
-      vehicule.quantiteVendu != 0
+      vehiculeVendu.vehicule.quantite >= vehiculeVendu.quantiteVendu &&
+      vehiculeVendu.quantiteVendu != 0
     ) {
-      vehicule.quantite -= vehicule.quantiteVendu;
-      this.devis.add({ ...vehicule });
+      vehiculeVendu.vehicule.quantite -= vehiculeVendu.quantiteVendu;
+      this.vehiculeVenteService.add(vehiculeVendu);
     }
   }
+
 }

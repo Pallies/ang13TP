@@ -118,17 +118,59 @@
     },
     {
       "id": 4,
-      "nom": "Willem",
-      "prenom": "Christophe",
-      "email": "Christophe.willem@gmail.com",
-      "profil": "MAG"
+      "nom": "root",
+      "prenom": "root",
+      "mdp": "rootroot",
+      "email": "admin@car.fr",
+      "profil": "ADMIN"
     }
   ],
-  "devis":[
-    { "id":1, "dateCreation":"2022-07-25", "prixTTC":66000, "clientId": 1, "vehiculesVenduId": [1] }
+  "devis": [
+    {
+      "id": 1,
+      "quantiteTotal": 3,
+      "dateCreation": "26/07/2022",
+      "clientId": 4,
+      "prixHT": 44820
+    },
+    {
+      "id": 2,
+      "quantiteTotal": 2,
+      "dateCreation": "26/07/2022",
+      "clientId": 2,
+      "prixHT": 44820
+    }
   ],
-  "VehiculesVendu":[
-    {"id":"1","quantiteVendu":5,"couleur":"","vehiculeId":1}
+  "venteVehicules": [
+    {
+      "id": 1,
+      "quantiteVendu": 1,
+      "couleur": "BLEU",
+      "vehiculeId": 1,
+      "deviId": 1
+    },
+    {
+      "id": 2,
+      "quantiteVendu": 2,
+      "couleur": "ORANGE",
+      "vehiculeId": 3,
+      "deviId": 1
+    },
+    {
+      "id": 2,
+      "quantiteVendu": 2,
+      "couleur": "ORANGE",
+      "vehiculeId": 3,
+      "deviId": 2
+    }
+  ],
+  "facture": [
+    {
+      "id": 1,
+      "dateCreation": "",
+      "prixHT": "",
+      "tva": ""
+    }
   ],
   "vehicules": [
     {
@@ -592,15 +634,6 @@
       "quantiteVendu": 0,
       "prixHT": 22507,
       "photo": "suv.gif"
-    }
-  ],
-  "venteVehicules": [],
-  "facture": [
-    {
-      "id": 1,
-      "dateCreation": "",
-      "prixHT": "",
-      "tva": ""
     }
   ]
 }

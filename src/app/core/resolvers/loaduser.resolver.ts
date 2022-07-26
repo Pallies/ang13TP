@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Resolve } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Client } from '../models/client';
+
+import {
+  Resolve,
+} from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { URL_BACK } from '../guards/url-back.routes';
+import { Utilisateur } from '../models/utilisateur';
+
 import { ApiService } from '../services/api.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LoaduserResolver implements Resolve<Client[]> {
 
-  constructor(private api: ApiService<Client>) {}
+export class LoaduserResolver implements Resolve<Utilisateur[]> {
 
-  resolve(): Observable<Client[]> {
-    this.api.name = 'utilisateurs';
-    return this.api.getAll();
+  constructor(private apiservice: ApiService<Utilisateur>) {}
+
+  resolve(): Observable<Utilisateur[]> {
+    this.apiservice.name = URL_BACK.UTILISATEUR;
+    return this.apiservice.getAll();
+
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RoutesProfil } from '../core/guards/routes';
+import { RoutesProfil } from '../core/guards/url-front.routes';
 import { AuthService } from '../core/services/auth.service';
 
 @Component({

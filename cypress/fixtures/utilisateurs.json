@@ -1,0 +1,36 @@
+{
+  "utilisateurs": [
+    {
+      "id": 1,
+      "nom": "attal",
+      "prenom": "yvan",
+      "mdp": "rootroot",
+      "email": "commercial@car.fr",
+      "profil": "COM"
+    },
+    {
+      "id": 2,
+      "nom": "Moati",
+      "prenom": "Félix",
+      "mdp": "rootroot",
+      "email": "mecano@car.fr",
+      "profil": "MECA"
+    },
+    {
+      "id": 3,
+      "nom": "luciani",
+      "prenom": "clara",
+      "mdp": "rootroot",
+      "email": "chef-atelier@car.fr",
+      "profil": "CHEF"
+    },
+    {
+      "id": 4,
+      "nom": "root",
+      "prenom": "root",
+      "mdp": "rootroot",
+      "email": "admin@car.fr",
+      "profil": "ADMIN"
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Devis } from 'src/app/core/models/devis';
 import { ApiService } from 'src/app/core/services/api.service';
-import { DevisVehiculeService } from '../devis-vehicule.service';
+import { DevisVenteService } from '../devis-vente.service';
 
 @Component({
   selector: 'car-liste-devis',
@@ -13,7 +13,7 @@ export class ListeDevisComponent implements OnInit {
 
   allDevis!: Devis[];
 
-  constructor(private devis: DevisVehiculeService, private router: Router,
+  constructor(private devis: DevisVenteService, private router: Router,
     private route: ActivatedRoute, private apiService: ApiService<Devis>) { }
 
   onBack() {
