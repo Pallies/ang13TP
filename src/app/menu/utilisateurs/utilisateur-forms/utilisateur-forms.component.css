@@ -1,0 +1,7 @@
+.opacity-hidden{
+  opacity: 0;
+  height: 100%;
+  margin-right: 1rem;
+  width: calc(1.75em + 0.375rem) ;
+}
+

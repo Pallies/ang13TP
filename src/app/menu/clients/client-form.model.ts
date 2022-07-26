@@ -1,10 +1,10 @@
-
-interface ClientHeader{
-  label:string;
+interface ClientHeader {
+  label: string;
 }
-const clientHeader:ClientHeader[]=[{label:'AJOUTER'},{label:'MODIFIER'},{label:'SUPPRIMER'}]
+const clientHeader: ClientHeader[] = [
+  { label: 'AJOUTER' },
+  { label: 'MODIFIER' },
+  { label: 'SUPPRIMER' },
+];
 
-export {
-  ClientHeader,
-  clientHeader
-}
+export { ClientHeader, clientHeader };

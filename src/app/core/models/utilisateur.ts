@@ -8,6 +8,7 @@ export class Utilisateur {
   public email !: string;
   public profil !: Profil;
 }
+
 export enum UTILISATEUR {
   ID = 'id',
   NOM = 'nom',
