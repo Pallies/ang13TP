@@ -5,7 +5,11 @@ import { CommonModule } from '@angular/common';
 import { CreationDevisComponent } from './creation/creation-devis.component';
 import { LoadvehiculeResolver } from '../core/resolvers/loadvehicule.resolver';
 import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
+import { ListeDevisComponent } from './liste-devis/liste-devis.component';
+import { LoaddevisResolver } from '../core/resolvers/loaddevis.resolver';
 import { URL_SNAPSHOT } from '../core/guards/url-front.routes';
+import { ValidationDevisComponent } from './validation-devis/validation-devis.component';
+import { LoadventevehiculeResolver } from '../core/resolvers/loadventevehicule.resolver';
 
 const routes: Routes = [
   {
@@ -21,6 +25,19 @@ const routes: Routes = [
         component: RecapDevisComponent,
         resolve: { [URL_SNAPSHOT.DATA_CLIENT]: LoadclientResolver },
       },
+      {
+        path: 'liste',
+        component: ListeDevisComponent,
+        resolve: { [URL_SNAPSHOT.DATA_DEVIS]: LoaddevisResolver },
+      },
+      {
+        path: 'validation/:id',
+        component: ValidationDevisComponent,
+        resolve: {
+          [URL_SNAPSHOT.DATA_VEHICULE]: LoadvehiculeResolver,
+          [URL_SNAPSHOT.DATA_VENTE_VEHICULE]: LoadventevehiculeResolver
+        },
+      }
     ],
   },
 ];
