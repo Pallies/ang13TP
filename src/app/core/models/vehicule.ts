@@ -4,8 +4,15 @@ export class Vehicule {
   public marque!:string;
   public modele!:string;
   public annee!:string;
-  public couleur!:string;
   public quantite!:number;
-  public quantiteVendu!:number;
   public prixHT!:number;
+}
+export enum VEHICULE{
+  ID= 'id',
+  PHOTO ='photo',
+  MARQUE= 'marque',
+  MODELE= 'modele',
+  ANNEE= 'annee',
+  QUANTITE= 'quantite',
+  PRIX ='prixHT',
 }

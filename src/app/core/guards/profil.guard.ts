@@ -10,7 +10,6 @@ export class ProfilGuard implements CanActivate {
   canActivate(): boolean {
     if(this.authService.utilisateur.getValue().profil == undefined)
       this.router.navigate(['/'])
-      // return false;
     return true;
   }
 }
