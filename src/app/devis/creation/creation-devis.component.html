@@ -30,34 +30,42 @@
           </tr>
         </thead>
         <tbody class="scrollbar">
-          <tr *ngFor="let vehicule of vehicules; let i = index">
+          <tr *ngFor="let vehiculeVendu of vehiculesVendus; let i = index">
             <td>
               <img
-                [src]="'./assets/images/car/' + vehicule.photo"
-                [alt]="vehicule.marque + ' ' + vehicule.modele"
+                [src]="'./assets/images/car/' + vehiculeVendu.vehicule.photo"
+                [alt]="
+                  vehiculeVendu.vehicule.marque +
+                  ' ' +
+                  vehiculeVendu.vehicule.modele
+                "
               />
             </td>
-            <td>{{ vehicule.marque }} {{ vehicule.modele }}</td>
-            <td>{{ vehicule.prixHT }} €</td>
-            <td>{{ vehicule.annee }}</td>
             <td>
-              <car-couleur
-                (selection)="vehicule.couleur = $event"
-              ></car-couleur>
+              {{ vehiculeVendu.vehicule.marque }}
+              {{ vehiculeVendu.vehicule.modele }}
             </td>
+            <td>{{ vehiculeVendu.vehicule.prixHT }} €</td>
+            <td>{{ vehiculeVendu.vehicule.annee }}</td>
 
-            <td>
-              <car-quantite
-                *ngIf="vehicule.quantite > 0"
-                [max]="vehicule.quantite"
-                (selection)="vehicule.quantiteVendu = $event"
-                [raz]="maj$"
-              ></car-quantite>
-            </td>
+              <td>
+                <car-couleur
+                  (selection)="vehiculeVendu.couleur = $event"
+                ></car-couleur>
+              </td>
+
+              <td>
+                <car-quantite
+                  *ngIf="vehiculeVendu.vehicule.quantite > 0"
+                  [max]="vehiculeVendu.vehicule.quantite"
+                  (selection)="vehiculeVendu.quantiteVendu = $event"
+                  [raz]="maj$"
+                ></car-quantite>
+              </td>
             <td>
               <button
                 class="btn btn-lg btn-outline-success"
-                (click)="ajouter(vehicule)"
+                (click)="ajouter(vehiculeVendu)"
               >
                 <i class="bi bi-plus-circle"></i>
               </button>

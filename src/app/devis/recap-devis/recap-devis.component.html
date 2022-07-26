@@ -28,28 +28,46 @@
           </tr>
         </thead>
         <tbody class="scrollbar">
-          <tr *ngFor="let vehicule of venteVehicules; let i = index">
+          <tr *ngFor="let vehiculeVendu of vehiculesVendus; let i = index">
             <td>
               <img
-                [src]="'/assets/images/car/' + vehicule.photo"
-                [alt]="vehicule.marque + ' ' + vehicule.modele"
+                [src]="'/assets/images/car/' + vehiculeVendu.vehicule.photo"
+                [alt]="
+                  vehiculeVendu.vehicule.marque +
+                  ' ' +
+                  vehiculeVendu.vehicule.modele
+                "
               />
             </td>
-            <td>{{ vehicule.marque }} {{ vehicule.modele }}</td>
-            <td>{{ vehicule.prixHT }} €</td>
-            <td>{{ vehicule.annee }}</td>
-            <td>{{ vehicule.couleur }}</td>
-            <td>{{ vehicule.quantiteVendu }}</td>
+            <td>
+              {{ vehiculeVendu.vehicule.marque }}
+              {{ vehiculeVendu.vehicule.modele }}
+            </td>
+            <td>{{ vehiculeVendu.vehicule.prixHT }} €</td>
+            <td>{{ vehiculeVendu.vehicule.annee }}</td>
+            <td>{{ vehiculeVendu.couleur }}</td>
+            <td>{{ vehiculeVendu.quantiteVendu }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
   <div class="row">
-    <div class="offset-2 col-4 my-4">
-      <select class="form-select btn btn-info">
-        <option selected>Sélectionner le client</option>
-        <option *ngFor="let client of clients" style="background-color: white">
+    <div class="offset-2 col-4 my-2 form-floating p-0">
+      <label for="selectClientOption" class="form-label ms-4"
+        >Sélectionner le client :</label
+      >
+      <select
+        class="form-select btn btn-info my-2 fs-5"
+        id="selectClientOption"
+        [(ngModel)]="clientSelection"
+      >
+        <option
+          class="form-select btn btn-info py-4"
+          *ngFor="let client of clients"
+          style="background-color: white"
+          [ngValue]="client"
+        >
           {{ client.nom }} {{ client.prenom }}
         </option>
       </select>
@@ -74,7 +92,7 @@
                 <td>{{ quantiteTotal }}</td>
                 <td>{{ prixTotal }}</td>
                 <td>20 %</td>
-                <td>{{ (quantiteTotal * prixTotal * 20) / 100 }}</td>
+                <td>{{ prixTotalTTC }}</td>
               </tr>
             </tbody>
           </table>
@@ -83,7 +101,8 @@
       <div class="w-50 d-flex justify-content-around mt-5 mx-auto">
         <button
           class="btn btn-lg btn-success px-5"
-          [disabled]="venteVehicules.length == 0"
+          [disabled]="!(vehiculesVendus.length != 0 && clientSelection != null)"
+          (click)="ajouter()"
         >
           Valider
         </button>

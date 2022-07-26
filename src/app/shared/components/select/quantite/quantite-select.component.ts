@@ -10,6 +10,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
         class="form-select col"
         [(ngModel)]="valeurSelection"
         (change)="emitionValeur()"
+        (click)="initialiseMax()"
       >
         <option *ngFor="let index of compteur" [ngValue]="index">
           {{ index }}
@@ -33,7 +34,6 @@ export class QuantiteSelectComponent implements OnInit {
   ngOnInit(): void {
     this.initialiseMax();
     this.raz.subscribe((d) => {
-      this.initialiseMax();
       this.valeurSelection = 0;
     });
   }

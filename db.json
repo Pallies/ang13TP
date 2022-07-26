@@ -118,17 +118,46 @@
     },
     {
       "id": 4,
-      "nom": "Willem",
-      "prenom": "Christophe",
-      "email": "Christophe.willem@gmail.com",
-      "profil": "MAG"
+      "nom": "root",
+      "prenom": "root",
+      "mdp": "rootroot",
+      "email": "admin@car.fr",
+      "profil": "ADMIN"
     }
   ],
   "devis": [
     {
       "id": 1,
+      "quantiteTotal": 3,
+      "venteVehiculeId": [
+        1,
+        2
+      ],
+      "dateCreation": "26/07/2022",
+      "clientId": 4,
+      "prixHT": 44820
+    }
+  ],
+  "venteVehicules": [
+    {
+      "id": 1,
+      "quantiteVendu": 1,
+      "couleur": "BLEU",
+      "vehiculeId": "1"
+    },
+    {
+      "id": 2,
+      "quantiteVendu": 2,
+      "couleur": "ORANGE",
+      "vehiculeId": "3"
+    }
+  ],
+  "facture": [
+    {
+      "id": 1,
       "dateCreation": "",
-      "prixHT": ""
+      "prixHT": "",
+      "tva": ""
     }
   ],
   "vehicules": [
@@ -593,15 +622,6 @@
       "quantiteVendu": 0,
       "prixHT": 22507,
       "photo": "suv.gif"
-    }
-  ],
-  "venteVehicules": [],
-  "facture": [
-    {
-      "id": 1,
-      "dateCreation": "",
-      "prixHT": "",
-      "tva": ""
     }
   ]
 }
