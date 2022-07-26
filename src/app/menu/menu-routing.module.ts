@@ -6,6 +6,7 @@ import { ClientsComponent } from './clients/clients.component';
 import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
 import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
 import { ProfilGuard } from '../core/guards/profil.guard';
+import { URL_SNAPSHOT } from '../core/guards/url-front.routes';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
       {
         path: 'clients',
         component: ClientsComponent,
-        resolve: { dataClients: LoadclientResolver },
+        resolve: { [URL_SNAPSHOT.DATA_CLIENT]: LoadclientResolver },
         runGuardsAndResolvers:'always'
       },
     ],
