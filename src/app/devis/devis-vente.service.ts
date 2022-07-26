@@ -33,15 +33,15 @@ export class DevisVenteService {
     this.devisValue[DEVIS.QUANTITE] = this.vehiculeVenduService.quantiteTotal;
     this.devisValue[DEVIS.PRIX] = this.vehiculeVenduService.prixTotalHT;
 
-    const devis = await this._assignDevis();
-    this.devis.next(this.devisValue);
+    await this._assignDevis().then(devis=>this.devis.next(devis))
+
   }
 
   private _assignClient(client: Client) {
     this.devisValue[DEVIS.CLIENT_ID] = client.id;
   }
 
-  private async _assignVehiculeVendu(devis: Devis) {
+  private async _assignVehiculeVendu(devis: Devis):Promise<Devis> {
     const vehiculesVendus = this.vehiculeVenduService.value;
     this.apiService.name = URL_BACK.VENTE_VEHICULE;
     for (let vehiculeVendu of vehiculesVendus) {
@@ -52,10 +52,10 @@ export class DevisVenteService {
     return devis;
   }
 
-  private async _assignDevis() {
+  private async _assignDevis():Promise<Devis> {
     this.apiService.name = URL_BACK.DEVIS;
-    await lastValueFrom(this.apiService.add(this.devisValue)).then((data) => {
-      this._assignVehiculeVendu(data as Devis);
+    return await lastValueFrom(this.apiService.add(this.devisValue)).then((data) => {
+      return this._assignVehiculeVendu(data as Devis);
     });
   }
 }
