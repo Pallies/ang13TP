@@ -9,7 +9,7 @@ export class Devis {
   public client!: Client;
   public venteVehicule!: VenteVehicule;
   public clientId!: number;
-  public venteVehiculeId: number[] = [];
+  public venteVehiculeId!: number;
 }
 
 export enum DEVIS {
@@ -17,7 +17,9 @@ export enum DEVIS {
   DATE = 'dateCreation',
   QUANTITE = 'quantiteTotal',
   PRIX = 'prixHT',
-  CLIENT = 'clients',
+  CLIENT = 'client',
+  VENTE_VEHICULE = 'venteVehicule',
   CLIENT_ID = 'clientId',
-  VEHICULES_VENDUS_ID = 'venteVehiculeId',
+  VENTE_VEHICULE_ID = 'venteVehiculeId',
 }
+

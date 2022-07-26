@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { URL_SNAPSHOT } from 'src/app/core/guards/url-front.routes';
 import { Devis } from 'src/app/core/models/devis';
-import { ApiService } from 'src/app/core/services/api.service';
-import { DevisVenteService } from '../devis-vente.service';
 
 @Component({
   selector: 'car-liste-devis',
@@ -13,15 +12,14 @@ export class ListeDevisComponent implements OnInit {
 
   allDevis!: Devis[];
 
-  constructor(private devis: DevisVenteService, private router: Router,
-    private route: ActivatedRoute, private apiService: ApiService<Devis>) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   onBack() {
     this.router.navigate(['/menu/vehicules']);
   }
 
   ngOnInit(): void {
-    this.allDevis = this.route.snapshot.data['dataDevis'];
+    this.allDevis = this.route.snapshot.data[URL_SNAPSHOT.DATA_DEVIS];
   }
 
 }

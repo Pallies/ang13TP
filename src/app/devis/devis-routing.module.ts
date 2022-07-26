@@ -9,6 +9,7 @@ import { ListeDevisComponent } from './liste-devis/liste-devis.component';
 import { LoaddevisResolver } from '../core/resolvers/loaddevis.resolver';
 import { URL_SNAPSHOT } from '../core/guards/url-front.routes';
 import { ValidationDevisComponent } from './validation-devis/validation-devis.component';
+import { LoadventevehiculeResolver } from '../core/resolvers/loadventevehicule.resolver';
 
 const routes: Routes = [
   {
@@ -27,12 +28,15 @@ const routes: Routes = [
       {
         path: 'liste',
         component: ListeDevisComponent,
-        resolve: { dataDevis: LoaddevisResolver },
+        resolve: { [URL_SNAPSHOT.DATA_DEVIS]: LoaddevisResolver },
       },
       {
-        path: 'validation',
+        path: 'validation/:id',
         component: ValidationDevisComponent,
-        resolve: { dataDevis: LoadvehiculeResolver },
+        resolve: {
+          [URL_SNAPSHOT.DATA_VEHICULE]: LoadvehiculeResolver,
+          [URL_SNAPSHOT.DATA_VENTE_VEHICULE]: LoadventevehiculeResolver
+        },
       }
     ],
   },

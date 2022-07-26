@@ -6,7 +6,7 @@ import { Devis } from './../core/models/devis';
 import { ApiService } from 'src/app/core/services/api.service';
 import { VehiculeVenteService } from './vehicule-vente.service';
 import { Injectable } from '@angular/core';
-import { VehiculeVendu, VenteVehicule } from '../core/models/vehicule-vendu';
+import { VenteVehicule } from '../core/models/vehicule-vendu';
 import { Client } from '../core/models/client';
 
 @Injectable({
@@ -26,40 +26,36 @@ export class DevisVenteService {
   get devisValue(): Devis {
     return this.devis.getValue();
   }
-  save(client: Client) {
+  async save(client: Client) {
     this._assignClient(client); //affectation du client au devis
 
     //affectation et enregistrement des véhicules vendus
-    const vehiculesVendus = this.vehiculeVenduService.value;
     this.devisValue[DEVIS.QUANTITE] = this.vehiculeVenduService.quantiteTotal;
     this.devisValue[DEVIS.PRIX] = this.vehiculeVenduService.prixTotalHT;
-   this._assignVehiculeVendu(vehiculesVendus);
 
-    // this._assignDevis();
+    const devis = await this._assignDevis();
+    this.devis.next(this.devisValue);
   }
 
   private _assignClient(client: Client) {
-    // this.devisValue[DEVIS.CLIENT]  = client;
     this.devisValue[DEVIS.CLIENT_ID] = client.id;
   }
 
-  private async _assignVehiculeVendu(
-    vehicules: VehiculeVendu[]
-  ) {
+  private async _assignVehiculeVendu(devis: Devis) {
+    const vehiculesVendus = this.vehiculeVenduService.value;
     this.apiService.name = URL_BACK.VENTE_VEHICULE;
-    for (let vehiculeVendu of vehicules) {
-      const vehiculeVente= new VenteVehicule(vehiculeVendu);
-      await lastValueFrom(this.apiService.add(vehiculeVente)).then(data => {
-        this.devisValue[DEVIS.VEHICULES_VENDUS_ID].push((data as VenteVehicule).id as number);
-      });
+    for (let vehiculeVendu of vehiculesVendus) {
+      const vehiculeVente = new VenteVehicule(vehiculeVendu);
+      vehiculeVente.deviId = devis.id;
+      await lastValueFrom(this.apiService.add(vehiculeVente));
     }
-    return await this._assignDevis();
+    return devis;
   }
 
   private async _assignDevis() {
     this.apiService.name = URL_BACK.DEVIS;
-    await this.apiService
-      .add(this.devisValue)
-      .subscribe((data) => this.devis.next(data as Devis));
+    await lastValueFrom(this.apiService.add(this.devisValue)).then((data) => {
+      this._assignVehiculeVendu(data as Devis);
+    });
   }
 }

@@ -1,1 +1,79 @@
-<p>validation-devis works!</p>
+<!-- TITRE -->
+<a class="h5">
+  <button
+    class="btn btn-sm btn-outline-primary m-3 p-2"
+    routerLink="/devis/creation"
+  >
+    <i class="bi bi-backspace"></i> Retour
+  </button>
+</a>
+<h1 class="text-center">Récapitulatif</h1>
+<div class="container-fluid">
+  <!-- TABLEAU -->
+  <div class="row w-75 m-auto">
+    <div class="col">
+      <table class="table table-striped table-responsive text-center" cellspacing="0" width="100%">
+        <thead>
+          <tr class="table-secondary">
+            <td scope="col">Photo</td>
+            <td scope="col">Marque Modèle</td>
+            <td scope="col">Prix HT</td>
+            <td scope="col">Année</td>
+            <td scope="col">Couleur</td>
+            <td scope="col">Quantité</td>
+          </tr>
+        </thead>
+        <!-- <tbody class="scrollbar">
+          <tr *ngFor="let vehiculeVendu of vehiculesVendus; let i = index">
+            <td>
+              <img [src]="'/assets/images/car/' + vehiculeVendu.vehicule.photo" [alt]="vehiculeVendu.vehicule.marque +' ' +vehiculeVendu.vehicule.modele"/>
+            </td>
+            <td>
+              {{ vehiculeVendu.vehicule.marque }}
+              {{ vehiculeVendu.vehicule.modele }}
+            </td>
+            <td>{{ vehiculeVendu.vehicule.prixHT }} €</td>
+            <td>{{ vehiculeVendu.vehicule.annee }}</td>
+            <td>{{ vehiculeVendu.couleur }}</td>
+            <td>{{ vehiculeVendu.quantiteVendu }}</td>
+          </tr>
+        </tbody> -->
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <!-- TABLEAU -->
+      <div class="row w-75 m-auto">
+        <div class="col">
+          <table class="table table-striped table-responsive text-center w-50">
+            <thead>
+              <tr class="table-secondary">
+                <td scope="col">QUANTITE TOTAL</td>
+                <td scope="col">PRIX HT TOTAL</td>
+                <td scope="col">TVA</td>
+                <td scope="col">PRIX TTC TOTAL</td>
+              </tr>
+            </thead>
+            <!-- <tbody>
+              <tr>
+                <td>{{ quantiteTotal }}</td>
+                <td>{{ prixTotal }}</td>
+                <td>20 %</td>
+                <td>{{ prixTotalTTC }}</td>
+              </tr>
+            </tbody> -->
+          </table>
+        </div>
+      </div>
+      <div class="w-50 d-flex justify-content-around mt-5 mx-auto">
+        <button class="btn btn-lg btn-success px-5">
+          Valider
+        </button>
+        <button class="btn btn-lg btn-danger px-5">
+          Annuler
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
