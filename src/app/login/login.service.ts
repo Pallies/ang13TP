@@ -12,8 +12,8 @@ export class LoginService {
   constructor(private formbuilder: FormBuilder) {
 
     this.loginForm = this.formbuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      mdp: ['', [Validators.required, Validators.minLength(8)]],
+      email: ['admin@car.fr', [Validators.required, Validators.email]],
+      mdp: ['rootroot', [Validators.required, Validators.minLength(8)]],
     }, {updateOn: 'submit'});
   }
 
