@@ -7,9 +7,10 @@ import { RecapDevisComponent } from './recap-devis/recap-devis.component';
 import { SharedModule } from '../shared/shared.module';
 import { VehiculeVenteService } from './vehicule-vente.service';
 import { DevisVenteService } from './devis-vente.service';
+import { ListeDevisComponent } from './liste-devis/liste-devis.component';
 
 @NgModule({
-  declarations: [CreationDevisComponent, RecapDevisComponent],
+  declarations: [CreationDevisComponent, RecapDevisComponent, ListeDevisComponent],
   imports: [
     CommonModule,
     FormsModule,

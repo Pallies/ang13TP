@@ -6,7 +6,7 @@ import { Devis } from './../core/models/devis';
 import { ApiService } from 'src/app/core/services/api.service';
 import { VehiculeVenteService } from './vehicule-vente.service';
 import { Injectable } from '@angular/core';
-import { VehiculeVendu, VenteVehicule } from '../core/models/vehicule-vendu';
+import { VenteVehicule } from '../core/models/vehicule-vendu';
 import { Client } from '../core/models/client';
 
 @Injectable({

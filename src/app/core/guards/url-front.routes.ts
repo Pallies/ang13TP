@@ -9,10 +9,14 @@ export enum RoutesProfil {
   MENU_UTILISATEUR = '/menu/utilisateurs',
   MENU_DEVIS = '/menu/clients',
 }
-export enum URL_SNAPSHOT {
-  DATA_UTILISATEUR = 'dataUtilisateurs',
-  DATA_VEHICULE = 'dataVehicules',
-  DATA_CLIENT = 'dataClients',
+
+export enum URL_SNAPSHOT{
+  DATA_UTILISATEUR="dataUtilisateurs",
+  DATA_VEHICULE="dataVehicules",
+  DATA_CLIENT="dataClients",
+  DATA_DEVIS="dataDevis",
+  DATA_VENTE_VEHICULE="dataVenteVehicules"
+
 }
 export const gestionProfil = {
   [Profil.ADMIN]: [

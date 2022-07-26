@@ -29,7 +29,7 @@ export class QuantiteSelectComponent implements OnInit {
 
   compteur!: number[];
   valeurSelection: number = 0;
-  constructor() {}
+  constructor() {  }
 
   ngOnInit(): void {
     this.initialiseMax();
@@ -41,6 +41,7 @@ export class QuantiteSelectComponent implements OnInit {
     this.compteur = [...Array(this.max)].map((_, i) => i + 1);
   }
   emitionValeur() {
+    console.log(this.valeurSelection);
     this.selection.emit(this.valeurSelection);
     this.initialiseMax();
   }
