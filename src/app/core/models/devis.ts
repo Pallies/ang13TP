@@ -6,9 +6,7 @@ export class Devis {
   public dateCreation!: string;
   public quantiteTotal: number = 0;
   public prixHT!: number;
-  // public clients!: Client;
   public clientId!: number;
-  public venteVehiculeId: number[] = [];
 }
 export enum DEVIS {
   ID = 'id',
@@ -17,5 +15,5 @@ export enum DEVIS {
   PRIX = 'prixHT',
   CLIENT = 'clients',
   CLIENT_ID = 'clientId',
-  VEHICULES_VENDUS_ID = 'venteVehiculeId',
 }
+
