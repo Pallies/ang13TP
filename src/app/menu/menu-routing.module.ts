@@ -18,7 +18,7 @@ const routes: Routes = [
       {
         path: 'utilisateurs',
         component: UtilisateursComponent,
-        resolve: { dataUtilisateurs: LoaduserResolver },
+        resolve: { [URL_SNAPSHOT.DATA_UTILISATEUR]: LoaduserResolver },
         runGuardsAndResolvers: 'always',
       },
       {
