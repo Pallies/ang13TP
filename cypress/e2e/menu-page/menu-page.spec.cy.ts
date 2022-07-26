@@ -1,19 +1,49 @@
+import { buttonContains, login } from "../fonctions/fonctions";
 
-describe('menu pour l administateur', function () {
-  this.beforeAll(function(){
- cy.visit('/');
-  cy.url().should('include', 'login');
-    cy.fixture('utilisateurs.json').then((data) =>
-    data.utilisateurs).as('utilisateur')
+describe('menu pour les différents profils', function () {
+  this.beforeEach(function(){
+    cy.visit('/');
   })
-
-  it('connexion Administrateur', () => {
-    cy.get('button').should('have.length',3)
-    cy.visit('/menu');
+  it('menu Commercial', () => {
+    login('COM')
+    cy.url().should('include', 'menu');
+    cy.get('button').should('have.length',2)
     cy.get('button').then(($button)=>{
-      expect($button.get(0).innerText).to.eq('Gestion des clients')
-      expect($button.get(1).innerText).to.eq('Gestion des ventes de véhicules')
-      expect($button.get(2).innerText).to.eq('Gestion des utilisateurs')
+      buttonContains($button,'COM')
+    })
+  });
+  it('menu Mecanicien', () => {
+    login('MECA')
+    cy.url().should('include', 'menu');
+    cy.get('button').should('have.length',2)
+    cy.get('button').then(($button)=>{
+      buttonContains($button,'MECA')
+    })
+  });
+  it('menu Chef d atelier', () => {
+    login('CHEF')
+    cy.url().should('include', 'menu');
+    cy.get('button').should('have.length',4)
+    cy.get('button').then(($button)=>{
+      buttonContains($button,'CHEF')
+    })
+  });
+  it('menu Magasinier', () => {
+    login('MAG')
+    cy.url().should('include', 'menu');
+    cy.get('button').should('have.length',3)
+    cy.get('button').then(($button)=>{
+      buttonContains($button,'MAG')
+    })
+  });
+  it('menu Administrateur', () => {
+    login('ADMIN')
+    cy.url().should('include', 'menu');
+    cy.get('button').should('have.length',6)
+    cy.get('button').then(($button)=>{
+      buttonContains($button,'ADMIN')
     })
   });
 });
+
+

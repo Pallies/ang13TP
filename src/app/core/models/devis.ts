@@ -7,7 +7,7 @@ export class Devis {
   public quantiteTotal: number = 0;
   public prixHT!: number;
   public client!: Client;
-  public venteVehicule!: VenteVehicule;
+  public venteVehicules!: VenteVehicule;
   public clientId!: number;
   public venteVehiculeId!: number;
 }
