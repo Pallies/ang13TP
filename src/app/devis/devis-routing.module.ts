@@ -8,6 +8,7 @@ import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
 import { ListeDevisComponent } from './liste-devis/liste-devis.component';
 import { LoaddevisResolver } from '../core/resolvers/loaddevis.resolver';
 import { URL_SNAPSHOT } from '../core/guards/url-front.routes';
+import { ValidationDevisComponent } from './validation-devis/validation-devis.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,11 @@ const routes: Routes = [
         path: 'liste',
         component: ListeDevisComponent,
         resolve: { dataDevis: LoaddevisResolver },
+      },
+      {
+        path: 'validation',
+        component: ValidationDevisComponent,
+        resolve: { dataDevis: LoadvehiculeResolver },
       }
     ],
   },

@@ -12,7 +12,7 @@ export class LoaddevisResolver implements Resolve<Devis[]> {
   constructor(private api: ApiService<Devis>) {}
 
   resolve(): Observable<Devis[]> {
-    this.api.name = 'devis';
+    this.api.name = 'devis?_embed=venteVehicules&_expand=client';
     return this.api.getAll();
   }
 }

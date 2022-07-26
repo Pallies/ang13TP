@@ -1,9 +1,13 @@
+import { Client } from "./client";
+import { VenteVehicule } from "./vehicule-vendu";
+
 export class Devis {
   public id: number=0;
   public dateCreation!: string;
   public quantiteTotal: number = 0;
   public prixHT!: number;
-  // public clients!: Client;
+  public client!: Client;
+  public venteVehicule!: VenteVehicule;
   public clientId!: number;
   public venteVehiculeId: number[] = [];
 }

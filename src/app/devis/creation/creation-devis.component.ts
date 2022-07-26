@@ -23,8 +23,8 @@ export class CreationDevisComponent implements OnInit {
     this.vehiculeVenteService.init()
   }
   onBack() {
-    this.devis.init();
-    this.router.navigate(['/menu/vehicules']);
+    this.router.navigated = false;
+    this.router.navigate(['menu', 'vehicules']);
   }
   ngOnInit(): void {
     this.maj$ = this.vehiculeVenteService.vehiculeVente.pipe(map((_) => true));

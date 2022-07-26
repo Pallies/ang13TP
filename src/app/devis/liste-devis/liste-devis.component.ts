@@ -17,7 +17,6 @@ export class ListeDevisComponent implements OnInit {
     private route: ActivatedRoute, private apiService: ApiService<Devis>) { }
 
   onBack() {
-    this.devis.init();
     this.router.navigate(['/menu/vehicules']);
   }
 
