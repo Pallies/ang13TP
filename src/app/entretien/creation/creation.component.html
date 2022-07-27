@@ -1,0 +1,135 @@
+<!-- TITRE -->
+<a class="h5">
+  <button class="btn btn-sm btn-outline-primary m-3 p-2" (click)="onBack()">
+    <i class="bi bi-backspace"></i> Retour
+  </button>
+</a>
+<h1 class="text-center">Création d'un devis: Vente de véhicule</h1>
+<div class="container-fluid mt-4">
+  <!-- SELECTION CLIENT -->
+  <div class="row">
+    <div class="offset-2 col-4 my-2 form-floating p-0">
+      <label for="selectClientOption" class="form-label ms-4"
+        >Sélectionner le client :</label
+      >
+      <select
+        class="form-select btn btn-info my-2 fs-5"
+        id="selectClientOption"
+        [(ngModel)]="clientSelection"
+      >
+        <option
+          class="form-select btn btn-info py-4"
+          *ngFor="let client of clients"
+          style="background-color: white"
+          [ngValue]="client"
+        >
+          {{ client.nom }} {{ client.prenom }}
+        </option>
+      </select>
+    </div>
+    <!-- SELECTION DATE -->
+    <div class="offset-1 col-2 my-2 p-0">
+      <label for="date-entretien" class="form-label"> Date d'entretien</label>
+      <input
+        type="date"
+        placeholder="date d'entretien"
+        name="dateentretien"
+        id="date-entretien"
+        class="form-control"
+      />
+    </div>
+  </div>
+</div>
+<!-- TABLEAU -->
+<div class="row w-75 m-auto mt-4">
+  <div class="col">
+    <table
+      class="table table-striped table-responsive text-center"
+      cellspacing="0"
+      width="100%"
+    >
+      <thead>
+        <tr class="table-secondary align-middle">
+          <td scope="col">Catégorie</td>
+          <td scope="col">Nom</td>
+          <td scope="col">Prix prestation</td>
+          <td scope="col">Ref produit</td>
+          <td scope="col">Prix</td>
+          <td scope="col" class="col-2"></td>
+        </tr>
+      </thead>
+      <tbody class="scrollbar">
+        <tr *ngFor="let presta of entretien.tache">
+          <td>{{presta.id}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <button class="btn btn-lg btn-outline-danger">
+              <i class="bi bi-dash-circle"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"></td>
+          <td colspan="2">
+            <button
+              class="btn btn-lg btn-outline-success w-50"
+              data-bs-toggle="modal"
+              data-bs-target="#pretationModal"
+            >
+              <i class="bi bi-plus-circle"> Ajouter prestation</i>
+            </button>
+          </td>
+          <td colspan="2"></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="table-secondary">
+          <td scope="col"></td>
+          <td scope="col"></td>
+          <td scope="col"></td>
+          <td scope="col">Prix TOTAL</td>
+          <td scope="col">_</td>
+          <td scope="col"></td>
+        </tr>
+        <td colspan="6">
+          <div class="w-50 d-flex justify-content-around m-auto mt-4"></div>
+        </td>
+      </tfoot>
+    </table>
+  </div>
+</div>
+<!-- FOOTER -->
+<div class="row">
+  <div class="col-3 m-auto">
+    <button class="btn btn-lg btn-success w-100"
+    (click)="savePrestations()"
+    >Enregistrer</button>
+  </div>
+</div>
+<car-modal-presta ref="pretationModal">
+  <!-- SELECTION CLIENT -->
+  <div class="row">
+    <div class="offset-2 col-4 my-2 form-floating p-0">
+      <label for="selectClientOption" class="form-label ms-4"
+        >Sélectionner le client :</label
+      >
+      <select
+        class="form-select btn btn-info my-2 fs-5"
+        id="selectClientOption"
+        [(ngModel)]="clientSelection"
+      >
+        <option
+          class="form-select btn btn-info py-4"
+          *ngFor="let client of clients"
+          style="background-color: white"
+          [ngValue]="client"
+        >
+          {{ client.nom }} {{ client.prenom }}
+        </option>
+      </select>
+    </div>
+  </div>
+</car-modal-presta>

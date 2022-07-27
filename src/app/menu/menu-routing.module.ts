@@ -8,6 +8,7 @@ import { LoaduserResolver } from '../core/resolvers/loaduser.resolver';
 import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
 import { ProfilGuard } from '../core/guards/profil.guard';
 import { URL_SNAPSHOT } from '../core/guards/url-front.routes';
+import { EntretienComponent } from './entretien/entretien.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,11 @@ const routes: Routes = [
         path: 'clients',
         component: ClientsComponent,
         resolve: { [URL_SNAPSHOT.DATA_CLIENT]: LoadclientResolver },
-        runGuardsAndResolvers:'always'
+        runGuardsAndResolvers: 'always',
+      },
+      {
+        path: 'entretien',
+        component: EntretienComponent,
       },
     ],
   },

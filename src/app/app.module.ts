@@ -11,6 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { SharedModule } from './shared/shared.module';
 import { MenuModule } from './menu/menu.module';
 import { ValidationDevisComponent } from './devis/validation-devis/validation-devis.component';
+import { EntretienModule } from './entretien/entretien.module';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,9 @@ import { ValidationDevisComponent } from './devis/validation-devis/validation-de
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    DevisModule,
     MenuModule,
+    DevisModule,
+    EntretienModule,
     SharedModule
   ],
   providers: [],
