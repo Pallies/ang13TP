@@ -125,8 +125,38 @@
       "profil": "ADMIN"
     }
   ],
-  "devis": [],
-  "venteVehicules": [],
+  "devis": [
+    {
+      "id": 1,
+      "quantiteTotal": 1,
+      "dateCreation": "27/07/2022",
+      "clientId": 3,
+      "prixHT": 23048
+    },
+    {
+      "id": 2,
+      "quantiteTotal": 3,
+      "dateCreation": "27/07/2022",
+      "clientId": 4,
+      "prixHT": 69144
+    }
+  ],
+  "venteVehicules": [
+    {
+      "id": 1,
+      "quantiteVendu": 1,
+      "couleur": "BLANC",
+      "vehiculeId": "1",
+      "deviId": 1
+    },
+    {
+      "id": 2,
+      "quantiteVendu": 3,
+      "couleur": "ORANGE",
+      "vehiculeId": 1,
+      "deviId": 2
+    }
+  ],
   "facture": [
     {
       "id": 1,
@@ -135,9 +165,381 @@
       "tva": ""
     }
   ],
+  "produits": [
+    {
+      "id": 1,
+      "nom": "Huile moteur",
+      "prix": 14.9,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 2,
+      "nom": "Lave-glace",
+      "prix": 8.5,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 3,
+      "nom": "Liquide de refroidissement",
+      "prix": 11.39,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 4,
+      "nom": "Batterie voiture ",
+      "prix": 79.4,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 5,
+      "nom": "Bougie ",
+      "prix": 15.1,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 6,
+      "nom": "booster et câbles ",
+      "prix": 34.7,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 7,
+      "nom": "Nettoyant intérieur ",
+      "prix": 11.4,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 8,
+      "nom": "Nettoyant extérieur ",
+      "prix": 9.4,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 9,
+      "nom": "Microfibres, aspirateur, brosses ",
+      "prix": 4.5,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 10,
+      "nom": "Dégivrant et gratte-givre ",
+      "prix": 3.75,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 11,
+      "nom": "Stylo peinture ",
+      "prix": 7.9,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 12,
+      "nom": "Bombe de peinture ",
+      "prix": 19.49,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 13,
+      "nom": "Mastic et résine polyester ",
+      "prix": 8.9,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 14,
+      "nom": "Abrasifs, fibre de verre ",
+      "prix": 7.5,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 15,
+      "nom": "Michelin ",
+      "prix": 100.5,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 16,
+      "nom": "Goodyear ",
+      "prix": 87.5,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 17,
+      "nom": "Hankook ",
+      "prix": 60.99,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 18,
+      "nom": "Lumière blanche ",
+      "prix": 8.49,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 19,
+      "nom": "Lumière jaune",
+      "prix": 5.49,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 20,
+      "nom": "Lumière bleu",
+      "prix": 13.9,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 21,
+      "nom": "Pack balais essuie-glaces AV/AR",
+      "prix": 40.9,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 22,
+      "nom": "Balai essuie-glace AV",
+      "prix": 16.9,
+      "quantite": "20",
+      "dateCommande": ""
+    },
+    {
+      "id": 23,
+      "nom": "Balai essuie-glace AR ",
+      "prix": 12.5,
+      "quantite": "20",
+      "dateCommande": ""
+    }
+  ],
+  "taches": [
+    {
+      "id": 1,
+      "categorie": "Entretien",
+      "nom": "Remise à niveau Huiles, liquides",
+      "prix": ""
+    },
+    {
+      "id": 2,
+      "categorie": "Réparation",
+      "nom": "Démarrage, batterie",
+      "prix": ""
+    },
+    {
+      "id": 3,
+      "categorie": "Nettoyage",
+      "nom": "intérieur",
+      "prix": ""
+    },
+    {
+      "id": 4,
+      "categorie": "Nettoyage",
+      "nom": "extérieur",
+      "prix": ""
+    },
+    {
+      "id": 5,
+      "categorie": "Nettoyage",
+      "nom": "intérieur/extérieur",
+      "prix": ""
+    },
+    {
+      "id": 6,
+      "categorie": "Réparation",
+      "nom": "Peintures carrosserie",
+      "prix": ""
+    },
+    {
+      "id": 7,
+      "categorie": "Réparation",
+      "nom": "Peintures rayure",
+      "prix": ""
+    },
+    {
+      "id": 8,
+      "categorie": "Réparation",
+      "nom": "pneu",
+      "prix": ""
+    },
+    {
+      "id": 9,
+      "categorie": "Entretien",
+      "nom": "Ampoules",
+      "prix": ""
+    },
+    {
+      "id": 10,
+      "categorie": "Entretien",
+      "nom": "Essuie-glaces",
+      "prix": ""
+    }
+  ],
+  "taches_produits": [
+    {
+      "id": 1,
+      "produitId": 1,
+      "tacheId": 1
+    },
+    {
+      "id": 2,
+      "produitId": 2,
+      "tacheId": 1
+    },
+    {
+      "id": 3,
+      "produitId": 2,
+      "tacheId": 10
+    },
+    {
+      "id": 4,
+      "produitId": 3,
+      "tacheId": 1
+    },
+    {
+      "id": 5,
+      "produitId": 4,
+      "tacheId": 2
+    },
+    {
+      "id": 6,
+      "produitId": 5,
+      "tacheId": 2
+    },
+    {
+      "id": 7,
+      "produitId": 6,
+      "tacheId": 2
+    },
+    {
+      "id": 8,
+      "produitId": 7,
+      "tacheId": 3
+    },
+    {
+      "id": 9,
+      "produitId": 7,
+      "tacheId": 5
+    },
+    {
+      "id": 10,
+      "produitId": 8,
+      "tacheId": 4
+    },
+    {
+      "id": 11,
+      "produitId": 8,
+      "tacheId": 5
+    },
+    {
+      "id": 12,
+      "produitId": 9,
+      "tacheId": 3
+    },
+    {
+      "id": 13,
+      "produitId": 9,
+      "tacheId": 5
+    },
+    {
+      "id": 14,
+      "produitId": 10,
+      "tacheId": 4
+    },
+    {
+      "id": 15,
+      "produitId": 10,
+      "tacheId": 5
+    },
+    {
+      "id": 16,
+      "produitId": 11,
+      "tacheId": 6
+    },
+    {
+      "id": 17,
+      "produitId": 11,
+      "tacheId": 7
+    },
+    {
+      "id": 18,
+      "produitId": 12,
+      "tacheId": 6
+    },
+    {
+      "id": 19,
+      "produitId": 12,
+      "tacheId": 7
+    },
+    {
+      "id": 20,
+      "produitId": 13,
+      "tacheId": 6
+    },
+    {
+      "id": 21,
+      "produitId": 14,
+      "tacheId": 6
+    },
+    {
+      "id": 22,
+      "produitId": 15,
+      "tacheId": 8
+    },
+    {
+      "id": 23,
+      "produitId": 16,
+      "tacheId": 8
+    },
+    {
+      "id": 24,
+      "produitId": 17,
+      "tacheId": 8
+    },
+    {
+      "id": 25,
+      "produitId": 18,
+      "tacheId": 9
+    },
+    {
+      "id": 26,
+      "produitId": 20,
+      "tacheId": 9
+    },
+    {
+      "id": 27,
+      "produitId": 21,
+      "tacheId": 10
+    },
+    {
+      "id": 28,
+      "produitId": 22,
+      "tacheId": 10
+    },
+    {
+      "id": 29,
+      "produitId": 23,
+      "tacheId": 10
+    }
+  ],
   "vehicules": [
     {
-      "id": "1",
+      "id": 1,
       "marque": "Citroen",
       "modele": "C-Crosser",
       "annee": "2007",
@@ -148,7 +550,7 @@
       "photo": "suv.gif"
     },
     {
-      "id": "2",
+      "id": 2,
       "marque": "Citroen",
       "modele": "C1",
       "annee": "2005",
@@ -159,7 +561,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "3",
+      "id": 3,
       "marque": "Citroen",
       "modele": "C2",
       "annee": "2003",
@@ -170,7 +572,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "4",
+      "id": 4,
       "marque": "Citroen",
       "modele": "C3",
       "annee": "2002",
@@ -181,7 +583,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "5",
+      "id": 5,
       "marque": "Citroen",
       "modele": "C3 AirCross",
       "annee": "2017",
@@ -192,7 +594,7 @@
       "photo": "suv.gif"
     },
     {
-      "id": "6",
+      "id": 6,
       "marque": "Citroen",
       "modele": "C3 Picasso",
       "annee": "2008",
@@ -203,7 +605,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "7",
+      "id": 7,
       "marque": "Citroen",
       "modele": "C4",
       "annee": "2004",
@@ -214,7 +616,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "8",
+      "id": 8,
       "marque": "Citroen",
       "modele": "C4 AirCross",
       "annee": "2012",
@@ -225,7 +627,7 @@
       "photo": "suv.gif"
     },
     {
-      "id": "9",
+      "id": 9,
       "marque": "Citroen",
       "modele": "C4 Picasso",
       "annee": "2006",
@@ -236,7 +638,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "10",
+      "id": 10,
       "marque": "Citroen",
       "modele": "C5",
       "annee": "2001",
@@ -247,7 +649,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "11",
+      "id": 11,
       "marque": "Citroen",
       "modele": "C5 AirCross",
       "annee": "2017",
@@ -258,7 +660,7 @@
       "photo": "suv.gif"
     },
     {
-      "id": "12",
+      "id": 12,
       "marque": "Citroen",
       "modele": "C6",
       "annee": "2004",
@@ -269,7 +671,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "13",
+      "id": 13,
       "marque": "Citroen",
       "modele": "C8",
       "annee": "2002",
@@ -280,7 +682,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "14",
+      "id": 14,
       "marque": "Citroen",
       "modele": "DS3",
       "annee": "2010",
@@ -291,7 +693,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "15",
+      "id": 15,
       "marque": "Citroen",
       "modele": "DS4",
       "annee": "2010",
@@ -302,7 +704,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "16",
+      "id": 16,
       "marque": "Citroen",
       "modele": "DS5",
       "annee": "2012",
@@ -313,7 +715,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "17",
+      "id": 17,
       "marque": "Citroen",
       "modele": "SpaceTourer",
       "annee": "2017",
@@ -324,7 +726,7 @@
       "photo": "suv.gif"
     },
     {
-      "id": "18",
+      "id": 18,
       "marque": "Kia",
       "modele": "Amanti",
       "annee": "2004",
@@ -335,7 +737,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "19",
+      "id": 19,
       "marque": "Kia",
       "modele": "Borrego",
       "annee": "2009",
@@ -346,7 +748,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "20",
+      "id": 20,
       "marque": "Kia",
       "modele": "Carens",
       "annee": "2000",
@@ -357,7 +759,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "21",
+      "id": 21,
       "marque": "Kia",
       "modele": "Cee'd",
       "annee": "2007",
@@ -368,7 +770,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "22",
+      "id": 22,
       "marque": "Kia",
       "modele": "Cerato",
       "annee": "2004",
@@ -379,7 +781,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "23",
+      "id": 23,
       "marque": "Kia",
       "modele": "Forte",
       "annee": "2008",
@@ -390,7 +792,7 @@
       "photo": "suv.gif"
     },
     {
-      "id": "24",
+      "id": 24,
       "marque": "Kia",
       "modele": "Joice",
       "annee": "2000",
@@ -401,7 +803,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "25",
+      "id": 25,
       "marque": "Kia",
       "modele": "Lotze",
       "annee": "2005",
@@ -412,7 +814,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "26",
+      "id": 26,
       "marque": "Kia",
       "modele": "Magentis",
       "annee": "2001",
@@ -423,7 +825,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "27",
+      "id": 27,
       "marque": "Kia",
       "modele": "Mohave",
       "annee": "2008",
@@ -434,7 +836,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "28",
+      "id": 28,
       "marque": "Kia",
       "modele": "Morning",
       "annee": "2004",
@@ -445,7 +847,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "29",
+      "id": 29,
       "marque": "Kia",
       "modele": "Opirus",
       "annee": "2003",
@@ -456,7 +858,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "30",
+      "id": 30,
       "marque": "Kia",
       "modele": "Optima",
       "annee": "2000",
@@ -467,7 +869,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "31",
+      "id": 31,
       "marque": "Kia",
       "modele": "Picanto",
       "annee": "2004",
@@ -478,7 +880,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "32",
+      "id": 32,
       "marque": "Kia",
       "modele": "Quoris",
       "annee": "2012",
@@ -489,7 +891,7 @@
       "photo": "suv.gif"
     },
     {
-      "id": "33",
+      "id": 33,
       "marque": "Kia",
       "modele": "Ray",
       "annee": "2012",
@@ -500,7 +902,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "34",
+      "id": 34,
       "marque": "Kia",
       "modele": "Rio",
       "annee": "2000",
@@ -511,7 +913,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "35",
+      "id": 35,
       "marque": "Kia",
       "modele": "Rondo",
       "annee": "2007",
@@ -522,7 +924,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "36",
+      "id": 36,
       "marque": "Kia",
       "modele": "Sorento",
       "annee": "2002",
@@ -533,7 +935,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "37",
+      "id": 37,
       "marque": "Kia",
       "modele": "Soul",
       "annee": "2008",
@@ -544,7 +946,7 @@
       "photo": "hatchback.gif"
     },
     {
-      "id": "38",
+      "id": 38,
       "marque": "Kia",
       "modele": "Spectra",
       "annee": "2000",
@@ -555,7 +957,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "39",
+      "id": 39,
       "marque": "Kia",
       "modele": "Stinger",
       "annee": "2017",
@@ -566,7 +968,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "40",
+      "id": 40,
       "marque": "Kia",
       "modele": "Stonic",
       "annee": "2017",
@@ -577,7 +979,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "41",
+      "id": 41,
       "marque": "Kia",
       "modele": "Venga",
       "annee": "2010",
@@ -588,7 +990,7 @@
       "photo": "sedan.gif"
     },
     {
-      "id": "42",
+      "id": 42,
       "marque": "Kia",
       "modele": "X-Trek",
       "annee": "2003",
