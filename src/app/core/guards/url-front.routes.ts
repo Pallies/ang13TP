@@ -1,13 +1,12 @@
 import { Profil } from '../models/profil';
-export enum RoutesProfil {
-  MENU = '/menu',
-  MENU_CLIENT = '/menu/clients',
-  MENU_STOCK = '/menu/stock',
-  MENU_ENTRETIEN = '/menu/entretien',
-  MENU_VEHICULE = '/menu/vehicules',
-  MENU_TACHE = 'menu/tache',
-  MENU_UTILISATEUR = '/menu/utilisateurs',
-  MENU_DEVIS = '/menu/clients',
+export enum ROUTES_MENU {
+  BASE = '/menu',
+  CLIENT = '/menu/clients',
+  STOCK = '/menu/stock',
+  ENTRETIEN = '/menu/entretien',
+  VEHICULE = '/menu/vehicules',
+  TACHE = 'menu/tache',
+  UTILISATEUR = '/menu/utilisateurs',
 }
 
 export enum URL_SNAPSHOT{
@@ -15,40 +14,40 @@ export enum URL_SNAPSHOT{
   DATA_VEHICULE="dataVehicules",
   DATA_CLIENT="dataClients",
   DATA_DEVIS="dataDevis",
-  DATA_VENTE_VEHICULE="dataVenteVehicules"
-
+  DATA_VENTE_VEHICULE="dataVenteVehicules",
+  DATA_TACHE="dataTache"
 }
 export const gestionProfil = {
   [Profil.ADMIN]: [
-    RoutesProfil.MENU,
-    RoutesProfil.MENU_CLIENT,
-    RoutesProfil.MENU_STOCK,
-    RoutesProfil.MENU_ENTRETIEN,
-    RoutesProfil.MENU_VEHICULE,
-    RoutesProfil.MENU_TACHE,
-    RoutesProfil.MENU_UTILISATEUR
+    ROUTES_MENU.BASE,
+    ROUTES_MENU.CLIENT,
+    ROUTES_MENU.STOCK,
+    ROUTES_MENU.ENTRETIEN,
+    ROUTES_MENU.VEHICULE,
+    ROUTES_MENU.TACHE,
+    ROUTES_MENU.UTILISATEUR
   ],
   [Profil.CHEF]: [
-    RoutesProfil.MENU,
-    RoutesProfil.MENU_CLIENT,
-    RoutesProfil.MENU_STOCK,
-    RoutesProfil.MENU_ENTRETIEN,
-    RoutesProfil.MENU_TACHE
+    ROUTES_MENU.BASE,
+    ROUTES_MENU.CLIENT,
+    ROUTES_MENU.STOCK,
+    ROUTES_MENU.ENTRETIEN,
+    ROUTES_MENU.TACHE
   ],
   [Profil.MAG]: [
-    RoutesProfil.MENU,
-    RoutesProfil.MENU_STOCK,
-    RoutesProfil.MENU_ENTRETIEN,
-    RoutesProfil.MENU_VEHICULE,
+    ROUTES_MENU.BASE,
+    ROUTES_MENU.STOCK,
+    ROUTES_MENU.ENTRETIEN,
+    ROUTES_MENU.VEHICULE,
   ],
   [Profil.MECA]: [
-     RoutesProfil.MENU,
-    RoutesProfil.MENU_ENTRETIEN,
-    RoutesProfil.MENU_TACHE,
+     ROUTES_MENU.BASE,
+    ROUTES_MENU.ENTRETIEN,
+    ROUTES_MENU.TACHE,
   ],
   [Profil.COM]: [
-    RoutesProfil.MENU,
-    RoutesProfil.MENU_CLIENT,
-    RoutesProfil.MENU_VEHICULE,
+    ROUTES_MENU.BASE,
+    ROUTES_MENU.CLIENT,
+    ROUTES_MENU.VEHICULE,
   ],
 };

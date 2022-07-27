@@ -5,4 +5,6 @@ export enum URL_BACK{
     VENTE_VEHICULE="venteVehicules",
     FACTURE="facture",
     VEHICULE="vehicules",
+    TACHE="taches",
+    PRODUIT='produits'
 }
