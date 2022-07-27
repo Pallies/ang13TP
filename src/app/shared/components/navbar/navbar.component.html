@@ -2,18 +2,33 @@
 
   <img src="../../assets/images/logo-placeholder.png" class="d-inline-block align-top" id="image" alt="">
 
-    <div class="collapse navbar-collapse"></div>
+  <div class="collapse navbar-collapse"></div>
 
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link">
-            NOM ENTREPRISE
-          </a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link">
+          NOM ENTREPRISE
+        </a>
+      </li>
+    </ul>
+  </div>
+  <ul class="navbar-nav">
+    <!-- Avatar -->
+    <li mdbDropdown class="nav-item dropdown">
+
+      <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button"
+        mdbDropdownToggle aria-expanded="false">
+        <i id="svg" class="bi-person-circle"></i>
+      </a>
+      <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <li>
+          <a class="dropdown-item" href="#">Profil</a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#">Déconnexion</a>
         </li>
       </ul>
-    </div>
-    <a href="#">
-      <i id="svg" class="bi-person-circle"></i>
-    </a>
+    </li>
+  </ul>
 </nav>

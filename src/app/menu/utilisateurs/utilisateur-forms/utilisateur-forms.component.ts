@@ -53,10 +53,6 @@ export class UtilisateurFormsComponent implements OnInit, OnDestroy {
     return this.utilisateurFormService;
   }
 
-  valider() {
-    this.utilisateurFormService.valider()
-  }
-
   ngOnDestroy(): void {
     this.subscription?.closed;
   }

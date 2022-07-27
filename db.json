@@ -104,9 +104,8 @@
       "id": 2,
       "nom": "Moati",
       "prenom": "Félix",
-      "mdp": "rootroot",
-      "email": "mecano@car.fr",
-      "profil": "MECA"
+      "email": "Mecano@car.fr",
+      "profil": "ADMIN"
     },
     {
       "id": 3,
@@ -139,6 +138,13 @@
       "dateCreation": "26/07/2022",
       "clientId": 2,
       "prixHT": 44820
+    },
+    {
+      "id": 3,
+      "quantiteTotal": 2,
+      "dateCreation": "26/07/2022",
+      "clientId": 3,
+      "prixHT": 46096
     }
   ],
   "venteVehicules": [
@@ -162,6 +168,13 @@
       "couleur": "ORANGE",
       "vehiculeId": 3,
       "deviId": 2
+    },
+    {
+      "id": 3,
+      "quantiteVendu": 2,
+      "couleur": "JAUNE",
+      "vehiculeId": "1",
+      "deviId": 3
     }
   ],
   "facture": [
