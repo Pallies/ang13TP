@@ -20,11 +20,11 @@ export function buttonContains(
       let buttons = data
         .filter((data) => Object.keys(data)[0] == profil)
         .map((data: buttonMenu) => {
-          return data[profil].buttons;
+          return data[profil].button;
         });
 
       button.each((i, $button) => {
-        expect($button.innerText).toString().includes(buttons[0]);
+        expect($button.innerText).includes(buttons[0]);
       });
     });
 }

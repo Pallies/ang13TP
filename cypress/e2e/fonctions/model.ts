@@ -4,5 +4,5 @@ interface utilisateur {
   profil: string;
 }
 type buttonMenu = {
-  [key in ProfilTest]: { button: string[]; };
+  [key :string]: { button: string[]; };
 };
