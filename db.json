@@ -139,6 +139,13 @@
       "dateCreation": "26/07/2022",
       "clientId": 2,
       "prixHT": 44820
+    },
+    {
+      "id": 3,
+      "quantiteTotal": 7,
+      "dateCreation": "26/07/2022",
+      "clientId": 2,
+      "prixHT": 158906
     }
   ],
   "venteVehicules": [
@@ -162,6 +169,20 @@
       "couleur": "ORANGE",
       "vehiculeId": 3,
       "deviId": 2
+    },
+    {
+      "id": 3,
+      "quantiteVendu": 2,
+      "couleur": "ORANGE",
+      "vehiculeId": "1",
+      "deviId": 3
+    },
+    {
+      "id": 4,
+      "quantiteVendu": 5,
+      "couleur": "ORANGE",
+      "vehiculeId": "2",
+      "deviId": 3
     }
   ],
   "facture": [

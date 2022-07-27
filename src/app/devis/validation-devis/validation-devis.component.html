@@ -1,9 +1,6 @@
 <!-- TITRE -->
 <a class="h5">
-  <button
-    class="btn btn-sm btn-outline-primary m-3 p-2"
-    routerLink="/devis/creation"
-  >
+  <button class="btn btn-sm btn-outline-primary m-3 p-2" routerLink="/devis/liste">
     <i class="bi bi-backspace"></i> Retour
   </button>
 </a>
@@ -23,21 +20,21 @@
             <td scope="col">Quantité</td>
           </tr>
         </thead>
-        <!-- <tbody class="scrollbar">
-          <tr *ngFor="let vehiculeVendu of vehiculesVendus; let i = index">
+        <tbody class="scrollbar">
+          <tr *ngFor="let vehicule of venteVehicules; let i = index">
             <td>
-              <img [src]="'/assets/images/car/' + vehiculeVendu.vehicule.photo" [alt]="vehiculeVendu.vehicule.marque +' ' +vehiculeVendu.vehicule.modele"/>
+              <img [src]="'/assets/images/car/' + vehicule.vehicule.photo" [alt]="vehicule.vehicule.marque +' ' +vehicule.vehicule.modele"/>
             </td>
             <td>
-              {{ vehiculeVendu.vehicule.marque }}
-              {{ vehiculeVendu.vehicule.modele }}
+              {{ vehicule.vehicule.marque }}
+              {{ vehicule.vehicule.modele }}
             </td>
-            <td>{{ vehiculeVendu.vehicule.prixHT }} €</td>
-            <td>{{ vehiculeVendu.vehicule.annee }}</td>
-            <td>{{ vehiculeVendu.couleur }}</td>
-            <td>{{ vehiculeVendu.quantiteVendu }}</td>
+            <td>{{ vehicule.vehicule.prixHT }} €</td>
+            <td>{{ vehicule.vehicule.annee }}</td>
+            <td>{{ vehicule.couleur }}</td>
+            <td>{{ vehicule.quantiteVendu }}</td>
           </tr>
-        </tbody> -->
+        </tbody>
       </table>
     </div>
   </div>
@@ -55,14 +52,14 @@
                 <td scope="col">PRIX TTC TOTAL</td>
               </tr>
             </thead>
-            <!-- <tbody>
+            <tbody>
               <tr>
-                <td>{{ quantiteTotal }}</td>
-                <td>{{ prixTotal }}</td>
-                <td>20 %</td>
-                <td>{{ prixTotalTTC }}</td>
+                <td>{{ qteTotale }}</td>
+                <td>{{ prixTTC }}€</td>
+                <td>20%</td>
+                <td>{{ prixTotal }}€</td>
               </tr>
-            </tbody> -->
+            </tbody>
           </table>
         </div>
       </div>

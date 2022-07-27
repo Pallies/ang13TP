@@ -13,7 +13,9 @@ export class LoadventevehiculeResolver implements Resolve<VenteVehicule[]> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<VenteVehicule[]> {
     let id = route.url[1].path;
-    this.api.name = `venteVehicules/${id}?_expand=vehicule`;
+
+    this.api.name = `devis/${id}?_embed=venteVehicules&_expand=client`;
+
     return this.api.getAll();
   }
 }
