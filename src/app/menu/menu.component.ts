@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RoutesProfil } from '../core/guards/url-front.routes';
+import { ROUTES_MENU } from '../core/guards/url-front.routes';
 import { AuthService } from '../core/services/auth.service';
 
 @Component({
@@ -9,6 +9,6 @@ import { AuthService } from '../core/services/auth.service';
 })
 export class MenuComponent implements OnInit {
   constructor(public auth: AuthService) {}
-  RouteProfil: typeof RoutesProfil = RoutesProfil;
+  routesMenu= ROUTES_MENU;
   ngOnInit(): void {}
 }

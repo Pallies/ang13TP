@@ -1,3 +1,4 @@
+import { URL_BACK } from './../guards/url-back.routes';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -13,7 +14,7 @@ export class LoadventevehiculeResolver implements Resolve<VenteVehicule[]> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<VenteVehicule[]> {
     let id = route.url[1].path;
-    this.api.name = `venteVehicules/${id}?_expand=vehicule`;
+    this.api.name = `${URL_BACK.VENTE_VEHICULE}/${id}?_expand=vehicule`;
     return this.api.getAll();
   }
 }
