@@ -7,8 +7,6 @@ import { ModalPrestaComponent } from './creation/modal-presta/modal-presta.compo
 import { SharedModule } from '../shared/shared.module';
 import { TvaPipe } from '../shared/pipes/tva.pipe';
 
-
-
 @NgModule({
   declarations: [
     CreationEntretienComponent,

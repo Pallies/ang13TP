@@ -12,15 +12,17 @@ export class TacheEffectuer {
   public categorie!: string;
   public nom!: string;
   public prix!: number;
-  public entretienId!:number;
-  public produitId:number[] = [];
-  public valide: boolean = false;
-  constructor(tache:Tache,entretienId:number){
-    this.categorie=tache.categorie;
-    this.nom=tache.nom;
-    this.prix=tache.prix;
-    this.entretienId=entretienId;
-    this.produitId=tache.produits.filter(p=>p.quantite>0).flatMap((p) => p.id);
+  public entretienId!: number;
+  public produitId: number[] = [];
+  public termine: boolean = false;
+  constructor(tache: Tache, entretienId: number) {
+    this.categorie = tache.categorie;
+    this.nom = tache.nom;
+    this.prix = tache.prix;
+    this.entretienId = entretienId;
+    this.produitId = tache.produits
+      .filter((p) => p.quantite > 0)
+      .flatMap((p) => p.id);
   }
 }
 export enum TACHE {
@@ -29,4 +31,5 @@ export enum TACHE {
   NOM = 'nom',
   PRIX = 'prix',
   PRODUIT = 'produits',
+  TERMINE = 'termine'
 }

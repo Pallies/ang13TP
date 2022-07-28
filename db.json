@@ -6,7 +6,9 @@
       "taches": [],
       "terminer": false,
       "clientId": 3,
-      "dateCreation": "2022-07-29"
+      "dateCreation": "2022-07-29",
+      "deadline": "2022-08-01",
+      "valider": true
     }
   ],
   "tachesEffectuer": [
@@ -15,7 +17,6 @@
       "produitId": [
         18
       ],
-      "valide": false,
       "categorie": "Entretien",
       "nom": "Ampoules",
       "prix": 16.98,
@@ -126,8 +127,7 @@
       "ville": "Lille"
     }
   ],
-  "utilisateurs": [
-    {
+  "utilisateurs": [{
       "id": 1,
       "nom": "attal",
       "prenom": "yvan",
@@ -167,8 +167,7 @@
       "profil": "MAG"
     }
   ],
-  "devis": [
-    {
+  "devis": [{
       "id": 1,
       "quantiteTotal": 1,
       "dateCreation": "27/07/2022",
@@ -183,8 +182,7 @@
       "prixHT": 69144
     }
   ],
-  "venteVehicules": [
-    {
+  "venteVehicules": [{
       "id": 1,
       "quantiteVendu": 1,
       "couleur": "BLANC",

@@ -31,6 +31,7 @@ const routes: Routes = [
       {
         path: 'entretien',
         component: EntretienComponent,
+        runGuardsAndResolvers:'always'
       },
     ],
   },

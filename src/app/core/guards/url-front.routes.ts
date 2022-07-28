@@ -19,7 +19,9 @@ export enum URL_SNAPSHOT {
   DATA_DEVIS = 'dataDevis',
   DATA_VENTE_VEHICULE = 'dataVenteVehicules',
   DATA_TACHE = 'dataTache',
+  DATA_ENTRETIEN = 'dataEntretien'
 }
+
 export const gestionProfil = {
   [Profil.ADMIN]: [
     ROUTES_MENU.BASE,

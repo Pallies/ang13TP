@@ -20,7 +20,7 @@
       <a [routerLink]="routesMenu.UTILISATEUR" class="h5"><button class="button">Gestion des utilisateurs</button></a>
     </div>
     <div class="col mt-5" *ngIf="auth.accesRoutes(routesMenu.FACTURE)">
-      <a routerLink="/factures/liste" class="h5"><button class="button">Gestion des factures</button></a>
+      <a [routerLink]="routesMenu.FACTURE" class="h5"><button class="button">Gestion des factures</button></a>
     </div>
   </div>
 </div>
