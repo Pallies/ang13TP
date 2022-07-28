@@ -1,6 +1,5 @@
 {
-  "clients": [
-    {
+  "clients": [{
       "id": 1,
       "nom": "Bernheim",
       "prenom": "Benjamin",
@@ -91,8 +90,7 @@
       "ville": "Lille"
     }
   ],
-  "utilisateurs": [
-    {
+  "utilisateurs": [{
       "id": 1,
       "nom": "attal",
       "prenom": "yvan",
@@ -124,8 +122,7 @@
       "profil": "ADMIN"
     }
   ],
-  "devis": [
-    {
+  "devis": [{
       "id": 1,
       "quantiteTotal": 3,
       "dateCreation": "26/07/2022",
@@ -174,8 +171,7 @@
       "statut": true
     }
   ],
-  "venteVehicules": [
-    {
+  "venteVehicules": [{
       "id": 1,
       "quantiteVendu": 1,
       "couleur": "BLEU",
@@ -239,16 +235,13 @@
       "deviId": 7
     }
   ],
-  "facture": [
-    {
-      "id": 1,
-      "dateCreation": "",
-      "prixHT": "",
-      "tva": ""
-    }
-  ],
-  "vehicules": [
-    {
+  "facture": [{
+    "id": 1,
+    "dateCreation": "",
+    "prixHT": "",
+    "tva": ""
+  }],
+  "vehicules": [{
       "id": "1",
       "marque": "Citroen",
       "modele": "C-Crosser",

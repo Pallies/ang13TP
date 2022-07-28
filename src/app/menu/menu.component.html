@@ -8,7 +8,7 @@
       <a routerLink="/" class="h5"><button class="button">Gestion des stocks</button></a>
     </div>
     <div class="col mt-5 mb-5" *ngIf="auth.accesRoutes(RouteProfil.MENU_ENTRETIEN)">
-      <a routerLink="/" class="h5"><button class="button">Gestion des fiches d'entretien</button></a>
+      <a routerLink="/menu/entretien" class="h5"><button class="button">Gestion des fiches d'entretien</button></a>
     </div>
     <div class="col mt-5" *ngIf="auth.accesRoutes(RouteProfil.MENU_VEHICULE)">
       <a routerLink="/menu/vehicules" class="h5"><button class="button">Gestion des ventes de véhicules</button></a>
