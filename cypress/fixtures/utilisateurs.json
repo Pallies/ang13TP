@@ -31,6 +31,13 @@
       "mdp": "rootroot",
       "email": "admin@car.fr",
       "profil": "ADMIN"
+    },    {
+      "id": 5,
+      "nom": "attal",
+      "prenom": "yvan",
+      "mdp": "rootroot",
+      "email": "magasinier@car.fr",
+      "profil": "MAG"
     }
   ]
 }

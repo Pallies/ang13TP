@@ -139,8 +139,9 @@
       "id": 2,
       "nom": "Moati",
       "prenom": "Félix",
-      "email": "Mecano@car.fr",
-      "profil": "ADMIN"
+      "mdp": "rootroot",
+      "email": "mecano@car.fr",
+      "profil": "MECA"
     },
     {
       "id": 3,
@@ -157,6 +158,13 @@
       "mdp": "rootroot",
       "email": "admin@car.fr",
       "profil": "ADMIN"
+    },    {
+      "id": 5,
+      "nom": "attal",
+      "prenom": "yvan",
+      "mdp": "rootroot",
+      "email": "magasinier@car.fr",
+      "profil": "MAG"
     }
   ],
   "devis": [
