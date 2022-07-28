@@ -13,6 +13,14 @@ a.nav-link {
 i.bi-person-circle {
   font-size: 2rem;
   color: white;
-  margin-right: 25px;
 }
 
+li#pos {
+  position: absolute;
+  bottom: -2rem;
+  right: 6rem;
+}
+
+a#title {
+  margin-right: 4rem;
+}

@@ -29,6 +29,7 @@ export class UtilisateursComponent implements OnInit {
     await this.router.navigate(['menu', 'utilisateurs']);
     this.utilisateurs = this.route.snapshot.data['dataUtilisateurs'];
   }
+
   utilisateurChoisi(utilisateur: Utilisateur) {
     this.utilisateurFormService.initValue(utilisateur);
   }
