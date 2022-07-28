@@ -36,6 +36,8 @@
         name="dateentretien"
         id="date-entretien"
         class="form-control"
+        [ngModel]="dateSelection | date:'yyyy-MM-dd':'fr'"
+        (ngModelChange)="dateSelection = $event"
       />
     </div>
   </div>
@@ -52,21 +54,24 @@
         <tr class="table-secondary align-middle">
           <td scope="col">Catégorie</td>
           <td scope="col">Nom</td>
-          <td scope="col">Prix prestation</td>
+          <td scope="col">PrixHT prestation</td>
           <td scope="col">Ref produit</td>
-          <td scope="col">Prix</td>
+          <td scope="col">PrixHT</td>
           <td scope="col" class="col-2"></td>
         </tr>
       </thead>
       <tbody class="scrollbar">
-        <tr *ngFor="let presta of entretien.tache">
-          <td>{{presta.id}}</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr *ngFor="let presta of (entretien$ | async)?.taches; let i = index">
+          <td>{{ presta.categorie }}</td>
+          <td>{{ presta.nom }}</td>
+          <td>{{ presta.produits | tachePipe:'presta'|number:'3.2-2'  }}</td>
+          <td>{{ presta.produits | tachePipe }}</td>
+          <td>{{ presta | tachePipe }}</td>
           <td>
-            <button class="btn btn-lg btn-outline-danger">
+            <button
+              class="btn btn-lg btn-outline-danger"
+              (click)="suppressionTache(i)"
+            >
               <i class="bi bi-dash-circle"></i>
             </button>
           </td>
@@ -90,8 +95,8 @@
           <td scope="col"></td>
           <td scope="col"></td>
           <td scope="col"></td>
-          <td scope="col">Prix TOTAL</td>
-          <td scope="col">_</td>
+          <td scope="col">Prix TOTAL TTC</td>
+          <td scope="col">{{prixTotal_TTC|number:'2.2-2'}}</td>
           <td scope="col"></td>
         </tr>
         <td colspan="6">
@@ -104,32 +109,13 @@
 <!-- FOOTER -->
 <div class="row">
   <div class="col-3 m-auto">
-    <button class="btn btn-lg btn-success w-100"
-    (click)="savePrestations()"
-    >Enregistrer</button>
+    <button
+      class="btn btn-lg btn-success w-100"
+      [disabled]="!estValide"
+      (click)="sauvegardePrestations()"
+    >
+      Enregistrer
+    </button>
   </div>
 </div>
-<car-modal-presta ref="pretationModal">
-  <!-- SELECTION CLIENT -->
-  <div class="row">
-    <div class="offset-2 col-4 my-2 form-floating p-0">
-      <label for="selectClientOption" class="form-label ms-4"
-        >Sélectionner le client :</label
-      >
-      <select
-        class="form-select btn btn-info my-2 fs-5"
-        id="selectClientOption"
-        [(ngModel)]="clientSelection"
-      >
-        <option
-          class="form-select btn btn-info py-4"
-          *ngFor="let client of clients"
-          style="background-color: white"
-          [ngValue]="client"
-        >
-          {{ client.nom }} {{ client.prenom }}
-        </option>
-      </select>
-    </div>
-  </div>
-</car-modal-presta>
+<car-modal-presta ref="pretationModal"></car-modal-presta>
