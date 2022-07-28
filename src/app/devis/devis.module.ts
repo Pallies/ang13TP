@@ -31,6 +31,6 @@ import { ModalDevisService } from './modal-liste-devis/modal-devis.service';
     ModalDevisService,
     DatePipe,
   ],
-  exports: [CreationDevisComponent],
+  exports: [],
 })
 export class DevisModule {}

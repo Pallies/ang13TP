@@ -8,7 +8,11 @@ import { VehiculeVenteService } from './vehicule-vente.service';
 import { Injectable } from '@angular/core';
 import { VenteVehicule } from '../core/models/vehicule-vendu';
 import { Client } from '../core/models/client';
-
+/**
+ * SAUVEGARDE EN BASE DE DONNEE
+ * sauvegarde la class DEVIS
+ * sauvegarde la class TacheEffectuer
+ */
 @Injectable({
   providedIn: 'root',
 })
