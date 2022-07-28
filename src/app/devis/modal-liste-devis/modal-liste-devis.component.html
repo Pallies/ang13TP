@@ -1,0 +1,62 @@
+<!-- Modal -->
+<div
+  #modal
+  [id]="ref"
+  class="modal fade"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="profilModal"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h5 class="modal-title display-6 m-auto" id="modalLabel">
+          SUPPRESSION DU DEVIS
+        </h5>
+        <button
+          type="button"
+          class="btn-close mx-0 px-0"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div
+        class="modal-body"
+      >
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-danger d-flex align-items-center " role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <div class="m-auto">
+                <p> Confirmez-vous la suppression du devis N° {{id}}</p>
+                <p>d'un montant de  <span class="fw-bold ms-2">{{prixTTC}} €</span></p>
+                <p>nombre de véhicule à la vente  <span class="fw-bold ms-2">{{quantite}}</span></p>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button
+          type="submit"
+          class="btn btn-success me-5"
+          (click)="deleteDevis()"
+        >
+          Confirmer
+        </button>
+        <button
+          #close
+          type="button"
+          class="btn btn-danger ms-5"
+          data-bs-dismiss="modal"
+        >
+          Annuler
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

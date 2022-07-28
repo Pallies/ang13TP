@@ -48,7 +48,6 @@ export class ClientFormsService {
     this.formGrp.get([CLIENT.ADRESSE])?.setValue(client.adresse);
     this.formGrp.get([CLIENT.CODE_POSTAL])?.setValue(client.cp);
     this.formGrp.get([CLIENT.VILLE])?.setValue(client.ville);
-    console.log(this.formGrp.value);
   }
   save(titre: string): Observable<Client|null> {
     this._capitalize(CLIENT.NOM)

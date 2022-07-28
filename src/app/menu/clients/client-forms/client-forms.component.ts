@@ -25,7 +25,7 @@ export class ClientFormsComponent implements OnInit, OnDestroy {
 
   @ViewChild('close', { static: false })
   dimiss!: ElementRef;
-  modalRef!: ElementRef;
+  
   CLIENT: typeof CLIENT = CLIENT;
   subscription!: Subscription;
   constructor(private clientFormService: ClientFormsService) {}

@@ -5,7 +5,7 @@
     </button>
   </div>
   <div class="offset-1 col-10">
-    <h1 class="display-5 text-center">Liste des devis</h1>
+    <h1 class="display-5 text-center">Liste des factures</h1>
   </div>
   <div class="row w-75 m-auto">
     <div class="col">
@@ -20,30 +20,16 @@
             <td scope="col">Client</td>
             <td scope="col">Total TTC</td>
             <td scope="col">Récapitulatif</td>
-            <td scope="col">Supprimer le devis</td>
           </tr>
         </thead>
         <tbody class="scrollbar">
-          <tr *ngFor="let devis of allDevis; let i = index">
-            <td>{{ devis.id }}</td>
-            <td>{{ devis.client.prenom }} {{ devis.client.nom }}</td>
-            <td>{{ devis.prixHT }}€</td>
+          <tr *ngFor="let facture of factures; let i = index">
+            <td>{{ facture.id }}</td>
+            <td>{{ facture.client.prenom }} {{ facture.client.nom }}</td>
+            <td>{{ facture.prixHT }}€</td>
             <td>
-              <button
-                class="btn btn-lg btn-outline-success"
-                [routerLink]="['/devis/validation/', devis.id]"
-              >
+              <button class="btn btn-lg btn-outline-success" [routerLink]="['/factures/', facture.id]">
                 <i class="bi bi-cart-check-fill"></i>
-              </button>
-            </td>
-            <td>
-              <button
-                class="btn btn-lg btn-outline-danger"
-                data-bs-toggle="modal"
-                data-bs-target="#devisModal"
-                (click)="modalDelete(devis)"
-              >
-                <i class="bi bi-trash"></i>
               </button>
             </td>
           </tr>
@@ -52,4 +38,3 @@
     </div>
   </div>
 </div>
-<car-modal-liste-devis ref="devisModal"></car-modal-liste-devis>

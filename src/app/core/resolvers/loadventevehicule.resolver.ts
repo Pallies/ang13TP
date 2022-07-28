@@ -12,7 +12,8 @@ export class LoadventevehiculeResolver implements Resolve<VenteVehicule[]> {
   constructor(private api: ApiService<VenteVehicule>) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<VenteVehicule[]> {
-    let id = route.url[1].path;
+    // console.log();
+    let id = route.params['id']?route.params['id']:route.url[1].path;
 
     this.api.name = `devis/${id}?_embed=venteVehicules&_expand=client`;
 
