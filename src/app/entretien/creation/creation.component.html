@@ -35,6 +35,8 @@
         placeholder="date d'entretien"
         name="dateentretien"
         id="date-entretien"
+        [min]="currentDate| date:'yyyy-MM-dd':'fr'"
+        [value]="currentDate| date:'yyyy-MM-dd':'fr'"
         class="form-control"
         [ngModel]="dateSelection | date:'yyyy-MM-dd':'fr'"
         (ngModelChange)="dateSelection = $event"
@@ -64,7 +66,7 @@
         <tr *ngFor="let presta of (entretien$ | async)?.taches; let i = index">
           <td>{{ presta.categorie }}</td>
           <td>{{ presta.nom }}</td>
-          <td>{{ presta.produits | tachePipe:'presta'|number:'3.2-2'  }}</td>
+          <td>{{ presta.produits | tachePipe:'presta'|number:'1.2-2'  }}</td>
           <td>{{ presta.produits | tachePipe }}</td>
           <td>{{ presta | tachePipe }}</td>
           <td>
@@ -96,7 +98,7 @@
           <td scope="col"></td>
           <td scope="col"></td>
           <td scope="col">Prix TOTAL TTC</td>
-          <td scope="col">{{prixTotal_TTC|number:'2.2-2'}}</td>
+          <td scope="col">{{prixTotal_TTC|number:'1.2-2'}}</td>
           <td scope="col"></td>
         </tr>
         <td colspan="6">

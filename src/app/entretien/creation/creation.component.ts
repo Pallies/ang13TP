@@ -1,4 +1,4 @@
-import { Produit } from 'src/app/core/models/produit';
+import { TvaPipe } from './../../shared/pipes/tva.pipe';
 import { MenuPrestaService } from './menu-presta.service';
 import { Entretien } from './../../core/models/entretien';
 import { URL_SNAPSHOT } from 'src/app/core/guards/url-front.routes';
@@ -6,7 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/core/models/client';
 import { Tache } from 'src/app/core/models/tache';
-import { filter, Observable } from 'rxjs';
+import {  Observable } from 'rxjs';
 
 @Component({
   selector: 'car-creation',
@@ -17,13 +17,15 @@ export class CreationEntretienComponent implements OnInit {
   clients: Client[];
   clientSelection!: Client;
   taches: Tache[] = [];
+  currentDate=new Date()
   entretien$!: Observable<Entretien>;
   dateSelection!: string;
   prixTotal_TTC: number = 0;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private menuService: MenuPrestaService
+    private menuService: MenuPrestaService,
+    private tvaPipe:TvaPipe
   ) {
     this.clients = this.route.snapshot.data[URL_SNAPSHOT.DATA_CLIENT];
     this.menuService.initMenu(
@@ -34,8 +36,10 @@ export class CreationEntretienComponent implements OnInit {
   ngOnInit(): void {
     this.entretien$ = this.menuService.entretien;
     this.entretien$.subscribe((e) => {
-      if (e.taches.length > 0)
-        this.prixTotal_TTC = this.calculTva(e)
+      console.log(e);
+      if (e.taches.length > 0){
+        this.prixTotal_TTC = this.tvaPipe.transform(e)
+      }
       else this.prixTotal_TTC = 0;
     });
   }
@@ -44,7 +48,7 @@ export class CreationEntretienComponent implements OnInit {
     this.router.navigate(['menu', 'entretien']);
   }
   sauvegardePrestations() {
-    console.log(this.clientSelection, this.dateSelection);
+    this.menuService.validationEntretien(this.clientSelection,this.dateSelection)
   }
   suppressionTache(index: number) {
     this.menuService.suppressionTache(index);
@@ -56,12 +60,5 @@ export class CreationEntretienComponent implements OnInit {
       this.dateSelection != undefined &&
       this.prixTotal_TTC > 0
     );
-  }
-  calculTva(e:Entretien){
-   const prix= e.taches
-        .flatMap((t) => t.produits)
-        .map((p) => p.quantite * p.prix)
-        .reduce((a, b) => b + a);
-        return prix+prix*0.2
   }
 }

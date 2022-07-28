@@ -6,14 +6,15 @@ import { QuantiteSelectComponent } from './components/select/quantite/quantite-s
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfilPipe } from './pipes/profil.pipe';
 import { EntretienPipe } from './pipes/entretien.pipe';
+import { TvaPipe } from './pipes/tva.pipe';
 
 @NgModule({
-  declarations: [CouleurSelectComponent, QuantiteSelectComponent, NavbarComponent, ProfilPipe, EntretienPipe],
+  declarations: [CouleurSelectComponent, QuantiteSelectComponent, NavbarComponent, ProfilPipe, EntretienPipe, TvaPipe],
   imports: [
     CommonModule,
     FormsModule,
   ],
   providers:[DecimalPipe],
-  exports:[CouleurSelectComponent, QuantiteSelectComponent, NavbarComponent, ProfilPipe,EntretienPipe,]
+  exports:[CouleurSelectComponent, QuantiteSelectComponent, NavbarComponent, ProfilPipe,EntretienPipe,TvaPipe]
 })
 export class SharedModule { }

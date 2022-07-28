@@ -92,12 +92,12 @@
                         [id]="'quantite' + i"
                         [value]="0"
                         min="0"
-                        [max]="produit.quantite"
+                        [max]="stockProduit"
                         (change)="setQuantite(i,$event)"
                       />
                     </td>
                     <td>/ {{ produit.quantite }}</td>
-                    <td >{{ getQuantite(i) |tachePipe:'prix'|number:'2.2-2'}} €</td>
+                    <td >{{ getQuantite(i) |tachePipe:'prix'|number:'1.2-2'}} €</td>
                   </tr>
                 </tbody>
                 <tfoot>
@@ -106,7 +106,7 @@
                     <td scope="col"></td>
                     <td scope="col"></td>
                     <td scope="col">Prix TOTAL</td>
-                    <td scope="col">{{prixTotal|async|number:'2.2-2'}}</td>
+                    <td scope="col">{{prixTotal|async|number:'1.2-2'}}</td>
                   </tr>
                   <td colspan="6">
                     <div

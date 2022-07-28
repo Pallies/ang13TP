@@ -20,14 +20,14 @@ export class EntretienPipe implements PipeTransform {
           prix = produits
             .map((p) => p.prix * p.quantite)
             ?.reduce((b, c) => b + c);
-          return this.decimal?.transform(prix, '2.2-2');
+          return this.decimal?.transform(prix, '1.2-2');
         case 'quantite':
           return produits.map((p) => p.quantite).reduce((b, c) => b + c);
         case 'presta':
           prix = produits
             .map((p) => 0.35 * p.prix * p.quantite)
             .reduce((b, c) => b + c);
-          return this.decimal?.transform(prix, '2.2-2');
+          return this.decimal?.transform(prix, '1.2-2');
         default:
           return produits.filter((q) => q.quantite > 0).map((p) => p.id);
       }

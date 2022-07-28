@@ -6,9 +6,7 @@ import {
   ElementRef,
   Input,
   OnInit,
-  QueryList,
   ViewChild,
-  ViewChildren,
 } from '@angular/core';
 import { Observable, Subscription, BehaviorSubject, filter } from 'rxjs';
 import { Menu } from '../menu-entretien';
@@ -28,6 +26,7 @@ export class ModalPrestaComponent implements OnInit {
   @ViewChild('close', { static: false }) dimiss!: ElementRef;
   Tache: typeof TACHE = TACHE;
   Produit: typeof PRODUIT = PRODUIT;
+  stockProduit:number=20;
   subscription!: Subscription;
   prixTotal: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   constructor(
@@ -45,7 +44,6 @@ export class ModalPrestaComponent implements OnInit {
       this.menuService.selectionProduit(nom);
     });
     this.menuForm.get(TACHE.PRODUIT)?.valueChanges.pipe(filter(p=>p.length>0)).subscribe((produit) => {
-      console.log(produit);
       this.prixTotal.next(+this.tachePipe.transform(produit, 'prix'));
     });
   }

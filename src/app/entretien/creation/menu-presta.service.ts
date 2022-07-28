@@ -1,3 +1,4 @@
+import { TvaPipe } from './../../shared/pipes/tva.pipe';
 import { Produit } from 'src/app/core/models/produit';
 import { PRODUIT } from './../../core/models/produit';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
@@ -7,6 +8,7 @@ import { Injectable } from '@angular/core';
 import { Entretien } from 'src/app/core/models/entretien';
 import { Menu } from './menu-entretien';
 import { DatePipe } from '@angular/common';
+import { Client } from 'src/app/core/models/client';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +20,7 @@ export class MenuPrestaService {
     new Entretien()
   );
   tacheForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private datePipe: DatePipe) {
+  constructor(private formBuilder: FormBuilder, private datePipe: DatePipe,private tvaPipe:TvaPipe) {
     this.tacheForm = this.formBuilder.group({
       [TACHE.ID]: this.formBuilder.control(''),
       [TACHE.CATEGORIE]: this.formBuilder.control(''),
@@ -77,6 +79,7 @@ export class MenuPrestaService {
     const entretien = this.entretien.getValue();
     const tache: Tache = this.tacheForm.value as Tache;
     entretien.taches.push(tache);
+    entretien.prixTTC=this.tvaPipe.transform(entretien)
     this.entretien.next({...entretien});
     this.tacheForm.reset()
   }
@@ -85,6 +88,12 @@ export class MenuPrestaService {
     console.log(this.entretien.getValue().taches.length)
     const tache =this.entretien.getValue().taches.filter((t, i) => i != index);
     this.entretien.getValue().taches=tache;
+    this.entretien.next({...this.entretien.getValue()});
+  }
+  validationEntretien(client:Client,date:string){
+    const entretien =this.entretien.getValue();
+    entretien.client=client;
+    entretien.dateCreation=date;
     this.entretien.next({...this.entretien.getValue()});
   }
   // raccourci de controls
