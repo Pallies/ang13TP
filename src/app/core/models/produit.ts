@@ -5,3 +5,10 @@ export class Produit {
     public quantite!:number;
     public dateCommande!:string;
 }
+export enum PRODUIT{
+  ID='id',
+  NOM="nom",
+  PRIX="prix",
+  QUANTITE="quantite",
+  DATE="dateCommande"
+}
