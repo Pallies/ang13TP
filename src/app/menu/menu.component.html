@@ -19,5 +19,8 @@
     <div class="col mt-5" *ngIf="auth.accesRoutes(RouteProfil.MENU_UTILISATEUR)">
       <a routerLink="/menu/utilisateurs" class="h5"><button class="button">Gestion des utilisateurs</button></a>
     </div>
+    <div class="col mt-5" *ngIf="auth.accesRoutes(RouteProfil.MENU_FACTURE)">
+      <a routerLink="/factures/liste" class="h5"><button class="button">Gestion des factures</button></a>
+    </div>
   </div>
 </div>

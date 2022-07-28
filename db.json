@@ -125,8 +125,121 @@
       "profil": "ADMIN"
     }
   ],
-  "devis": [],
-  "venteVehicules": [],
+  "devis": [
+    {
+      "id": 1,
+      "quantiteTotal": 3,
+      "dateCreation": "26/07/2022",
+      "prixHT": 44820,
+      "clientId": 4,
+      "statut": true
+    },
+    {
+      "id": 3,
+      "quantiteTotal": 7,
+      "dateCreation": "26/07/2022",
+      "prixHT": 158906,
+      "clientId": 2,
+      "statut": true
+    },
+    {
+      "id": 4,
+      "quantiteTotal": 5,
+      "dateCreation": "27/07/2022",
+      "prixHT": 114268,
+      "clientId": 6,
+      "statut": true
+    },
+    {
+      "id": 5,
+      "quantiteTotal": 5,
+      "dateCreation": "27/07/2022",
+      "clientId": 3,
+      "prixHT": 115240,
+      "statut": false
+    },
+    {
+      "id": 6,
+      "quantiteTotal": 3,
+      "dateCreation": "27/07/2022",
+      "prixHT": 69144,
+      "clientId": 5,
+      "statut": true
+    },
+    {
+      "id": 7,
+      "quantiteTotal": 4,
+      "dateCreation": "27/07/2022",
+      "prixHT": 92192,
+      "clientId": 10,
+      "statut": true
+    }
+  ],
+  "venteVehicules": [
+    {
+      "id": 1,
+      "quantiteVendu": 1,
+      "couleur": "BLEU",
+      "vehiculeId": 1,
+      "deviId": 1
+    },
+    {
+      "id": 2,
+      "quantiteVendu": 2,
+      "couleur": "ORANGE",
+      "vehiculeId": 3,
+      "deviId": 2
+    },
+    {
+      "id": 3,
+      "quantiteVendu": 2,
+      "couleur": "ORANGE",
+      "vehiculeId": "1",
+      "deviId": 3
+    },
+    {
+      "id": 4,
+      "quantiteVendu": 5,
+      "couleur": "ORANGE",
+      "vehiculeId": "2",
+      "deviId": 3
+    },
+    {
+      "id": 5,
+      "quantiteVendu": 3,
+      "couleur": "BLEU",
+      "vehiculeId": "1",
+      "deviId": 4
+    },
+    {
+      "id": 6,
+      "quantiteVendu": 2,
+      "couleur": "JAUNE",
+      "vehiculeId": "2",
+      "deviId": 4
+    },
+    {
+      "id": 7,
+      "quantiteVendu": 5,
+      "couleur": "ORANGE",
+      "vehiculeId": "1",
+      "deviId": 5
+    },
+    {
+      "id": 8,
+      "quantiteVendu": 3,
+      "couleur": "ORANGE",
+      "vehiculeId": "1",
+      "deviId": 6
+    },
+    {
+      "id": 9,
+      "quantiteVendu": 4,
+      "couleur": "ORANGE",
+      "vehiculeId": "1",
+      "deviId": 7
+    }
+  ],
   "facture": [
     {
       "id": 1,
