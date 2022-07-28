@@ -1,4 +1,4 @@
-import { gestionProfil, RoutesProfil } from '../guards/url-front.routes';
+import { gestionProfil, ROUTES_MENU } from '../guards/url-front.routes';
 import { BehaviorSubject} from 'rxjs';
 import { Utilisateur } from './../models/utilisateur';
 import { Injectable } from '@angular/core';
@@ -32,7 +32,7 @@ export class AuthService {
         return false;
       })[0];
   }
-  accesRoutes(routes:RoutesProfil):boolean{
+  accesRoutes(routes:ROUTES_MENU):boolean{
     // récupération du profil
     const profil= Object.entries(Profil).filter(profil=>
       profil[0]== this.utilisateur.getValue().profil

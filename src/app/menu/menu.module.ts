@@ -10,8 +10,8 @@ import { ClientFormsService } from './clients/client-forms.service';
 import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
 import { UtilisateurFormsComponent } from './utilisateurs/utilisateur-forms/utilisateur-forms.component';
 import { UtilisateurFormsService } from './utilisateurs/utilisateur-forms.service';
+import { ListeComponent } from '../entretien/liste/liste.component';
 import { EntretienComponent } from './entretien/entretien.component';
-import { ListeComponent } from './entretien/liste/liste.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +20,10 @@ import { ListeComponent } from './entretien/liste/liste.component';
     UtilisateurFormsComponent,
     ClientsComponent,
     ClientFormsComponent,
-    EntretienComponent,
     ListeComponent,
+    EntretienComponent
   ],
   imports: [CommonModule, MenuRoutingModule, SharedModule, ReactiveFormsModule],
-  providers: [ClientFormsService, UtilisateurFormsService],
-  exports: [VehiculesComponent, UtilisateursComponent, ClientsComponent],
+  providers: [ClientFormsService, UtilisateurFormsService]
 })
 export class MenuModule {}

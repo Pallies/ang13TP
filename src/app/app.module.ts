@@ -11,6 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { SharedModule } from './shared/shared.module';
 import { MenuModule } from './menu/menu.module';
 import { ValidationDevisComponent } from './devis/validation-devis/validation-devis.component';
+import { EntretienModule } from './entretien/entretien.module';
 import { FactureModule } from './facture/facture.module';
 
 @NgModule({
@@ -26,10 +27,11 @@ import { FactureModule } from './facture/facture.module';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    DevisModule,
     MenuModule,
+    DevisModule,
+    EntretienModule,
     SharedModule,
-    FactureModule
+    FactureModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

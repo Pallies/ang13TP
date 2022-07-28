@@ -1,53 +1,16 @@
-<!-- TITRE -->
-<a class="h5">
-  <button class="btn btn-sm btn-outline-primary m-3 p-2" (click)="onBack()">
+<a routerLink="/menu" class="h5">
+  <button class="btn btn-sm btn-outline-primary m-3 p-2">
     <i class="bi bi-backspace"></i> Retour
   </button>
 </a>
 <h1 class="text-center">Gestion des fiches d'entretien</h1>
-<div class="container-fluid mt-4">
-  <!-- FILTRE -->
+<div class="container">
   <div class="row">
-    <div class="col"></div>
-  </div>
-  <!-- TABLEAU -->
-  <div class="row w-75 m-auto">
-    <div class="col">
-      <table class="table table-striped table-responsive text-center" cellspacing="0" width="100%">
-        <thead>
-          <tr class="table-secondary">
-            <td scope="col">Client</td>
-            <td scope="col">Validée</td>
-            <td scope="col">Terminée</td>
-            <td scope="col">Date création</td>
-            <td scope="col">Deadline</td>
-            <td scope="col">Définir taches</td>
-            <td scope="col">Modifier fiche</td>
-            <td scope="col">Taches liées</td>
-          </tr>
-        </thead>
-        <tbody class="scrollbar">
-          <tr>
-            <td>John Doe</td>
-            <td><i class="bi bi-check-circle-fill"></i></td>
-            <td><i class="bi bi-x-circle-fill"></i></td>
-            <td>28/07/2022</td>
-            <td>01/08/2022</td>
-            <td><i class="bi bi-pen"></i></td>
-            <td><i class="bi bi-pencil-square"></i></td>
-            <td><i class="bi bi-eye-fill"></i></td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <td colspan="6">
-            <div class="w-50 d-flex justify-content-around m-auto mt-4">
-              <button class="btn btn-lg btn-success px-5" routerLink="/devis/recap">
-                Créer une fiche
-              </button>
-            </div>
-          </td>
-        </tfoot>
-      </table>
+    <div class="col-md-3 offset-md-2 mt-5">
+      <a routerLink="/entretien/creation" class="h5"><button class="btn-box">Créer une fiche entretien</button></a>
+    </div>
+    <div class="col-md-3 offset-md-2 mt-5">
+      <a routerLink="/entretien/liste-entretien" class="h5"><button class="btn-box">Liste fiches d'entretien</button></a>
     </div>
   </div>
 </div>

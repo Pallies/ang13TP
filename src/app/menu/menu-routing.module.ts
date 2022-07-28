@@ -26,7 +26,7 @@ const routes: Routes = [
         path: 'clients',
         component: ClientsComponent,
         resolve: { [URL_SNAPSHOT.DATA_CLIENT]: LoadclientResolver },
-        runGuardsAndResolvers:'always'
+        runGuardsAndResolvers: 'always',
       },
       {
         path: 'entretien',
