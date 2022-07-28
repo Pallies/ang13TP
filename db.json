@@ -124,59 +124,8 @@
       "profil": "ADMIN"
     }
   ],
-  "devis": [
-    {
-      "id": 1,
-      "quantiteTotal": 3,
-      "dateCreation": "26/07/2022",
-      "clientId": 4,
-      "prixHT": 44820
-    },
-    {
-      "id": 2,
-      "quantiteTotal": 2,
-      "dateCreation": "26/07/2022",
-      "clientId": 2,
-      "prixHT": 44820
-    },
-    {
-      "id": 3,
-      "quantiteTotal": 2,
-      "dateCreation": "26/07/2022",
-      "clientId": 3,
-      "prixHT": 46096
-    }
-  ],
-  "venteVehicules": [
-    {
-      "id": 1,
-      "quantiteVendu": 1,
-      "couleur": "BLEU",
-      "vehiculeId": 1,
-      "deviId": 1
-    },
-    {
-      "id": 2,
-      "quantiteVendu": 2,
-      "couleur": "ORANGE",
-      "vehiculeId": 3,
-      "deviId": 1
-    },
-    {
-      "id": 2,
-      "quantiteVendu": 2,
-      "couleur": "ORANGE",
-      "vehiculeId": 3,
-      "deviId": 2
-    },
-    {
-      "id": 3,
-      "quantiteVendu": 2,
-      "couleur": "JAUNE",
-      "vehiculeId": "1",
-      "deviId": 3
-    }
-  ],
+  "devis": [],
+  "venteVehicules": [],
   "facture": [
     {
       "id": 1,
