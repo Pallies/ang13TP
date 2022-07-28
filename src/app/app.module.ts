@@ -12,13 +12,14 @@ import { SharedModule } from './shared/shared.module';
 import { MenuModule } from './menu/menu.module';
 import { ValidationDevisComponent } from './devis/validation-devis/validation-devis.component';
 import { EntretienModule } from './entretien/entretien.module';
+import { FactureModule } from './facture/facture.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     LoginComponent,
-    ValidationDevisComponent,
+    ValidationDevisComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,8 @@ import { EntretienModule } from './entretien/entretien.module';
     MenuModule,
     DevisModule,
     EntretienModule,
-    SharedModule
+    SharedModule,
+    FactureModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

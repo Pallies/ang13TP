@@ -10,6 +10,12 @@ export class VehiculeVendu {
     this.vehicule = vehicule;
     this.vehiculeId = vehicule.id;
   }
+  setCaracteristique(vehiculeVendu:VenteVehicule){
+    this.id=vehiculeVendu.id;
+    this.quantiteVendu=vehiculeVendu.quantiteVendu;
+    this.couleur=vehiculeVendu.couleur;
+    return this;
+  }
 }
 export class VenteVehicule {
   public id: number = 0;

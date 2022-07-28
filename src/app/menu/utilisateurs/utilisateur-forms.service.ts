@@ -38,23 +38,12 @@ export class UtilisateurFormsService {
     this.formGrp.reset();
   }
 
-  valider() {
-    console.log(
-      this.formGrp.get([UTILISATEUR.ID])?.valid,
-      this.formGrp.get([UTILISATEUR.NOM])?.valid,
-      this.formGrp.get([UTILISATEUR.PRENOM])?.valid,
-      this.formGrp.get([UTILISATEUR.EMAIL])?.valid,
-      this.formGrp.get([UTILISATEUR.PROFIL])?.valid
-    );
-  }
-
   initValue(utilisateur: Utilisateur) {
     this.formGrp.get([UTILISATEUR.ID])?.setValue(utilisateur.id);
     this.formGrp.get([UTILISATEUR.NOM])?.setValue(utilisateur.nom);
     this.formGrp.get([UTILISATEUR.PRENOM])?.setValue(utilisateur.prenom);
     this.formGrp.get([UTILISATEUR.EMAIL])?.setValue(utilisateur.email);
     this.formGrp.get([UTILISATEUR.PROFIL])?.setValue(utilisateur.profil);
-    console.log(this.formGrp.value);
   }
 
   save(titre: string): Observable<Utilisateur | null> {

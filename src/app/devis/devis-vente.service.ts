@@ -36,6 +36,7 @@ export class DevisVenteService {
     //affectation et enregistrement des véhicules vendus
     this.devisValue[DEVIS.QUANTITE] = this.vehiculeVenduService.quantiteTotal;
     this.devisValue[DEVIS.PRIX] = this.vehiculeVenduService.prixTotalHT;
+    this.devisValue[DEVIS.STATUT] = false;
 
     await this._assignDevis().then((devis)=>this.devis.next(devis));
   }

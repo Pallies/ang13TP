@@ -29,6 +29,7 @@ export class ApiService<T extends { id: number }> {
   }
 
   update(data: T): Observable<T> {
+    //console.log(data);
     return this.http.put<T>(`${url}/${this._name}/${data.id}`, data);
   }
 
