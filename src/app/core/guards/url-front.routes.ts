@@ -8,6 +8,7 @@ export enum RoutesProfil {
   MENU_TACHE = 'menu/tache',
   MENU_UTILISATEUR = '/menu/utilisateurs',
   MENU_DEVIS = '/menu/clients',
+  MENU_FACTURE = '/factures/liste'
 }
 
 export enum URL_SNAPSHOT{
@@ -26,20 +27,23 @@ export const gestionProfil = {
     RoutesProfil.MENU_ENTRETIEN,
     RoutesProfil.MENU_VEHICULE,
     RoutesProfil.MENU_TACHE,
-    RoutesProfil.MENU_UTILISATEUR
+    RoutesProfil.MENU_UTILISATEUR,
+    RoutesProfil.MENU_FACTURE
   ],
   [Profil.CHEF]: [
     RoutesProfil.MENU,
     RoutesProfil.MENU_CLIENT,
     RoutesProfil.MENU_STOCK,
     RoutesProfil.MENU_ENTRETIEN,
-    RoutesProfil.MENU_TACHE
+    RoutesProfil.MENU_TACHE,
+    RoutesProfil.MENU_FACTURE
   ],
   [Profil.MAG]: [
     RoutesProfil.MENU,
     RoutesProfil.MENU_STOCK,
     RoutesProfil.MENU_ENTRETIEN,
     RoutesProfil.MENU_VEHICULE,
+    RoutesProfil.MENU_FACTURE
   ],
   [Profil.MECA]: [
      RoutesProfil.MENU,
@@ -50,5 +54,6 @@ export const gestionProfil = {
     RoutesProfil.MENU,
     RoutesProfil.MENU_CLIENT,
     RoutesProfil.MENU_VEHICULE,
+    RoutesProfil.MENU_FACTURE
   ],
 };

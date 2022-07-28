@@ -19,23 +19,23 @@ export class ListeDevisComponent implements OnInit,OnDestroy {
     private modalService: ModalDevisService
   ) {
     this.modalService.devis.next(
-      this.route.snapshot.data[URL_SNAPSHOT.DATA_DEVIS]
+      (this.route.snapshot.data[URL_SNAPSHOT.DATA_DEVIS] as Array<Devis>).filter(d => !d.statut)
     );
   }
 
-subcription!:Subscription;
+  subcription!:Subscription;
   onBack() {
     this.router.navigate(['/menu/vehicules']);
   }
 
   ngOnInit(): void {
-    this.subcription=this.modalService.devis.subscribe((data) => (this.allDevis = data));
+    this.subcription = this.modalService.devis.subscribe((data) => (this.allDevis = data));
   }
 
   ngOnDestroy(): void {
     this.subcription.closed;
   }
   modalDelete(devis:Devis){
-   this.modalService.open(devis);
+    this.modalService.open(devis);
   }
 }

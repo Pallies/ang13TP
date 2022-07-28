@@ -44,7 +44,6 @@ export class UtilisateurFormsService {
     this.formGrp.get([UTILISATEUR.PRENOM])?.setValue(utilisateur.prenom);
     this.formGrp.get([UTILISATEUR.EMAIL])?.setValue(utilisateur.email);
     this.formGrp.get([UTILISATEUR.PROFIL])?.setValue(utilisateur.profil);
-    console.log(this.formGrp.value);
   }
 
   save(titre: string): Observable<Utilisateur | null> {

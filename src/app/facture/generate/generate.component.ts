@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
 import { URL_SNAPSHOT } from 'src/app/core/guards/url-front.routes';
-import { Devis, DevisValidation } from 'src/app/core/models/devis';
+import { Devis } from 'src/app/core/models/devis';
 import { Vehicule } from 'src/app/core/models/vehicule';
 import { VehiculeVendu, VenteVehicule } from 'src/app/core/models/vehicule-vendu';
-import { ApiService } from 'src/app/core/services/api.service';
 
 @Component({
-  selector: 'car-validation-devis',
-  templateUrl: './validation-devis.component.html',
-  styleUrls: ['./validation-devis.component.css']
+  selector: 'car-generate',
+  templateUrl: './generate.component.html',
+  styleUrls: ['./generate.component.css']
 })
-export class ValidationDevisComponent implements OnInit {
+export class GenerateComponent implements OnInit {
 
   vehicules!: Vehicule[];
   devis!: Devis;
@@ -20,7 +22,8 @@ export class ValidationDevisComponent implements OnInit {
   qteTotale!: number;
   prixTotal!: number;
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService<DevisValidation>, private router: Router){
+  @ViewChild('invoice') invoiceElement!: ElementRef;
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.vehicules = this.route.snapshot.data[URL_SNAPSHOT.DATA_VEHICULE];
     this.devis = this.route.snapshot.data[URL_SNAPSHOT.DATA_VENTE_VEHICULE];
   }
@@ -46,16 +49,20 @@ export class ValidationDevisComponent implements OnInit {
     this.prixTotal = this.prixTTC + this.prixTTC * 0.2;
   }
 
-  changeStatut(){
-    this.devis.statut = true;
-    const devisValidation = new DevisValidation(this.devis);
-
-    this.apiService.name = "devis";
-    this.apiService.update(devisValidation).subscribe(_ => this.router.navigate(['factures/', this.devis.id]));
+  public generatePDF(): void {
+    html2canvas(this.invoiceElement.nativeElement, { scale: 3 }).then((canvas) => {
+      const imageGeneratedFromTemplate = canvas.toDataURL('image/png');
+      const fileWidth = 200;
+      const generatedImageHeight = (canvas.height * fileWidth) / canvas.width;
+      let PDF = new jsPDF('p', 'mm', 'a4',);
+      PDF.addImage(imageGeneratedFromTemplate, 'PNG', 0, 5, fileWidth, generatedImageHeight,);
+      PDF.html(this.invoiceElement.nativeElement.innerHTML)
+      PDF.save('facture'+this.devis.client.nom+'.pdf');
+    });
   }
 
   onBack(){
-    this.router.navigate(['/devis/liste']);
+    this.router.navigate(['/factures/liste']);
   }
 
 }

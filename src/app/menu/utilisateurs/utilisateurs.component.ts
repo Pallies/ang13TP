@@ -21,7 +21,6 @@ export class UtilisateursComponent implements OnInit {
 
   ngOnInit(): void {
     this.utilisateurs = this.route.snapshot.data['dataUtilisateurs'];
-    console.log(this.utilisateurs);
   }
 
   async refresh() {
