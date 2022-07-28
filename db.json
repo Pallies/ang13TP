@@ -1,4 +1,39 @@
 {
+  "entretien": [
+    {
+      "id": 1,
+      "prixTTC": "45.336",
+      "taches": [],
+      "terminer": false,
+      "clientId": 3,
+      "dateCreation": "2022-07-29"
+    }
+  ],
+  "tachesEffectuer": [
+    {
+      "id": 1,
+      "produitId": [
+        18
+      ],
+      "valide": false,
+      "categorie": "Entretien",
+      "nom": "Ampoules",
+      "prix": 16.98,
+      "entretienId": 1
+    },
+    {
+      "id": 2,
+      "produitId": [
+        7,
+        8
+      ],
+      "valide": false,
+      "categorie": "Nettoyage",
+      "nom": "intérieur/extérieur",
+      "prix": 9.4,
+      "entretienId": 1
+    }
+  ],
   "clients": [
     {
       "id": 1,

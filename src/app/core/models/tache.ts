@@ -1,5 +1,3 @@
-import { Entretien } from 'src/app/core/models/entretien';
-import { Client } from 'src/app/core/models/client';
 import { Produit } from './produit';
 
 export class Tache {
@@ -9,14 +7,21 @@ export class Tache {
   public prix!: number;
   public produits: Produit[] = [];
 }
-export class TacheAEffectuer {
+export class TacheEffectuer {
   public id: number = 0;
   public categorie!: string;
   public nom!: string;
   public prix!: number;
-  public entretienId!:Entretien;
+  public entretienId!:number;
   public produitId:number[] = [];
   public valide: boolean = false;
+  constructor(tache:Tache,entretienId:number){
+    this.categorie=tache.categorie;
+    this.nom=tache.nom;
+    this.prix=tache.prix;
+    this.entretienId=entretienId;
+    this.produitId=tache.produits.filter(p=>p.quantite>0).flatMap((p) => p.id);
+  }
 }
 export enum TACHE {
   ID = 'id',

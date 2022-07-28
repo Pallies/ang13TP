@@ -6,5 +6,7 @@ export enum URL_BACK{
     FACTURE="facture",
     VEHICULE="vehicules",
     TACHE="taches",
-    PRODUIT='produits'
+    PRODUIT='produits',
+    TACHE_A_EFFECTUER='tachesEffectuer',
+    ENTRETIEN='entretien'
 }

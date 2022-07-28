@@ -20,7 +20,10 @@ export class MenuPrestaService {
     new Entretien()
   );
   tacheForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private datePipe: DatePipe,private tvaPipe:TvaPipe) {
+  constructor(private formBuilder: FormBuilder,
+    private datePipe: DatePipe,
+    private tvaPipe:TvaPipe,
+  ) {
     this.tacheForm = this.formBuilder.group({
       [TACHE.ID]: this.formBuilder.control(''),
       [TACHE.CATEGORIE]: this.formBuilder.control(''),
@@ -71,6 +74,9 @@ export class MenuPrestaService {
   get value() {
     return this.menu.getValue();
   }
+  get EntretienValue(){
+    return this.entretien.getValue()
+  }
   get produitCtrl() {
     return this.tacheForm.get(TACHE.PRODUIT) as FormArray;
   }
@@ -85,7 +91,6 @@ export class MenuPrestaService {
   }
   // suppression d'une Tache
   suppressionTache(index: number) {
-    console.log(this.entretien.getValue().taches.length)
     const tache =this.entretien.getValue().taches.filter((t, i) => i != index);
     this.entretien.getValue().taches=tache;
     this.entretien.next({...this.entretien.getValue()});

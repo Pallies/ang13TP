@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/core/models/client';
 import { Tache } from 'src/app/core/models/tache';
 import {  Observable } from 'rxjs';
+import { SaveEntretienService } from './save-entretien.service';
 
 @Component({
   selector: 'car-creation',
@@ -25,7 +26,8 @@ export class CreationEntretienComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private menuService: MenuPrestaService,
-    private tvaPipe:TvaPipe
+    private tvaPipe:TvaPipe,
+    private entretienService:SaveEntretienService
   ) {
     this.clients = this.route.snapshot.data[URL_SNAPSHOT.DATA_CLIENT];
     this.menuService.initMenu(
@@ -48,7 +50,9 @@ export class CreationEntretienComponent implements OnInit {
     this.router.navigate(['menu', 'entretien']);
   }
   sauvegardePrestations() {
-    this.menuService.validationEntretien(this.clientSelection,this.dateSelection)
+    this.entretienService.sauvegardeEntretien(this.clientSelection,this.dateSelection)
+    .then(_=>this.onBack())
+
   }
   suppressionTache(index: number) {
     this.menuService.suppressionTache(index);

@@ -63,8 +63,9 @@ export class ModalPrestaComponent implements OnInit {
     const produit = this.getQuantite(i);
     produit.quantite = +quantite.target.value;
     (this.menuService.tacheForm.get(TACHE.PRODUIT) as FormArray)
-      .at(i)
-      .setValue(produit);
+    .at(i)
+    .setValue(produit);
+    this.menuService.getControl(TACHE.PRIX)?.setValue(produit.prix*produit.quantite)
   }
   save() {
     this.menuService.validationTache();
