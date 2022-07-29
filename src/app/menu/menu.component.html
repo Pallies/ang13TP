@@ -1,0 +1,26 @@
+<h1 class="text-center mt-3">MENU</h1>
+<div class="container">
+  <div class="row">
+    <div class="col mt-5 mb-5" *ngIf="auth.accesRoutes(routesMenu.CLIENT)">
+      <a [routerLink]="routesMenu.CLIENT" class="h5"><button class="button">Gestion des clients</button></a>
+    </div>
+    <div class="col mt-5 mb-5" *ngIf="auth.accesRoutes(routesMenu.STOCK)">
+      <a [routerLink]="routesMenu.STOCK" class="h5"><button class="button">Gestion des stocks</button></a>
+    </div>
+    <div class="col mt-5 mb-5" *ngIf="auth.accesRoutes(routesMenu.ENTRETIEN)">
+      <a [routerLink]="routesMenu.ENTRETIEN" class="h5"><button class="button">Gestion des fiches d'entretien</button></a>
+    </div>
+    <div class="col mt-5" *ngIf="auth.accesRoutes(routesMenu.VEHICULE)">
+      <a [routerLink]="routesMenu.VEHICULE" class="h5"><button class="button">Gestion des ventes de véhicules</button></a>
+    </div>
+    <div class="col mt-5" *ngIf="auth.accesRoutes(routesMenu.TACHE)">
+      <a [routerLink]="routesMenu.TACHE" class="h5"><button class="button">Gestion des tâches</button></a>
+    </div>
+    <div class="col mt-5" *ngIf="auth.accesRoutes(routesMenu.UTILISATEUR)">
+      <a [routerLink]="routesMenu.UTILISATEUR" class="h5"><button class="button">Gestion des utilisateurs</button></a>
+    </div>
+    <div class="col mt-5" *ngIf="auth.accesRoutes(RouteProfil.MENU_FACTURE)">
+      <a routerLink="/factures/liste" class="h5"><button class="button">Gestion des factures</button></a>
+    </div>
+  </div>
+</div>
