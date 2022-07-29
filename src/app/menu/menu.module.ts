@@ -19,7 +19,7 @@ import { EntretienComponent } from './entretien/entretien.component';
     UtilisateurFormsComponent,
     ClientsComponent,
     ClientFormsComponent,
-    EntretienComponent,
+    EntretienComponent
   ],
   imports: [CommonModule, MenuRoutingModule, SharedModule, ReactiveFormsModule],
   providers: [ClientFormsService, UtilisateurFormsService]

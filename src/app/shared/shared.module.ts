@@ -7,14 +7,28 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfilPipe } from './pipes/profil.pipe';
 import { EntretienPipe } from './pipes/entretien.pipe';
 import { TvaPipe } from './pipes/tva.pipe';
+import { PrioriteDirective } from './directives/priorite.directive';
 
 @NgModule({
-  declarations: [CouleurSelectComponent, QuantiteSelectComponent, NavbarComponent, ProfilPipe, EntretienPipe, TvaPipe],
-  imports: [
-    CommonModule,
-    FormsModule,
+  declarations: [
+    CouleurSelectComponent,
+    QuantiteSelectComponent,
+    NavbarComponent,
+    ProfilPipe,
+    EntretienPipe,
+    TvaPipe,
+    PrioriteDirective,
   ],
-  providers:[DecimalPipe],
-  exports:[CouleurSelectComponent, QuantiteSelectComponent, NavbarComponent, ProfilPipe,EntretienPipe,TvaPipe]
+  imports: [CommonModule, FormsModule],
+  providers: [DecimalPipe],
+  exports: [
+    CouleurSelectComponent,
+    QuantiteSelectComponent,
+    NavbarComponent,
+    ProfilPipe,
+    EntretienPipe,
+    TvaPipe,
+    PrioriteDirective
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

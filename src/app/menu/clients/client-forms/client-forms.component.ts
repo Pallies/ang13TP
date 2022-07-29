@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { Client, CLIENT } from './../../../core/models/client';
+import {  CLIENT } from './../../../core/models/client';
 import {
   Component,
   OnInit,
@@ -25,7 +25,7 @@ export class ClientFormsComponent implements OnInit, OnDestroy {
 
   @ViewChild('close', { static: false })
   dimiss!: ElementRef;
-  
+
   CLIENT: typeof CLIENT = CLIENT;
   subscription!: Subscription;
   constructor(private clientFormService: ClientFormsService) {}
