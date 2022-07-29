@@ -4,6 +4,9 @@ import { Utilisateur } from 'src/app/core/models/utilisateur';
 import { utilisateurHeader, UtilisateurHeader } from './utilisateur-form.model';
 import { UtilisateurFormsService } from './utilisateur-forms.service';
 
+/**
+ * Composant qui sert à l'affichage des utilisateurs
+ */
 @Component({
   selector: 'app-utilisateurs',
   templateUrl: './utilisateurs.component.html',
@@ -19,10 +22,17 @@ export class UtilisateursComponent implements OnInit {
     private router: Router
   ) {}
 
+
+  /**
+   * Fonction qui charge la liste des utilisateurs à l'initialisation de la page
+   */
   ngOnInit(): void {
     this.utilisateurs = this.route.snapshot.data['dataUtilisateurs'];
   }
 
+  /**
+   * Fonction qui sert à recharger la page en asynchrone
+   */
   async refresh() {
     this.utilisateurFormService.refresh();
     this.router.navigated = false;
@@ -30,6 +40,10 @@ export class UtilisateursComponent implements OnInit {
     this.utilisateurs = this.route.snapshot.data['dataUtilisateurs'];
   }
 
+  /**
+   * Fonction qui permet de sélectionner un utilisateur
+   * @param utilisateur
+   */
   utilisateurChoisi(utilisateur: Utilisateur) {
     this.utilisateurFormService.initValue(utilisateur);
   }

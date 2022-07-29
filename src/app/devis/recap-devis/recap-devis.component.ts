@@ -9,7 +9,9 @@ import { ApiService } from "src/app/core/services/api.service";
 import { DevisVenteService } from "../devis-vente.service";
 import { VehiculeVenteService } from "../vehicule-vente.service";
 
-
+/**
+ * Composant qui permet l'affichage du récapitulatif d'un devis
+ */
 @Component({
   selector: 'app-recap-devis',
   templateUrl: './recap-devis.component.html',
@@ -30,6 +32,10 @@ export class RecapDevisComponent implements OnInit, OnDestroy {
     private router: Router
   ) {}
 
+  /**
+   * Fonction qui va charger les clients et les véhicules contenus dans le devis
+   * à l'initialisation de la page
+   */
   ngOnInit(): void {
     this.clients = this.route.snapshot.data[URL_SNAPSHOT.DATA_CLIENT];
     this.api.getAll();
@@ -47,13 +53,22 @@ export class RecapDevisComponent implements OnInit, OnDestroy {
   get prixTotalTTC():number{
     return this.prixTotal + this.prixTotal * 0.2
   }
+
+  /**
+   * Fonction qui permet de revenir à la page menu véhicules
+   */
   onBack() {
     this.router.navigated = false;
     this.router.navigate(['menu', 'vehicules']);
   }
+
+  /**
+   * Fonction qui permet d'enregistrer un devis dans le db.json
+   */
   ajouter(){
     this.devisService.save(this.clientSelection)
   }
+
   ngOnDestroy(): void {
     this.subscription.closed;
   }

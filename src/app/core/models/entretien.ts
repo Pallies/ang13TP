@@ -1,6 +1,10 @@
 import { Client } from 'src/app/core/models/client';
 import { Tache } from './tache';
 
+/**
+ * La classe Entretien va servir à la gestion des entretiens,
+ * prestations qu'un client demande
+ */
 export class Entretien {
   public id: number = 0;
   public client?: Client;

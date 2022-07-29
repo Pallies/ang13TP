@@ -6,6 +6,9 @@ import { VehiculeVenteService } from '../vehicule-vente.service';
 import { map, Observable } from 'rxjs';
 import { URL_SNAPSHOT } from 'src/app/core/guards/url-front.routes';
 
+/**
+ * Composant relatif à la création d'un devis
+ */
 @Component({
   selector: 'app-creation',
   templateUrl: './creation-devis.component.html',
@@ -22,13 +25,26 @@ export class CreationDevisComponent implements OnInit {
     this.vehiculesVendus = (this.route.snapshot.data[URL_SNAPSHOT.DATA_VEHICULE] as Vehicule[]).map(v=>new VehiculeVendu(v));
     this.vehiculeVenteService.init()
   }
+
+  /**
+   * Fonction qui sert à revenir à la page menu véhicules
+   */
   onBack() {
     this.router.navigated = false;
     this.router.navigate(['menu', 'vehicules']);
   }
+
+  /**
+   * Fonction qui sert à l'initialisation de la page
+   */
   ngOnInit(): void {
     this.maj$ = this.vehiculeVenteService.vehiculeVente.pipe(map((_) => true));
   }
+
+  /**
+   * Fonction qui permet d'ajouter le VehiculeVendu en passant par le service dédié
+   * @param vehiculeVendu
+   */
   ajouter(vehiculeVendu: VehiculeVendu) {
     if (
       vehiculeVendu.vehicule.quantite >= vehiculeVendu.quantiteVendu &&

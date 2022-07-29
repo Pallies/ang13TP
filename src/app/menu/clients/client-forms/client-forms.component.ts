@@ -12,6 +12,9 @@ import {
 } from '@angular/core';
 import { ClientFormsService } from '../client-forms.service';
 
+/**
+ * Composant qui va servir à enregistrer ou modifier les informations d'un client
+ */
 @Component({
   selector: 'car-client-forms',
   templateUrl: './client-forms.component.html',
@@ -30,6 +33,9 @@ export class ClientFormsComponent implements OnInit, OnDestroy {
   subscription!: Subscription;
   constructor(private clientFormService: ClientFormsService) {}
 
+  /**
+   * Fonction qui sert à enregistrer ou mettre à jour un client
+   */
   saveClient() {
     if (this.clientForm.valid) {
       this.subscription = this.clientFormService

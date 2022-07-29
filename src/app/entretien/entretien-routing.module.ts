@@ -10,6 +10,10 @@ import { CreationEntretienComponent } from './creation/creation.component';
 import { ListeEntretienComponent } from './liste-entretien/liste-entretien.component';
 import { ListeTacheComponent } from './liste-tache/liste-tache.component';
 
+
+/**
+ * Ce routing contient les paths pour la navigation des entretiens
+ */
 const routes: Routes = [
   {
     path: 'entretien',

@@ -5,6 +5,9 @@ import { Client } from 'src/app/core/models/client';
 import { clientHeader, ClientHeader } from './client-form.model';
 import { ClientFormsService } from './client-forms.service';
 
+/**
+ * Composant qui sert à l'affichage des clients
+ */
 @Component({
   selector: 'app-clients',
   templateUrl: './clients.component.html',
@@ -21,15 +24,27 @@ export class ClientsComponent implements OnInit {
   ) {}
 
 
+  /**
+   * Fonction qui charge la liste des clients à l'initialisation de la page
+   */
   ngOnInit(): void {
     this.clients = this.route.snapshot.data[URL_SNAPSHOT.DATA_CLIENT];
   }
+
+  /**
+   * Fonction qui sert à recharger la page en asynchrone
+   */
   async refresh() {
     this.clientFormService.refresh();
     this.router.navigated=false;
     await this.router.navigate(['menu','clients']);
     this.clients=this.route.snapshot.data[URL_SNAPSHOT.DATA_CLIENT]
   }
+
+  /**
+   * Fonction qui permet de sélectionner un client
+   * @param client
+   */
   clientChoisi(client: Client) {
     this.clientFormService.initValue(client);
   }

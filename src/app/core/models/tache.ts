@@ -1,5 +1,9 @@
 import { Produit } from './produit';
 
+/**
+ * La classe Tache va servir à pour la gestion des entretiens/tâches,
+ * pour la liste des tâches proposées
+ */
 export class Tache {
   public id: number = 0;
   public categorie!: string;
@@ -20,6 +24,11 @@ export class Tache {
     this.produits=produits;
   }
 }
+
+/**
+ * La classe TacheEffectuer va servir à pour la gestion des entretiens/tâches,
+ * ce sont les tâches que l'employé va réaliser pour un client
+ */
 export class TacheEffectuer {
   public id: number = 0;
   public categorie!: string;
@@ -39,6 +48,10 @@ export class TacheEffectuer {
       .flatMap((p) => p.id);
   }
 }
+
+/**
+ * L'énumération Tache sert à synthétiser les termes à un seul endroit
+ */
 export enum TACHE {
   ID = 'id',
   CATEGORIE = 'categorie',

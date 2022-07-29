@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { VehiculeVendu } from '../core/models/vehicule-vendu';
 
+/**
+ * Service contenant des fonctions relatives à la création d'un devis
+ */
 @Injectable({
   providedIn: 'platform',
 })

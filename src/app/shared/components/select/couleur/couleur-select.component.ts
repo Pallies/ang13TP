@@ -8,6 +8,9 @@ import {
   QueryList,
 } from '@angular/core';
 
+/**
+ * Composant utilisé pour selectionner les couleurs de véhicules
+ */
 @Component({
   selector: 'car-couleur',
   template: `

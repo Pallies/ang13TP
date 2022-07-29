@@ -2,6 +2,9 @@ import { AuthService } from './../services/auth.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 
+/**
+ * Ce guard empêche l'utilisateur de naviguer sur le site s'il n'a pas de profil associé
+ */
 @Injectable({
   providedIn: 'root',
 })

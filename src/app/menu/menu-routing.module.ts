@@ -10,6 +10,9 @@ import { ProfilGuard } from '../core/guards/profil.guard';
 import { URL_SNAPSHOT } from '../core/guards/url-front.routes';
 import { EntretienComponent } from './entretien/entretien.component';
 
+/**
+ * Ce routing contient les paths pour la navigation des menus
+ */
 const routes: Routes = [
   {
     path: 'menu',

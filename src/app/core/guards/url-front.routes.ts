@@ -1,5 +1,9 @@
 import { Profil } from '../models/profil';
 
+/**
+ * L'énumération ROUTES_MENU sert à synthétiser les termes à un seul endroit,
+ * pour les url des menus
+ */
 export enum ROUTES_MENU {
   BASE = '/menu',
   CLIENT = '/menu/clients',
@@ -12,6 +16,10 @@ export enum ROUTES_MENU {
   FACTURE = '/factures/liste',
 }
 
+/**
+ * L'énumération URL_SNAPSHOT sert à synthétiser les termes à un seul endroit,
+ * pour l'utilisation des resolvers
+ */
 export enum URL_SNAPSHOT {
   DATA_UTILISATEUR = 'dataUtilisateurs',
   DATA_VEHICULE = 'dataVehicules',

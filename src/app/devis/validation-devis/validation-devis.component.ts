@@ -6,6 +6,9 @@ import { Vehicule } from 'src/app/core/models/vehicule';
 import { VehiculeVendu, VenteVehicule } from 'src/app/core/models/vehicule-vendu';
 import { ApiService } from 'src/app/core/services/api.service';
 
+/**
+ * Composant relatif à la validation d'un devis
+ */
 @Component({
   selector: 'car-validation-devis',
   templateUrl: './validation-devis.component.html',
@@ -25,6 +28,10 @@ export class ValidationDevisComponent implements OnInit {
     this.devis = this.route.snapshot.data[URL_SNAPSHOT.DATA_VENTE_VEHICULE];
   }
 
+  /**
+   * Fonction qui permet de charger tous les véhicules du devis
+   * à l'initialisation de la page
+   */
   ngOnInit(): void {
     var prix = 0;
     var qte = 0;
@@ -46,6 +53,9 @@ export class ValidationDevisComponent implements OnInit {
     this.prixTotal = this.prixTTC + this.prixTTC * 0.2;
   }
 
+  /**
+   * Fonction qui permet de changer le statut d'un devis
+   */
   changeStatut(){
     this.devis.statut = true;
     const devisValidation = new DevisValidation(this.devis);
@@ -54,6 +64,9 @@ export class ValidationDevisComponent implements OnInit {
     this.apiService.update(devisValidation).subscribe(_ => this.router.navigate(['factures/', this.devis.id]));
   }
 
+  /**
+   * Fonction qui permet un retour sur la liste des devis
+   */
   onBack(){
     this.router.navigate(['/devis/liste']);
   }

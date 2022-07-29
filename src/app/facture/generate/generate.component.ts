@@ -8,6 +8,9 @@ import { Devis } from 'src/app/core/models/devis';
 import { Vehicule } from 'src/app/core/models/vehicule';
 import { VehiculeVendu, VenteVehicule } from 'src/app/core/models/vehicule-vendu';
 
+/**
+ * Composant qui sert à générer la facture en PDF
+ */
 @Component({
   selector: 'car-generate',
   templateUrl: './generate.component.html',

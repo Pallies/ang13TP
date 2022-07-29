@@ -3,6 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { URL_SNAPSHOT } from 'src/app/core/guards/url-front.routes';
 import { Devis } from 'src/app/core/models/devis';
 
+/**
+ * Composant qui sert à l'affichage de la liste des factures
+ */
 @Component({
   selector: 'car-liste',
   templateUrl: './liste.component.html',

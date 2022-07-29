@@ -5,6 +5,10 @@ import { Observable } from 'rxjs';
 import { VenteVehicule } from '../models/vehicule-vendu';
 import { ApiService } from '../services/api.service';
 
+/**
+ * Le resolver LoadventevehiculeResolver va servir à charger tous les objets VenteVehicule
+ * en faisant appel à ApiService
+ */
 @Injectable({
   providedIn: 'root',
 })

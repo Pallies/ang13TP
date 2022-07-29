@@ -5,6 +5,10 @@ import { Observable } from 'rxjs';
 import { ApiService } from '../services/api.service';
 import { URL_BACK } from '../guards/url-back.routes';
 
+/**
+ * Le resolver LoadvehiculeResolver va servir à charger tous les objets Vehicule
+ * en faisant appel à ApiService
+ */
 @Injectable({
   providedIn: 'root',
 })

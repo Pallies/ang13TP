@@ -1,3 +1,6 @@
+/**
+ * L'énumération URL_BACK sert à synthétiser les termes à un seul endroit, pour les url
+ */
 export enum URL_BACK{
     CLIENT="clients",
     UTILISATEUR="utilisateurs",

@@ -1,6 +1,11 @@
 import { Client } from "./client";
 import { VenteVehicule } from "./vehicule-vendu";
 
+/**
+ * La classe Devis va servir à la gestion des ventes de véhicules,
+ * les devis sont établis pour les clients
+ * et contiennent les véhicules demandés
+ */
 export class Devis {
   public id: number=0;
   public dateCreation!: string;
@@ -13,6 +18,9 @@ export class Devis {
   public statut!: boolean;
 }
 
+/**
+ * La classe DevisValidation va servir pour l'update d'un devis (validation de celui-ci)
+ */
 export class DevisValidation {
   public id: number=0;
   public dateCreation!: string;
@@ -31,6 +39,9 @@ export class DevisValidation {
   }
 }
 
+/**
+ * L'énumération Devis sert à synthétiser les termes à un seul endroit
+ */
 export enum DEVIS {
   ID = 'id',
   DATE = 'dateCreation',

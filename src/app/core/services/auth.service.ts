@@ -6,6 +6,9 @@ import { ApiService } from './api.service';
 import { Profil } from '../models/profil';
 import { URL_BACK } from '../guards/url-back.routes';
 
+/**
+ * Le service AuthService va servir pour l'authentification
+ */
 @Injectable({
   providedIn: 'root',
 })
@@ -20,7 +23,11 @@ export class AuthService {
     this.apiService.getAll().subscribe(data=>this.utilisateurs=data);
   }
 
-
+  /**
+   * Permet la connexion et donne accès selon profil utilisateur
+   * @param utilisateur
+   * @returns
+   */
   async connexion(utilisateur: Utilisateur): Promise<boolean> {
     return await this.utilisateurs
       .filter((data) => data.email === utilisateur.email)

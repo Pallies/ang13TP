@@ -11,6 +11,9 @@ import { URL_SNAPSHOT } from '../core/guards/url-front.routes';
 import { ValidationDevisComponent } from './validation-devis/validation-devis.component';
 import { LoadventevehiculeResolver } from '../core/resolvers/loadventevehicule.resolver';
 
+/**
+ * Ce routing contient les paths pour la navigation des devis
+ */
 const routes: Routes = [
   {
     path: 'devis',
