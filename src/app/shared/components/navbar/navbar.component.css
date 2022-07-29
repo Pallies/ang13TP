@@ -1,0 +1,26 @@
+#image {
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+}
+
+a.nav-link {
+  color: white;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+i.bi-person-circle {
+  font-size: 2rem;
+  color: white;
+}
+
+li#pos {
+  position: absolute;
+  bottom: -2rem;
+  right: 6rem;
+}
+
+a#title {
+  margin-right: 4rem;
+}

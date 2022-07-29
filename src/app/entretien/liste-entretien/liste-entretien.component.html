@@ -1,0 +1,80 @@
+<!-- TITRE -->
+<a class="h5">
+  <button class="btn btn-sm btn-outline-primary m-3 p-2" (click)="onBack()">
+    <i class="bi bi-backspace"></i> Retour
+  </button>
+</a>
+<h1 class="text-center">Gestion des fiches d'entretien</h1>
+<div class="container-fluid mt-4">
+  <!-- FILTRE -->
+  <div class="row">
+    <div class="col"></div>
+  </div>
+  <!-- TABLEAU -->
+  <div class="row w-75 m-auto">
+    <div class="col">
+      <table
+        class="table table-striped table-responsive text-center"
+        cellspacing="0"
+        width="100%"
+      >
+        <thead>
+          <tr class="table-secondary">
+            <td scope="col" [colSpan]="2">Client</td>
+            <td scope="col">Validée</td>
+            <td scope="col">Terminée</td>
+            <td scope="col">Date création</td>
+            <td scope="col">Date de Clôture</td>
+            <td scope="col">Valider fiche</td>
+            <td scope="col">Taches liées</td>
+          </tr>
+        </thead>
+
+        <tbody class="scrollbar">
+          <tr *ngFor="let e of entretiens">
+            <td>{{ e.client?.nom | uppercase }}</td>
+            <td>{{ e.client?.prenom | uppercase }}</td>
+            <td>
+              <i
+                class="bi bi-check-circle-fill fs-4"
+                [ngStyle]="{ color: 'green', opacity: e.valider ? '1' : '0' }"
+              ></i>
+            </td>
+            <td>
+              <i
+                class="bi bi-x-circle-fill fs-4"
+                [ngStyle]="{
+                  color: 'crimson',
+                  opacity: e.terminer ? '0' : '1'
+                }"
+              ></i>
+            </td>
+            <td>{{ e.dateCreation | date: "dd/MM/yyyy" }}</td>
+            <td>{{ e.dateCloture | date: "dd/MM/yyyy" }}</td>
+            <td>
+              <button
+                class="btn btn-sm btn-success ms-4"
+                [ngStyle]="{ opacity:( !e.terminer || e.valider)? '0' : '1' }"
+              >
+                <i
+                  class="bi bi-pencil-square"
+                  (click)="validerEntretien(e)"
+                ></i>
+              </button>
+            </td>
+            <td>
+              <button
+                class="btn btn-sm btn-primary ms-4"
+                [disabled]="e.terminer"
+                [ngStyle]="{ opacity: e.terminer ? '0' : '1' }"
+                [routerLink]="'/entretien/liste-tache/'+e.id"
+              >
+                <i class="bi bi-eye-fill"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<!-- TITRE -->
+<a class="h5">
+  <button class="btn btn-sm btn-outline-primary m-3 p-2" (click)="onBack()">
+    <i class="bi bi-backspace"></i> Retour
+  </button>
+</a>
+<h1 class="text-center">Création d'un devis: Vente de véhicule</h1>
+<div class="container-fluid mt-4">
+  <!-- FILTRE -->
+  <div class="row">
+    <div class="col"></div>
+  </div>
+  <!-- TABLEAU -->
+  <div class="row w-75 m-auto">
+    <div class="col">
+      <table
+        class="table table-striped table-responsive text-center"
+        cellspacing="0"
+        width="100%"
+      >
+        <thead>
+          <tr class="table-secondary">
+            <td scope="col">Photo</td>
+            <td scope="col">Marque Modèle</td>
+            <td scope="col">Prix HT</td>
+            <td scope="col">Année</td>
+            <td scope="col">Couleur</td>
+            <td scope="col">Quantité</td>
+            <td scope="col">Ajouter</td>
+          </tr>
+        </thead>
+        <tbody class="scrollbar">
+          <tr *ngFor="let vehiculeVendu of vehiculesVendus; let i = index">
+            <td>
+              <img
+                [src]="'./assets/images/car/' + vehiculeVendu.vehicule.photo"
+                [alt]="
+                  vehiculeVendu.vehicule.marque +
+                  ' ' +
+                  vehiculeVendu.vehicule.modele
+                "
+              />
+            </td>
+            <td>
+              {{ vehiculeVendu.vehicule.marque }}
+              {{ vehiculeVendu.vehicule.modele }}
+            </td>
+            <td>{{ vehiculeVendu.vehicule.prixHT }} €</td>
+            <td>{{ vehiculeVendu.vehicule.annee }}</td>
+
+              <td>
+                <car-couleur
+                  (selection)="vehiculeVendu.couleur = $event"
+                ></car-couleur>
+              </td>
+
+              <td>
+                <car-quantite
+                  *ngIf="vehiculeVendu.vehicule.quantite > 0"
+                  [max]="vehiculeVendu.vehicule.quantite"
+                  (selection)="vehiculeVendu.quantiteVendu = $event"
+                  [raz]="maj$"
+                ></car-quantite>
+              </td>
+            <td>
+              <button
+                class="btn btn-lg btn-outline-success"
+                (click)="ajouter(vehiculeVendu)"
+              >
+                <i class="bi bi-plus-circle"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <td colspan="6">
+            <div class="w-50 d-flex justify-content-around m-auto mt-4">
+              <button
+                class="btn btn-lg btn-success px-5"
+                routerLink="/devis/recap"
+              >
+                Récapitulatif
+              </button>
+              <button class="btn btn-lg btn-danger px-5" (click)="onBack()">
+                Annuler
+              </button>
+            </div>
+          </td>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
