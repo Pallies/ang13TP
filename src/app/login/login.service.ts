@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+/**
+ * Service qui sert à l'authentification
+ */
 @Injectable({
   providedIn: 'root'
 })
-
 export class LoginService {
 
   loginForm: FormGroup;

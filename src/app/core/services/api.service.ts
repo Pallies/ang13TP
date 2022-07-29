@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 
 const url = 'http://localhost:3000';
 
+/**
+ * Le service ApiService va requêter sur le json-server
+ */
 @Injectable({
   providedIn: 'root',
 })
@@ -29,7 +32,6 @@ export class ApiService<T extends { id: number }> {
   }
 
   update(data: T): Observable<T> {
-    //console.log(data);
     return this.http.put<T>(`${url}/${this._name}/${data.id}`, data);
   }
 

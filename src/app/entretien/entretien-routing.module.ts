@@ -5,6 +5,10 @@ import { LoadclientResolver } from '../core/resolvers/loadclient.resolver';
 import { LoadtacheResolver } from '../core/resolvers/loadtache.resolver';
 import { CreationEntretienComponent } from './creation/creation.component';
 
+
+/**
+ * Ce routing contient les paths pour la navigation des entretiens
+ */
 const routes: Routes = [
   {
     path: 'entretien',

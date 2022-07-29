@@ -8,6 +8,9 @@ import { ListeComponent } from './liste/liste.component';
 import { LoadvehiculeResolver } from '../core/resolvers/loadvehicule.resolver';
 import { LoadventevehiculeResolver } from '../core/resolvers/loadventevehicule.resolver';
 
+/**
+ * Ce routing contient les paths pour la navigation des factures
+ */
 const routes: Routes = [
   {
     path: 'factures',

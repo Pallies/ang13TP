@@ -5,6 +5,10 @@ import { Observable } from 'rxjs';
 import { Devis } from '../models/devis';
 import { ApiService } from '../services/api.service';
 
+/**
+ * Le resolver LoaddevisResolver va servir à charger tous les objets Devis
+ * en faisant appel à ApiService
+ */
 @Injectable({
   providedIn: 'root',
 })

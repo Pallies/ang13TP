@@ -1,6 +1,9 @@
 import { Observable } from 'rxjs';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
+/**
+ * Composant utilisé pour selectionner la quantité de véhicules
+ */
 @Component({
   selector: 'car-quantite',
   template: `

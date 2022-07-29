@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Composant de la navbar
+ */
 @Component({
   selector: 'car-navbar',
   templateUrl: './navbar.component.html',

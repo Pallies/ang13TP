@@ -1,14 +1,14 @@
 import { ApiService } from './../services/api.service';
 import { Injectable } from '@angular/core';
-import {
-  Router, Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Resolve } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Tache } from '../models/tache';
 import { URL_BACK } from '../guards/url-back.routes';
 
+/**
+ * Le resolver LoadtacheResolver va servir à charger tous les objets Tache
+ * en faisant appel à ApiService
+ */
 @Injectable({
   providedIn: 'root'
 })

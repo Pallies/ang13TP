@@ -13,6 +13,9 @@ import {
 } from '@angular/core';
 import { UtilisateurFormsService } from '../utilisateur-forms.service';
 
+/**
+ * Composant qui va servir à enregistrer ou modifier les informations d'un utilisateur
+ */
 @Component({
   selector: 'car-utilisateur-forms',
   templateUrl: './utilisateur-forms.component.html',
@@ -33,6 +36,9 @@ export class UtilisateurFormsComponent implements OnInit, OnDestroy {
   subscription!: Subscription;
   constructor(private utilisateurFormService: UtilisateurFormsService) {}
 
+  /**
+   * Fonction qui sert à enregistrer ou mettre à jour un utilisateur
+   */
   saveUtilisateur() {
     if (this.utilisateurForm.valid) {
       this.subscription = this.utilisateurFormService
