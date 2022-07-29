@@ -8,5 +8,8 @@ export enum URL_BACK{
     TACHE="taches",
     PRODUIT='produits',
     TACHE_A_EFFECTUER='tachesEffectuer',
-    ENTRETIEN='entretien'
+    ENTRETIEN='entretiens'
+}
+export function singularUrl(relationship:string){
+  return relationship.slice(0,relationship.length-1)
 }

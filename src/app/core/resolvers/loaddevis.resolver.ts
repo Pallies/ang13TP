@@ -1,4 +1,4 @@
-import { URL_BACK } from './../guards/url-back.routes';
+import { singularUrl, URL_BACK } from './../guards/url-back.routes';
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -13,7 +13,7 @@ export class LoaddevisResolver implements Resolve<Devis[]> {
   constructor(private api: ApiService<Devis>) {}
 
   resolve(): Observable<Devis[]> {
-    this.api.name = `${URL_BACK.DEVIS}?_embed=venteVehicules&_expand=client`;
+    this.api.name = `${URL_BACK.DEVIS}?_embed=${URL_BACK.VENTE_VEHICULE}&_expand=${singularUrl(URL_BACK.CLIENT)}`;
     return this.api.getAll();
   }
 }

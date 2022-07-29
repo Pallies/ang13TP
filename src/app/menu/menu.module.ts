@@ -10,7 +10,6 @@ import { ClientFormsService } from './clients/client-forms.service';
 import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
 import { UtilisateurFormsComponent } from './utilisateurs/utilisateur-forms/utilisateur-forms.component';
 import { UtilisateurFormsService } from './utilisateurs/utilisateur-forms.service';
-import { ListeComponent } from '../entretien/liste/liste.component';
 import { EntretienComponent } from './entretien/entretien.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { EntretienComponent } from './entretien/entretien.component';
     UtilisateurFormsComponent,
     ClientsComponent,
     ClientFormsComponent,
-    ListeComponent,
     EntretienComponent
   ],
   imports: [CommonModule, MenuRoutingModule, SharedModule, ReactiveFormsModule],
