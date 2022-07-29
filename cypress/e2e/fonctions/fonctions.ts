@@ -7,7 +7,7 @@ export function login(profil: string) {
         cy.get('#mail').clear().type(user.email);
         cy.get('#password').clear().type(user.mdp);
       }
-      cy.get('button').click();
+      cy.get('button').wait(1000).click();
     });
 }
 export function buttonContains(
@@ -20,11 +20,11 @@ export function buttonContains(
       let buttons = data
         .filter((data) => Object.keys(data)[0] == profil)
         .map((data: buttonMenu) => {
-          return data[profil].button;
-        });
+          return data[profil];
+        })
 
       button.each((i, $button) => {
-        expect($button.innerText).includes(buttons[0]);
+        expect((buttons[0] as unknown as string[]).filter(v=>v.toString()==$button.innerText)).to.length(1)
       });
     });
 }

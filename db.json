@@ -1,12 +1,54 @@
 {
-  "entretien": [
+  "entretiens": [
     {
       "id": 1,
       "prixTTC": "45.336",
       "taches": [],
       "terminer": false,
+      "valider": false,
       "clientId": 3,
-      "dateCreation": "2022-07-29"
+      "dateCreation": "2022-07-29",
+      "dateCloture": ""
+    },
+    {
+      "id": 2,
+      "prixTTC": "469.968",
+      "taches": [],
+      "terminer": true,
+      "valider": true,
+      "clientId": 7,
+      "dateCreation": "2022-08-06",
+      "dateCloture": "2022-07-28",
+      "client": {}
+    },
+    {
+      "id": 3,
+      "prixTTC": "72.204",
+      "taches": [],
+      "terminer": false,
+      "valider": false,
+      "clientId": 3,
+      "dateCreation": "2022-07-29",
+      "dateCloture": ""
+    },
+    {
+      "id": 4,
+      "prixTTC": "9.48",
+      "taches": [],
+      "terminer": true,
+      "valider": false,
+      "clientId": 8,
+      "dateCreation": "2022-07-30",
+      "dateCloture": ""
+    },
+    {
+      "id": 5,
+      "prixTTC": "115.416",
+      "taches": [],
+      "terminer": false,
+      "valider": false,
+      "clientId": 5,
+      "dateCreation": "2022-08-05"
     }
   ],
   "tachesEffectuer": [
@@ -32,6 +74,113 @@
       "nom": "intérieur/extérieur",
       "prix": 9.4,
       "entretienId": 1
+    },
+    {
+      "id": 3,
+      "produitId": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "termine": false,
+      "categorie": "Réparation",
+      "nom": "Peintures carrosserie",
+      "prix": 7.5,
+      "entretienId": 2
+    },
+    {
+      "id": 4,
+      "produitId": [
+        11,
+        12
+      ],
+      "termine": false,
+      "categorie": "Réparation",
+      "nom": "Peintures rayure",
+      "prix": 7.9,
+      "entretienId": 2
+    },
+    {
+      "id": 5,
+      "produitId": [
+        15
+      ],
+      "termine": false,
+      "categorie": "Réparation",
+      "nom": "pneu",
+      "prix": 201,
+      "entretienId": 2
+    },
+    {
+      "id": 6,
+      "produitId": [
+        18
+      ],
+      "termine": false,
+      "categorie": "Entretien",
+      "nom": "Ampoules",
+      "prix": 16.98,
+      "entretienId": 3
+    },
+    {
+      "id": 7,
+      "produitId": [
+        11,
+        12
+      ],
+      "termine": false,
+      "categorie": "Réparation",
+      "nom": "Peintures rayure",
+      "prix": 19.49,
+      "entretienId": 3
+    },
+    {
+      "id": 8,
+      "produitId": [
+        11
+      ],
+      "termine": false,
+      "categorie": "Réparation",
+      "nom": "Peintures rayure",
+      "prix": 7.9,
+      "entretienId": 3
+    },
+    {
+      "id": 9,
+      "produitId": [
+        11
+      ],
+      "termine": false,
+      "categorie": "Réparation",
+      "nom": "Peintures carrosserie",
+      "prix": 7.9,
+      "entretienId": 4
+    },
+    {
+      "id": 10,
+      "produitId": [
+        11,
+        12,
+        14
+      ],
+      "termine": false,
+      "categorie": "Réparation",
+      "nom": "Peintures carrosserie",
+      "prix": 7.5,
+      "entretienId": 5
+    },
+    {
+      "id": 11,
+      "produitId": [
+        2,
+        22
+      ],
+      "termine": false,
+      "categorie": "Entretien",
+      "nom": "Essuie-glaces",
+      "prix": 16.9,
+      "entretienId": 5
     }
   ],
   "clients": [
@@ -139,8 +288,9 @@
       "id": 2,
       "nom": "Moati",
       "prenom": "Félix",
-      "email": "Mecano@car.fr",
-      "profil": "ADMIN"
+      "mdp": "rootroot",
+      "email": "mecano@car.fr",
+      "profil": "MECA"
     },
     {
       "id": 3,
@@ -157,6 +307,14 @@
       "mdp": "rootroot",
       "email": "admin@car.fr",
       "profil": "ADMIN"
+    },
+    {
+      "id": 5,
+      "nom": "attal",
+      "prenom": "yvan",
+      "mdp": "rootroot",
+      "email": "magasinier@car.fr",
+      "profil": "MAG"
     }
   ],
   "devis": [

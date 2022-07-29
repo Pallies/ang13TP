@@ -10,22 +10,22 @@ this.beforeEach(function(){
 })
   it('connexion Commercial', () => {
     login('COM')
-    cy.url().should('include', 'menu');
+    cy.url().wait(1000).should('include', 'menu');
   });
   it('connexion Mecanicien', () => {
    login('MECA')
-    cy.url().should('include', 'menu');
+    cy.url().wait(1000).should('include', 'menu');
   });
   it('connexion Chef d atelier', () => {
     login('CHEF')
-    cy.url().should('include', 'menu');
+    cy.url().wait(1000).should('include', 'menu');
   });
   it('connexion Magasinier', () => {
     login('MAG')
-    cy.url().should('include', 'menu');
+    cy.url().wait(1000).should('include', 'menu');
   });
   it('connexion Administrateur', () => {
     login('ADMIN')
-    cy.url().should('include', 'menu');
+    cy.url().wait(1000).should('include', 'menu');
   });
 });

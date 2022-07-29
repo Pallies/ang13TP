@@ -13,6 +13,7 @@ import { SaveEntretienService } from './save-entretien.service';
   selector: 'car-creation',
   templateUrl: './creation.component.html',
   styleUrls: ['./creation.component.css'],
+  providers:[MenuPrestaService,MenuPrestaService]
 })
 export class CreationEntretienComponent implements OnInit {
   clients: Client[];

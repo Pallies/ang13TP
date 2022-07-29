@@ -33,13 +33,13 @@ export class EntretienPipe implements PipeTransform {
       }
     } else if (option != undefined) {
       let produit = value as Produit;
-      return produit.prix * produit.quantite;
+      return Math.round(produit.prix * produit.quantite*100)/100;
     } else {
       const tache = value as Tache;
-      let prixHT = tache.prix;
-      return (prixHT += tache.produits
+      let prixHT = Math.round(tache.prix*100)/100;
+      return prixHT += Math.round(tache.produits
         ?.map((p) => p.quantite * p.prix)
-        .reduce((b, c) => b + c));
+        .reduce((b, c) => b + c)*100)/100;
     }
   }
 }

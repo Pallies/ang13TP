@@ -10,7 +10,7 @@ export enum ROUTES_MENU {
   STOCK = '/menu/stock',
   ENTRETIEN = '/menu/entretien',
   VEHICULE = '/menu/vehicules',
-  TACHE = 'menu/tache',
+  TACHE = '/menu/tache',
   UTILISATEUR = '/menu/utilisateurs',
   DEVIS = '/menu/clients',
   FACTURE = '/factures/liste',
@@ -27,12 +27,11 @@ export enum URL_SNAPSHOT {
   DATA_DEVIS = 'dataDevis',
   DATA_VENTE_VEHICULE = 'dataVenteVehicules',
   DATA_TACHE = 'dataTache',
+  DATA_ENTRETIEN = 'dataEntretien',
+  DATA_TACHE_EFFECTUER='dataTacheEffectuer',
+  DATA_PRODUIT='dataProduits'
 }
 
-/**
- * La variable gestionProfil sert à gérer les accès aux différents niveaux de l'application,
- * selon les profils utilisateurs
- */
 export const gestionProfil = {
   [Profil.ADMIN]: [
     ROUTES_MENU.BASE,
